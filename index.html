@@ -12,8 +12,7 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://diamondhandsdaily.com/og-image.svg"/>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
-<!-- Google Analytics -->
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Share+Tech+Mono&family=Permanent+Marker&display=swap" rel="stylesheet"/>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VCLGE77TKL"></script>
 <script>
 window.dataLayer=window.dataLayer||[];
@@ -24,824 +23,798 @@ gtag('config','G-VCLGE77TKL');
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{background:#060608;color:#f0ede6;font-family:'Space Grotesk',sans-serif;min-height:100vh;overflow-x:hidden;}
+body{background:#0e0d0b;color:#e8e0cc;font-family:'Share Tech Mono',monospace;min-height:100vh;overflow-x:hidden;}
 a{color:inherit;text-decoration:none;}
 img{display:block;}
 
 /* TICKER */
-.ticker-bar{background:#f7c948;display:flex;align-items:center;overflow:hidden;height:30px;position:sticky;top:0;z-index:100;}
-.ticker-live{background:#060608;color:#f7c948;font-family:'Space Mono',monospace;font-size:9px;font-weight:700;letter-spacing:3px;padding:0 14px;height:100%;display:flex;align-items:center;white-space:nowrap;flex-shrink:0;}
-.ticker-scroll{display:flex;gap:28px;animation:tickscroll 35s linear infinite;white-space:nowrap;padding:0 16px;}
-.ticker-coin{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;color:#060608;display:flex;align-items:center;gap:5px;}
-.ticker-coin img{width:14px;height:14px;border-radius:50%;}
-.t-up{color:#0a4a1a;}
-.t-dn{color:#7a0a0a;}
-@keyframes tickscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ticker{background:#f5c518;height:26px;display:flex;align-items:center;overflow:hidden;position:sticky;top:0;z-index:100;}
+.ticker::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:repeating-linear-gradient(90deg,transparent,transparent 40px,rgba(0,0,0,0.04) 40px,rgba(0,0,0,0.04) 41px);pointer-events:none;}
+.ticker-live{background:#0e0d0b;color:#f5c518;font-size:8px;letter-spacing:4px;padding:0 10px;height:100%;display:flex;align-items:center;flex-shrink:0;}
+.ticker-scroll{display:flex;gap:20px;animation:tsc 28s linear infinite;white-space:nowrap;padding:0 10px;font-size:10px;font-weight:700;color:#0e0d0b;}
+@keyframes tsc{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.tup{color:#063006;font-weight:900;}
+.tdn{color:#5a0606;font-weight:900;}
+.ticker-coin{display:flex;align-items:center;gap:4px;}
+.ticker-coin img{width:12px;height:12px;border-radius:50%;}
 
 /* NAV */
-.site-nav{padding:0 20px;height:54px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #1a1a24;background:#060608;position:sticky;top:30px;z-index:99;}
-.logo-wrap{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.nav{height:50px;display:flex;align-items:center;justify-content:space-between;padding:0 14px;border-bottom:1px solid #1e1c16;background:#0e0d0b;position:sticky;top:26px;z-index:99;}
+.nav::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,#f5c51800,#f5c51830,#f5c51800);}
+.logo{display:flex;align-items:center;gap:10px;}
 .logo-svg{width:30px;height:30px;}
-.logo-name{font-family:'Bebas Neue',sans-serif;font-size:22px;color:#f7c948;letter-spacing:2px;line-height:1;}
-.logo-tag{font-family:'Space Mono',monospace;font-size:7px;color:#444;letter-spacing:2px;margin-top:1px;}
-.nav-links{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;}
-.nav-links::-webkit-scrollbar{display:none;}
-.nav-btn{font-family:'Space Mono',monospace;font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:7px 11px;color:#555;border:1px solid transparent;border-radius:2px;cursor:pointer;white-space:nowrap;background:transparent;transition:all 0.15s;}
-.nav-btn:hover{color:#f0ede6;border-color:#2a2a3a;}
-.nav-btn.active{color:#060608;background:#f7c948;border-color:#f7c948;}
-.nav-btn.satoshi-btn{color:#f7c948;border-color:#f7c94840;}
-.nav-btn.satoshi-btn.active{color:#060608;background:#f7c948;}
+.logo-text{display:flex;flex-direction:column;}
+.logo-name{font-family:'Permanent Marker',cursive;font-size:18px;color:#f5c518;line-height:1;filter:drop-shadow(0 0 8px rgba(245,197,24,0.2));}
+.logo-sub{font-size:7px;letter-spacing:3px;color:#333;margin-top:1px;}
+.nav-tabs{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;}
+.nav-tabs::-webkit-scrollbar{display:none;}
+.nt{font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:2px;padding:5px 9px;background:transparent;color:#444;border:1px solid transparent;cursor:pointer;white-space:nowrap;transition:all 0.12s;}
+.nt:hover{color:#e8e0cc;border-color:#2a2820;}
+.nt.on{background:#f5c518;color:#0e0d0b;border-color:#f5c518;}
+.nt.sat{color:#f5c518;border-color:#f5c51830;}
+.nt.sat.on{background:#f5c518;color:#0e0d0b;}
 
-/* SECTIONS */
-.page-section{display:none;}
-.page-section.active{display:block;}
+/* PAGE SECTIONS */
+.pg{display:none;}
+.pg.on{display:block;}
 
 /* HERO */
-.hero{padding:40px 20px 32px;border-bottom:2px solid #f7c948;position:relative;overflow:hidden;background:#060608;}
-.hero-watermark{position:absolute;right:-20px;top:-30px;font-family:'Bebas Neue',sans-serif;font-size:280px;color:#f7c948;opacity:0.02;line-height:1;pointer-events:none;user-select:none;}
-.hero-kicker{font-family:'Space Mono',monospace;font-size:9px;font-weight:700;letter-spacing:4px;color:#f7c948;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
-.kicker-dot{width:6px;height:6px;background:#f7c948;border-radius:50%;animation:blink 1.2s ease-in-out infinite;}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:0.15}}
-.hero h1{font-family:'Bebas Neue',sans-serif;font-size:68px;line-height:0.9;color:#f0ede6;letter-spacing:2px;margin-bottom:18px;}
-.hero h1 em{color:#f7c948;font-style:normal;display:block;}
-.hero-sub{font-size:14px;color:#666;line-height:1.75;max-width:500px;margin-bottom:24px;}
-.hero-btns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px;}
-.btn-gold{font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:2px;padding:10px 24px;background:#f7c948;color:#060608;border:none;border-radius:2px;cursor:pointer;transition:opacity 0.15s;}
-.btn-gold:hover{opacity:0.9;}
-.btn-outline{font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:2px;padding:10px 24px;background:transparent;color:#f7c948;border:1px solid #f7c94860;border-radius:2px;cursor:pointer;transition:all 0.15s;}
-.btn-outline:hover{border-color:#f7c948;}
-.hero-stats{display:flex;gap:28px;padding-top:24px;border-top:1px solid #1a1a24;flex-wrap:wrap;}
-.stat-n{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#f7c948;letter-spacing:1px;line-height:1;}
-.stat-l{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:2px;color:#444;text-transform:uppercase;margin-top:2px;}
+.hero{padding:32px 14px 26px;border-bottom:3px solid #f5c518;position:relative;overflow:hidden;background:#0e0d0b;}
+.hero-btc{position:absolute;right:-20px;top:-30px;font-family:'Bebas Neue',sans-serif;font-size:260px;color:#f5c518;opacity:0.035;line-height:1;pointer-events:none;letter-spacing:-10px;filter:blur(0.5px);}
+.hero-wall-words{position:absolute;top:10px;left:10px;font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:4px;color:#f5c518;opacity:0.07;line-height:2;pointer-events:none;transform:rotate(-2deg);}
+.hero-wall-2{position:absolute;bottom:10px;right:140px;font-family:'Permanent Marker',cursive;font-size:28px;color:#ff1a1a;opacity:0.06;line-height:1;pointer-events:none;transform:rotate(3deg);}
+.drip{position:absolute;top:0;width:2px;background:linear-gradient(180deg,#f5c518 0%,#f5c51840 60%,transparent 100%);pointer-events:none;}
+.hero-stamp{display:inline-block;background:#ff1a1a;font-family:'Bebas Neue',sans-serif;font-size:10px;letter-spacing:5px;color:#fff;padding:3px 10px;margin-bottom:14px;transform:rotate(-1deg);position:relative;box-shadow:2px 2px 0 rgba(255,26,26,0.3);}
+.hero-h1{font-family:'Bebas Neue',sans-serif;font-size:60px;line-height:0.88;letter-spacing:2px;margin-bottom:14px;position:relative;}
+.hero-h1 .l1{color:#e8e0cc;display:block;text-shadow:1px 0 0 rgba(232,224,204,0.1),-1px 0 0 rgba(232,224,204,0.08);}
+.hero-h1 .l2{color:#f5c518;display:block;filter:drop-shadow(0 0 12px rgba(245,197,24,0.25));text-shadow:2px 0 0 rgba(245,197,24,0.15),-1px 0 0 rgba(245,197,24,0.1);}
+.hero-h1 .l3{color:#ff1a1a;display:block;text-shadow:2px 0 0 rgba(255,26,26,0.2),-1px 0 0 rgba(255,26,26,0.1);}
+.hero-sub{font-size:10px;color:#555;line-height:1.85;max-width:500px;margin-bottom:18px;letter-spacing:0.5px;}
+.hero-sub b{color:#f5c518;}
+.war-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px;}
+.wt{font-family:'Bebas Neue',sans-serif;font-size:10px;letter-spacing:3px;padding:3px 8px;}
+.wt-gold{color:#f5c518;border:1px solid #f5c51840;background:rgba(245,197,24,0.06);}
+.wt-red{color:#ff1a1a;border:1px solid #ff1a1a40;background:rgba(255,26,26,0.06);}
+.wt-white{color:#888;border:1px solid #33332a;background:rgba(232,224,204,0.04);}
+.hero-btns{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px;}
+.btn-spray{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:3px;padding:10px 22px;background:#f5c518;color:#0e0d0b;border:none;cursor:pointer;transform:skewX(-3deg);transition:opacity 0.12s;box-shadow:0 0 20px rgba(245,197,24,0.15);}
+.btn-spray:hover{opacity:0.88;}
+.btn-spray-out{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:3px;padding:10px 22px;background:transparent;color:#f5c518;border:1px solid #f5c51850;cursor:pointer;transform:skewX(-3deg);}
+.hero-stats{display:flex;gap:0;border-top:1px dashed #2a2820;padding-top:18px;flex-wrap:wrap;}
+.hstat{padding-right:22px;margin-right:22px;border-right:1px dashed #2a2820;}
+.hstat:last-child{border:none;}
+.hstat-n{font-family:'Permanent Marker',cursive;font-size:30px;color:#f5c518;line-height:1;filter:drop-shadow(0 0 6px rgba(245,197,24,0.2));}
+.hstat-l{font-size:7px;letter-spacing:3px;color:#333;text-transform:uppercase;margin-top:2px;}
 
 /* BODY */
-.body-wrap{max-width:1100px;margin:0 auto;padding:28px 20px;display:flex;flex-direction:column;gap:40px;}
+.body{max-width:1100px;margin:0 auto;padding:18px 14px;display:flex;flex-direction:column;gap:28px;}
 
-/* SECTION HEAD */
-.sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;}
-.sec-title{font-family:'Bebas Neue',sans-serif;font-size:26px;color:#f0ede6;letter-spacing:2px;white-space:nowrap;}
-.sec-line{flex:1;height:1px;background:#1a1a24;}
-.sec-tag{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:2px;color:#f7c948;text-transform:uppercase;border:1px solid #f7c94830;padding:3px 8px;border-radius:2px;white-space:nowrap;}
+/* SECTION HEADS */
+.sh{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.sh-name{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:4px;color:#e8e0cc;text-shadow:1px 0 0 rgba(232,224,204,0.1);}
+.sh-name::before{content:'▶';color:#f5c518;font-size:10px;margin-right:8px;opacity:0.7;}
+.sh-rule{flex:1;height:1px;background:repeating-linear-gradient(90deg,#f5c51830 0,#f5c51830 3px,transparent 3px,transparent 8px);}
+.sh-tag{font-size:7px;letter-spacing:3px;color:#f5c518;border:1px solid #f5c51825;padding:3px 7px;white-space:nowrap;}
 
-/* FEATURED NEWS */
-.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:2px;}
-.feat-main{background:#0d0d12;border:1px solid #1a1a24;padding:24px;position:relative;overflow:hidden;cursor:pointer;transition:border-color 0.15s;}
-.feat-main:hover{border-color:#f7c94840;}
-.feat-main-wm{position:absolute;bottom:-20px;right:-10px;font-size:110px;opacity:0.04;line-height:1;pointer-events:none;}
-.feat-label{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:#f7c948;margin-bottom:12px;display:flex;align-items:center;gap:6px;}
-.feat-label-dot{width:5px;height:5px;background:#f7c948;border-radius:50%;animation:blink 1.2s ease-in-out infinite;}
-.feat-title{font-family:'Bebas Neue',sans-serif;font-size:34px;color:#f0ede6;line-height:1.0;letter-spacing:1px;margin-bottom:10px;}
-.feat-desc{font-size:12px;color:#666;line-height:1.65;margin-bottom:14px;}
-.feat-read{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;color:#f7c948;text-transform:uppercase;}
-.feat-side{background:#0d0d12;border:1px solid #1a1a24;padding:16px;cursor:pointer;transition:border-color 0.15s;display:flex;flex-direction:column;justify-content:space-between;}
-.feat-side:hover{border-color:#f7c94850;}
-.feat-side-cat{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:#555;margin-bottom:6px;}
-.feat-side-title{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;color:#e8e4dc;line-height:1.35;}
-.feat-side-meta{font-family:'Space Mono',monospace;font-size:9px;color:#333;margin-top:8px;}
+/* QUOTE WALL */
+.qwall{background:#111009;border:1px solid #2a2820;border-left:4px solid #ff1a1a;padding:14px 18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;position:relative;overflow:hidden;}
+.qwall-bg{position:absolute;right:-8px;top:-5px;font-family:'Permanent Marker',cursive;font-size:80px;color:#ff1a1a;opacity:0.04;line-height:1;pointer-events:none;transform:rotate(-8deg);}
+.qwall-q{font-family:'Permanent Marker',cursive;font-size:14px;color:#e8e0cc;line-height:1.45;text-shadow:1px 1px 0 rgba(0,0,0,0.5);}
+.qwall-q span{color:#f5c518;}
+.qwall-src{font-size:8px;color:#333;letter-spacing:2px;margin-top:4px;}
+
+/* NEWS */
+.feat-wall{display:grid;grid-template-columns:2fr 1fr;gap:2px;margin-bottom:2px;}
+.fw-main{background:#111009;border:1px solid #2a2820;padding:18px;position:relative;overflow:hidden;cursor:pointer;transition:border-color 0.12s;}
+.fw-main:hover{border-color:#f5c51840;}
+.fw-wm{position:absolute;bottom:-10px;right:-8px;font-family:'Bebas Neue',sans-serif;font-size:100px;color:#f5c518;opacity:0.04;line-height:1;pointer-events:none;filter:blur(0.3px);}
+.fw-flash{display:inline-block;background:#ff1a1a;font-family:'Bebas Neue',sans-serif;font-size:9px;letter-spacing:4px;color:#fff;padding:2px 8px;transform:rotate(-0.8deg);margin-bottom:8px;box-shadow:1px 1px 0 rgba(255,26,26,0.3);}
+.fw-cat{font-size:7px;letter-spacing:3px;color:#f5c518;text-transform:uppercase;margin-bottom:5px;}
+.fw-title{font-family:'Bebas Neue',sans-serif;font-size:28px;color:#e8e0cc;line-height:1.0;letter-spacing:1px;margin-bottom:8px;}
+.fw-desc{font-size:10px;color:#444;line-height:1.75;margin-bottom:10px;}
+.fw-read{font-size:7px;letter-spacing:3px;color:#f5c518;text-transform:uppercase;}
+.fw-stack{display:flex;flex-direction:column;gap:2px;}
+.fw-side{background:#111009;border:1px solid #2a2820;padding:11px;cursor:pointer;transition:border-color 0.12s;flex:1;overflow:hidden;}
+.fw-side:hover{border-color:#f5c51835;}
+.fw-side-top{height:2px;width:100%;margin-bottom:7px;}
+.fw-side-top::after{content:'';display:block;width:2px;height:6px;margin-left:10px;margin-top:0;opacity:0.6;background:inherit;}
+.fw-side-cat{font-size:7px;letter-spacing:2px;color:#444;text-transform:uppercase;margin-bottom:3px;}
+.fw-side-title{font-family:'Bebas Neue',sans-serif;font-size:13px;color:#ccc5aa;line-height:1.2;letter-spacing:0.5px;}
+.fw-side-meta{font-size:7px;color:#222218;margin-top:4px;}
 
 /* NEWS GRID */
-.news-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2px;}
-.news-card{background:#0d0d12;border:1px solid #1a1a24;padding:14px;cursor:pointer;transition:border-color 0.15s,background 0.15s;position:relative;overflow:hidden;}
-.news-card:hover{background:#111118;border-color:#f7c94840;}
-.news-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;}
-.nc-btc::before{background:#f7a520;}
-.nc-eth::before{background:#627eea;}
-.nc-meme::before{background:#00d084;}
-.nc-law::before{background:#e0605a;}
-.nc-defi::before{background:#a855f7;}
-.nc-macro::before{background:#06b6d4;}
-.nc-alt::before{background:#f7c948;}
-.news-pill{font-family:'Space Mono',monospace;font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:2px 6px;border-radius:2px;display:inline-block;margin-bottom:8px;}
-.p-hot{background:#c0303018;color:#e06060;border:1px solid #c0303035;}
-.p-new{background:#1a6a3a18;color:#4cc870;border:1px solid #1a6a3a35;}
-.p-live{background:#7030a018;color:#c070e0;border:1px solid #7030a035;}
-.news-cat{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:#555;margin-bottom:5px;}
-.news-title{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;color:#e8e4dc;line-height:1.35;margin-bottom:7px;}
-.news-meta{font-family:'Space Mono',monospace;font-size:9px;color:#333;}
+.news-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:2px;}
+.nc{background:#111009;border:1px solid #2a2820;padding:10px;cursor:pointer;transition:all 0.12s;position:relative;overflow:hidden;}
+.nc:hover{background:#151309;border-color:#f5c51830;}
+.nc-top{height:2px;width:100%;position:absolute;top:0;left:0;}
+.nc-pill{font-family:'Bebas Neue',sans-serif;font-size:8px;letter-spacing:2px;padding:1px 5px;display:inline-block;margin-bottom:5px;margin-top:4px;transform:skewX(-4deg);}
+.ph{background:#ff1a1a18;color:#ff4444;border:1px solid #ff1a1a30;}
+.pn{background:#f5c51812;color:#f5c518;border:1px solid #f5c51828;}
+.pl{background:#00ff8810;color:#00ff88;border:1px solid #00ff8825;}
+.nc-cat{font-size:7px;letter-spacing:2px;color:#333;text-transform:uppercase;margin-bottom:3px;}
+.nc-title{font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:0.5px;color:#ccc5aa;line-height:1.25;margin-bottom:4px;}
+.nc-meta{font-size:7px;color:#1e1c14;}
 
-/* LEGISLATION */
+/* PRICE BOARD */
+.price-board{background:#111009;border:1px solid #2a2820;padding:14px;position:relative;overflow:hidden;}
+.price-board::before{content:'PRICES';position:absolute;right:-5px;top:-5px;font-family:'Bebas Neue',sans-serif;font-size:60px;color:#f5c518;opacity:0.025;line-height:1;letter-spacing:4px;pointer-events:none;}
+.pb-head{font-size:7px;letter-spacing:4px;color:#333;text-transform:uppercase;margin-bottom:10px;display:flex;justify-content:space-between;}
+.pb-head span{color:#f5c518;}
+.pb-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:2px;}
+.pb-item{background:#0e0d0b;border:1px solid #1e1c16;padding:10px 8px;text-align:center;}
+.pb-sym{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:1px;color:#e8e0cc;margin-bottom:3px;}
+.pb-price{font-size:8px;color:#444;margin-bottom:4px;}
+.pb-logo{width:18px;height:18px;border-radius:50%;background:#1e1c16;margin:0 auto 4px;display:block;}
+.pb-chg{font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:0.5px;}
+.pbup{color:#00ff88;text-shadow:0 0 8px rgba(0,255,136,0.2);}
+.pbdn{color:#ff4444;text-shadow:0 0 8px rgba(255,68,68,0.2);}
+.loading-state{text-align:center;padding:40px;font-size:8px;letter-spacing:4px;color:#2a2820;text-transform:uppercase;}
+
+/* SATOSHI */
+.sat-wall{padding:30px 14px;border-bottom:3px solid #f5c518;position:relative;overflow:hidden;background:#0e0d0b;}
+.sat-btc{position:absolute;right:-15px;top:-20px;font-family:'Bebas Neue',sans-serif;font-size:220px;color:#f5c518;opacity:0.03;line-height:1;pointer-events:none;filter:blur(0.5px);letter-spacing:-8px;}
+.sat-ghost{position:absolute;bottom:-8px;left:10px;font-family:'Permanent Marker',cursive;font-size:50px;color:#ff1a1a;opacity:0.05;transform:rotate(-4deg);pointer-events:none;}
+.sat-kicker{font-size:8px;letter-spacing:5px;color:#ff1a1a;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.sat-blink{width:6px;height:6px;background:#ff1a1a;border-radius:50%;animation:bl 1.2s ease-in-out infinite;}
+@keyframes bl{0%,100%{opacity:1}50%{opacity:0.1}}
+.sat-h1{font-family:'Bebas Neue',sans-serif;font-size:56px;line-height:0.9;letter-spacing:3px;margin-bottom:14px;}
+.sat-h1 .sw1{color:#e8e0cc;display:block;text-shadow:1px 0 0 rgba(232,224,204,0.1);}
+.sat-h1 .sw2{color:#f5c518;display:block;filter:drop-shadow(0 0 10px rgba(245,197,24,0.2));text-shadow:2px 0 0 rgba(245,197,24,0.12);}
+.sat-quote{background:#111009;border:1px solid #f5c51828;border-left:3px solid #f5c518;padding:12px 16px;font-size:10px;color:#f5c518;line-height:1.85;max-width:580px;margin-bottom:18px;position:relative;overflow:hidden;}
+.sat-quote::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 0% 50%,rgba(245,197,24,0.04) 0%,transparent 60%);}
+.sat-body{max-width:1100px;margin:0 auto;padding:18px 14px;display:flex;flex-direction:column;gap:24px;}
+
+/* TIMELINE */
+.tl{display:flex;flex-direction:column;}
+.tl-row{display:flex;gap:0;position:relative;}
+.tl-row::before{content:'';position:absolute;left:70px;top:22px;bottom:-1px;width:1px;background:#2a2820;}
+.tl-row:last-child::before{display:none;}
+.tl-yr{font-size:9px;color:#f5c518;width:62px;flex-shrink:0;text-align:right;padding-right:10px;padding-top:5px;letter-spacing:1px;}
+.tl-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;margin-top:6px;margin-right:10px;z-index:1;}
+.tl-dot.g{background:#f5c518;box-shadow:0 0 6px rgba(245,197,24,0.3);}
+.tl-dot.d{background:#1e1c14;border:1px solid #333;}
+.tl-content{padding:2px 0 20px;}
+.tl-evt{font-size:7px;letter-spacing:3px;text-transform:uppercase;color:#444;margin-bottom:3px;}
+.tl-head{font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:1px;color:#ccc5aa;margin-bottom:3px;}
+.tl-desc{font-size:10px;color:#444;line-height:1.65;}
+
+/* WHITEPAPER */
+.wp-card{background:#111009;border:1px solid #f5c51825;border-left:4px solid #f5c518;padding:18px;position:relative;overflow:hidden;}
+.wp-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 0% 0%,rgba(245,197,24,0.03) 0%,transparent 50%);}
+.wp-eyebrow{font-size:7px;letter-spacing:4px;text-transform:uppercase;color:#f5c518;margin-bottom:8px;}
+.wp-title{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px;color:#e8e0cc;margin-bottom:3px;}
+.wp-auth{font-size:8px;color:#444;margin-bottom:10px;}
+.wp-abs{font-size:10px;color:#444;line-height:1.75;border-left:2px solid #f5c51818;padding-left:12px;margin-bottom:12px;font-style:italic;}
+.wp-dl{display:inline-flex;align-items:center;gap:8px;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:#f5c518;border:1px solid #f5c51835;padding:7px 12px;transition:border-color 0.12s;}
+.wp-dl:hover{border-color:#f5c518;}
+
+/* WALLET */
+.wallet{background:#111009;border:1px solid #f5c51825;padding:16px;display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap;position:relative;overflow:hidden;}
+.wallet-big{font-family:'Permanent Marker',cursive;font-size:28px;color:#f5c518;line-height:1;filter:drop-shadow(0 0 8px rgba(245,197,24,0.15));}
+.wallet-sub{font-size:8px;color:#444;letter-spacing:1px;margin-top:3px;}
+.wallet-addr{font-size:8px;color:#2a2820;margin-top:6px;word-break:break-all;line-height:1.6;}
+.wallet-note{font-size:10px;color:#444;line-height:1.65;max-width:340px;}
+
+/* QUOTES */
+.quotes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:2px;}
+.qcard{background:#111009;border:1px solid #2a2820;border-left:2px solid #f5c51830;padding:13px;position:relative;overflow:hidden;}
+.qcard::before{content:'"';position:absolute;top:-5px;left:8px;font-family:'Permanent Marker',cursive;font-size:40px;color:#f5c518;opacity:0.08;pointer-events:none;}
+.qcard-txt{font-size:10px;color:#777;line-height:1.7;margin-bottom:7px;font-style:italic;}
+.qcard-src{font-size:7px;letter-spacing:2px;color:#333;text-transform:uppercase;}
+
+/* LAW */
 .law-stack{display:flex;flex-direction:column;gap:2px;}
-.law-item{background:#0d0d12;border:1px solid #1a1a24;padding:16px 18px;display:flex;gap:0;align-items:stretch;}
-.law-bar{width:3px;flex-shrink:0;margin-right:16px;border-radius:0;}
-.law-bar.lb-pending{background:#f7c948;}
-.law-bar.lb-passed{background:#4cc870;}
-.law-bar.lb-watch{background:#e06060;}
-.law-bar.lb-order{background:#60aaff;}
-.law-status{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;margin-bottom:5px;}
-.ls-pending{color:#f7c948;}
-.ls-passed{color:#4cc870;}
-.ls-watch{color:#e06060;}
-.ls-order{color:#60aaff;}
-.law-title{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;color:#e8e4dc;margin-bottom:5px;}
-.law-desc{font-size:11px;color:#555;line-height:1.6;}
-
-/* SATOSHI PAGE */
-.satoshi-page{background:#060608;}
-.sat-hero{padding:40px 20px;border-bottom:2px solid #f7c948;position:relative;overflow:hidden;}
-.sat-hero-wm{position:absolute;right:-20px;top:-10px;font-family:'Bebas Neue',sans-serif;font-size:220px;color:#f7c948;opacity:0.025;line-height:1;pointer-events:none;}
-.sat-eyebrow{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:4px;color:#f7c948;text-transform:uppercase;margin-bottom:14px;}
-.sat-h1{font-family:'Bebas Neue',sans-serif;font-size:62px;line-height:0.92;color:#f0ede6;letter-spacing:2px;margin-bottom:20px;}
-.sat-h1 em{color:#f7c948;font-style:normal;display:block;}
-.sat-intro{font-size:14px;color:#777;line-height:1.8;max-width:600px;margin-bottom:28px;}
-.sat-mystery{font-family:'Space Mono',monospace;font-size:11px;color:#f7c948;border:1px solid #f7c94840;padding:14px 18px;border-radius:2px;line-height:1.7;max-width:600px;margin-bottom:28px;}
-.sat-btns{display:flex;gap:10px;flex-wrap:wrap;}
-
-.sat-body{max-width:1100px;margin:0 auto;padding:28px 20px;display:flex;flex-direction:column;gap:36px;}
-
-.sat-timeline{display:flex;flex-direction:column;gap:0;}
-.sat-tl-item{display:flex;gap:0;position:relative;}
-.sat-tl-item::before{content:'';position:absolute;left:79px;top:28px;bottom:-1px;width:1px;background:#1a1a24;}
-.sat-tl-item:last-child::before{display:none;}
-.sat-tl-date{font-family:'Space Mono',monospace;font-size:10px;color:#f7c948;width:72px;flex-shrink:0;padding-top:6px;text-align:right;padding-right:14px;letter-spacing:1px;}
-.sat-tl-dot{width:10px;height:10px;border-radius:50%;background:#f7c948;flex-shrink:0;margin-top:8px;margin-right:14px;position:relative;z-index:1;}
-.sat-tl-dot.dim{background:#2a2a3a;border:1px solid #444;}
-.sat-tl-content{padding:4px 0 28px;}
-.sat-tl-label{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:#555;margin-bottom:5px;}
-.sat-tl-title{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;color:#e8e4dc;margin-bottom:4px;}
-.sat-tl-desc{font-size:12px;color:#666;line-height:1.6;}
-
-.sat-whitepaper{background:#0d0d12;border:1px solid #f7c94840;padding:24px;border-radius:2px;}
-.sat-wp-label{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:#f7c948;margin-bottom:12px;}
-.sat-wp-title{font-family:'Bebas Neue',sans-serif;font-size:28px;color:#f0ede6;letter-spacing:1px;margin-bottom:6px;}
-.sat-wp-author{font-family:'Space Mono',monospace;font-size:10px;color:#666;margin-bottom:14px;}
-.sat-wp-abstract{font-size:12px;color:#666;line-height:1.7;margin-bottom:16px;font-style:italic;border-left:2px solid #f7c94840;padding-left:14px;}
-.sat-wp-link{display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#f7c948;border:1px solid #f7c94840;padding:8px 14px;border-radius:2px;transition:border-color 0.15s;}
-.sat-wp-link:hover{border-color:#f7c948;}
-
-.sat-quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2px;}
-.sat-quote{background:#0d0d12;border:1px solid #1a1a24;padding:18px;border-left:2px solid #f7c94840;}
-.sat-quote-text{font-family:'Space Grotesk',sans-serif;font-size:13px;color:#aaa;line-height:1.65;margin-bottom:10px;font-style:italic;}
-.sat-quote-src{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:2px;color:#555;text-transform:uppercase;}
-
-.sat-wallet{background:#0d0d12;border:1px solid #f7c94830;padding:20px;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
-.sat-wallet-icon{font-size:36px;flex-shrink:0;}
-.sat-wallet-label{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:#555;margin-bottom:5px;}
-.sat-wallet-val{font-family:'Bebas Neue',sans-serif;font-size:28px;color:#f7c948;letter-spacing:1px;}
-.sat-wallet-sub{font-family:'Space Mono',monospace;font-size:9px;color:#444;margin-top:3px;}
-.sat-wallet-addr{font-family:'Space Mono',monospace;font-size:9px;color:#3a3a4a;margin-top:8px;word-break:break-all;line-height:1.5;}
-.sat-wallet-note{font-size:11px;color:#555;line-height:1.6;max-width:400px;}
+.law-row{background:#111009;border:1px solid #2a2820;padding:13px 15px;display:flex;gap:12px;}
+.law-bar{width:3px;flex-shrink:0;min-height:40px;align-self:stretch;}
+.law-badge{font-family:'Bebas Neue',sans-serif;font-size:8px;letter-spacing:2px;padding:2px 6px;display:inline-block;margin-bottom:4px;transform:skewX(-3deg);}
+.lb-y{background:rgba(245,197,24,0.1);color:#f5c518;border:1px solid rgba(245,197,24,0.25);}
+.lb-g{background:rgba(0,255,136,0.08);color:#00ff88;border:1px solid rgba(0,255,136,0.2);}
+.lb-r{background:rgba(255,26,26,0.08);color:#ff4444;border:1px solid rgba(255,26,26,0.2);}
+.lb-b{background:rgba(68,136,255,0.08);color:#4488ff;border:1px solid rgba(68,136,255,0.2);}
+.law-title{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:0.5px;color:#ccc5aa;margin-bottom:3px;}
+.law-desc{font-size:10px;color:#444;line-height:1.6;}
 
 /* VOICES */
-.voices-wrap{display:flex;flex-direction:column;gap:2px;}
-.voice-satoshi{background:#0d0d12;border:2px solid #f7c948;padding:20px;display:flex;gap:18px;align-items:center;flex-wrap:wrap;cursor:pointer;}
-.voice-satoshi-avatar{width:64px;height:64px;border-radius:2px;background:#f7c94815;border:1px solid #f7c94840;display:flex;align-items:center;justify-content:center;font-size:32px;flex-shrink:0;}
-.voice-satoshi-name{font-family:'Bebas Neue',sans-serif;font-size:28px;color:#f7c948;letter-spacing:2px;line-height:1;}
-.voice-satoshi-sub{font-family:'Space Mono',monospace;font-size:9px;color:#666;letter-spacing:2px;margin-top:4px;}
-.voice-satoshi-desc{font-size:12px;color:#555;line-height:1.6;max-width:400px;}
-.voice-satoshi-tag{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:#f7c948;border:1px solid #f7c94840;padding:3px 8px;border-radius:2px;margin-top:8px;display:inline-block;}
+.voice-legend{background:#111009;border:2px solid #f5c518;padding:18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;cursor:pointer;margin-bottom:2px;position:relative;overflow:hidden;}
+.voice-legend::before{content:'₿';position:absolute;right:-5px;top:-8px;font-family:'Bebas Neue',sans-serif;font-size:80px;color:#f5c518;opacity:0.05;line-height:1;pointer-events:none;filter:blur(0.3px);}
+.vl-icon{width:54px;height:54px;background:rgba(245,197,24,0.08);border:2px solid #f5c518;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:22px;color:#f5c518;flex-shrink:0;letter-spacing:1px;}
+.vl-name{font-family:'Permanent Marker',cursive;font-size:22px;color:#f5c518;line-height:1.1;filter:drop-shadow(0 0 6px rgba(245,197,24,0.15));}
+.vl-sub{font-size:7px;letter-spacing:2px;color:#444;margin-top:3px;}
+.vl-desc{font-size:10px;color:#444;line-height:1.6;max-width:380px;}
+.vl-cta{font-family:'Bebas Neue',sans-serif;font-size:9px;letter-spacing:3px;color:#f5c518;border:1px solid #f5c51835;padding:3px 9px;margin-top:7px;display:inline-block;transform:skewX(-3deg);}
+.vg{display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:2px;}
+.vc{background:#111009;border:1px solid #2a2820;padding:11px 8px;text-align:center;cursor:pointer;transition:border-color 0.12s;position:relative;overflow:hidden;}
+.vc:hover{border-color:#f5c51835;}
+.vc-tag{position:absolute;top:3px;right:4px;font-family:'Bebas Neue',sans-serif;font-size:7px;letter-spacing:1px;opacity:0.45;}
+.vc-photo{width:46px;height:46px;border-radius:50%;object-fit:cover;margin:0 auto 6px;display:block;border:1px solid #2a2820;background:#1e1c14;}
+.vc-fb{width:46px;height:46px;border-radius:50%;margin:0 auto 6px;display:none;align-items:center;justify-content:center;font-family:'Permanent Marker',cursive;font-size:14px;border:1px solid;}
+.vc-name{font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:0.5px;color:#ccc5aa;margin-bottom:1px;}
+.vc-handle{font-size:7px;color:#222218;}
+.vc-role{font-size:8px;color:#333;margin-top:2px;line-height:1.3;}
 
-.voices-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:2px;margin-top:2px;}
-.voice-card{background:#0d0d12;border:1px solid #1a1a24;padding:14px 10px;text-align:center;cursor:pointer;transition:border-color 0.15s;}
-.voice-card:hover{border-color:#f7c94840;}
-.voice-photo{width:52px;height:52px;border-radius:50%;object-fit:cover;margin:0 auto 8px;border:1px solid #2a2a3a;background:#1a1a24;}
-.voice-photo-fallback{width:52px;height:52px;border-radius:50%;margin:0 auto 8px;border:1px solid #2a2a3a;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:1px;}
-.voice-name{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:11px;color:#e8e4dc;margin-bottom:2px;}
-.voice-handle{font-family:'Space Mono',monospace;font-size:8px;color:#444;}
-.voice-focus{font-size:10px;color:#555;margin-top:3px;line-height:1.3;}
-
-/* CRYPTO 101 */
-.learn-tabs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:16px;}
-.learn-tab{font-family:'Space Mono',monospace;font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 12px;border-radius:2px;border:1px solid #2a2a3a;background:transparent;color:#555;cursor:pointer;transition:all 0.15s;}
-.learn-tab:hover{color:#f0ede6;border-color:#3a3a4a;}
-.learn-tab.active{background:#f7c948;color:#060608;border-color:#f7c948;}
-.learn-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:2px;}
-.learn-card{background:#0d0d12;border:1px solid #1a1a24;padding:18px;cursor:pointer;transition:border-color 0.15s;}
-.learn-card:hover{border-color:#f7c94840;}
-.learn-icon{font-size:30px;margin-bottom:10px;}
-.learn-name{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#f7c948;letter-spacing:1px;margin-bottom:5px;}
-.learn-desc{font-size:11px;color:#555;line-height:1.55;}
+/* LEARN */
+.lt-tabs{display:flex;gap:2px;flex-wrap:wrap;margin-bottom:12px;}
+.lt{font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:2px;padding:5px 10px;background:transparent;border:1px solid #2a2820;color:#444;cursor:pointer;transition:all 0.12s;}
+.lt:hover{color:#e8e0cc;border-color:#3a3828;}
+.lt.on{background:#f5c518;color:#0e0d0b;border-color:#f5c518;}
+.learn-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:2px;}
+.lc{background:#111009;border:1px solid #2a2820;padding:13px;cursor:pointer;transition:border-color 0.12s;position:relative;overflow:hidden;}
+.lc:hover{border-color:#f5c51830;}
+.lc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#f5c51800,#f5c51830,#f5c51800);}
+.lc-icon{font-size:24px;margin-bottom:8px;}
+.lc-name{font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:1px;color:#f5c518;margin-bottom:4px;}
+.lc-desc{font-size:9px;color:#444;line-height:1.6;}
 
 /* MEMES */
 .meme-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:2px;}
-.meme-card{background:#0d0d12;border:1px solid #1a1a24;overflow:hidden;}
-.meme-face{height:100px;display:flex;align-items:center;justify-content:center;font-size:44px;}
-.meme-txt{padding:10px 12px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:11px;color:#777;line-height:1.4;border-top:1px solid #1a1a24;}
+.mc{background:#111009;border:1px solid #2a2820;overflow:hidden;position:relative;}
+.mc-face{height:90px;display:flex;align-items:center;justify-content:center;font-size:38px;position:relative;}
+.mc-spray{position:absolute;font-family:'Permanent Marker',cursive;opacity:0.5;text-shadow:0 0 4px currentColor;}
+.mc-txt{padding:9px 10px;font-size:9px;color:#555;line-height:1.55;border-top:1px solid #1e1c14;}
 
 /* PODCASTS */
-.pod-stack{display:flex;flex-direction:column;gap:2px;}
-.pod-card{background:#0d0d12;border:1px solid #1a1a24;padding:14px 16px;display:flex;gap:14px;align-items:center;cursor:pointer;transition:border-color 0.15s;}
-.pod-card:hover{border-color:#f7c94840;}
-.pod-art{width:52px;height:52px;border-radius:2px;background:#1a1a24;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
-.pod-info{flex:1;min-width:0;}
-.pod-show{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:#f7c948;margin-bottom:3px;}
-.pod-title{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:12px;color:#e8e4dc;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.pod-meta{font-family:'Space Mono',monospace;font-size:9px;color:#333;}
-.pod-play{width:32px;height:32px;background:#f7c948;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.pod-play::after{content:'';width:0;height:0;border-top:7px solid transparent;border-bottom:7px solid transparent;border-left:12px solid #060608;margin-left:3px;}
+.pod-list{display:flex;flex-direction:column;gap:2px;}
+.pc{background:#111009;border:1px solid #2a2820;padding:11px 13px;display:flex;gap:11px;align-items:center;cursor:pointer;transition:border-color 0.12s;}
+.pc:hover{border-color:#f5c51830;}
+.pc-art{width:46px;height:46px;background:#1e1c14;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.pc-info{flex:1;min-width:0;}
+.pc-show{font-size:7px;letter-spacing:3px;text-transform:uppercase;color:#f5c518;margin-bottom:2px;}
+.pc-title{font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:0.5px;color:#ccc5aa;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.pc-meta{font-size:7px;color:#222218;}
+.pc-btn{width:28px;height:28px;background:#f5c518;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 0 8px rgba(245,197,24,0.2);}
+.pc-btn::after{content:'';width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:10px solid #0e0d0b;margin-left:2px;}
 
 /* MARKETS */
-.markets-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:10px;}
-.markets-search{font-family:'Space Mono',monospace;font-size:11px;background:#0d0d12;border:1px solid #2a2a3a;color:#f0ede6;padding:8px 12px;border-radius:2px;width:200px;outline:none;}
-.markets-search::placeholder{color:#333;}
-.markets-search:focus{border-color:#f7c94860;}
-.markets-table-wrap{overflow-x:auto;}
-.markets-table{width:100%;border-collapse:collapse;}
-.markets-table th{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:#444;padding:8px 10px;border-bottom:1px solid #1a1a24;text-align:left;white-space:nowrap;}
-.markets-table th.r{text-align:right;}
-.markets-table td{padding:10px 10px;border-bottom:1px solid #0f0f18;vertical-align:middle;}
-.markets-table tr:hover td{background:#0d0d12;}
-.coin-rank{font-family:'Space Mono',monospace;font-size:10px;color:#333;width:32px;}
-.coin-info{display:flex;align-items:center;gap:10px;}
-.coin-logo{width:24px;height:24px;border-radius:50%;background:#1a1a24;}
-.coin-name{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;color:#e8e4dc;}
-.coin-symbol{font-family:'Space Mono',monospace;font-size:9px;color:#444;text-transform:uppercase;margin-top:1px;}
-.coin-price{font-family:'Space Mono',monospace;font-size:12px;color:#e8e4dc;text-align:right;white-space:nowrap;}
-.coin-change{font-family:'Space Mono',monospace;font-size:11px;text-align:right;white-space:nowrap;font-weight:700;}
-.c-up{color:#4cc870;}
-.c-dn{color:#e06060;}
-.coin-mcap{font-family:'Space Mono',monospace;font-size:10px;color:#555;text-align:right;white-space:nowrap;}
-.coin-vol{font-family:'Space Mono',monospace;font-size:10px;color:#444;text-align:right;white-space:nowrap;}
-.markets-loading{text-align:center;padding:60px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:3px;color:#333;text-transform:uppercase;}
-.load-more-btn{font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:2px;padding:12px 32px;background:transparent;color:#f7c948;border:1px solid #f7c94840;border-radius:2px;cursor:pointer;margin:16px auto 0;display:block;transition:all 0.15s;}
-.load-more-btn:hover{background:#f7c94815;border-color:#f7c948;}
-.load-more-btn:disabled{opacity:0.4;cursor:not-allowed;}
+.mkt-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:11px;flex-wrap:wrap;gap:8px;}
+.mkt-srch{font-size:10px;background:#111009;border:1px solid #2a2820;color:#e8e0cc;padding:7px 10px;width:170px;outline:none;}
+.mkt-srch::placeholder{color:#2a2820;}
+.mkt-srch:focus{border-color:#f5c51840;}
+.mkt-wrap{overflow-x:auto;}
+.mt{width:100%;border-collapse:collapse;}
+.mt th{font-size:7px;letter-spacing:3px;text-transform:uppercase;color:#333;padding:7px 8px;border-bottom:1px solid #2a2820;text-align:left;white-space:nowrap;}
+.mt th.r{text-align:right;}
+.mt td{padding:8px;border-bottom:1px solid #161409;vertical-align:middle;}
+.mt tr:hover td{background:#111009;}
+.cr-r{font-size:8px;color:#222218;width:26px;}
+.cr-info{display:flex;align-items:center;gap:7px;}
+.cr-logo{width:20px;height:20px;border-radius:50%;background:#1e1c14;}
+.cr-name{font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:0.3px;color:#ccc5aa;}
+.cr-sym{font-size:7px;color:#333;text-transform:uppercase;margin-top:1px;}
+.cr-price{font-size:10px;color:#ccc5aa;text-align:right;white-space:nowrap;}
+.cr-chg{font-family:'Bebas Neue',sans-serif;font-size:12px;text-align:right;white-space:nowrap;}
+.cup{color:#00ff88;text-shadow:0 0 6px rgba(0,255,136,0.2);}
+.cdn{color:#ff4444;text-shadow:0 0 6px rgba(255,68,68,0.2);}
+.cr-mc{font-size:9px;color:#333;text-align:right;white-space:nowrap;}
+.more-btn{font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:3px;padding:10px 24px;background:transparent;color:#f5c518;border:1px solid #f5c51830;cursor:pointer;margin:12px auto 0;display:block;transform:skewX(-4deg);}
+.more-btn:hover{background:rgba(245,197,24,0.06);border-color:#f5c518;}
+.more-btn:disabled{opacity:0.2;cursor:not-allowed;}
 
 /* FOOTER */
-.site-footer{padding:20px;border-top:2px solid #f7c948;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:20px;}
-.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#f7c948;letter-spacing:2px;}
-.footer-tag{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:3px;color:#333;text-transform:uppercase;margin-top:3px;}
-.footer-disc{font-family:'Space Mono',monospace;font-size:8px;color:#252530;max-width:420px;line-height:1.7;text-align:right;}
+.site-footer{padding:16px 14px;border-top:3px solid #f5c518;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:16px;position:relative;overflow:hidden;background:#0e0d0b;}
+.site-footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#f5c518,#f5c518 40%,#ff1a1a 40%,#ff1a1a 43%,#f5c518 43%);}
+.footer-bg{position:absolute;right:-5px;bottom:-8px;font-family:'Permanent Marker',cursive;font-size:70px;color:#f5c518;opacity:0.025;line-height:1;pointer-events:none;}
+.footer-logo{font-family:'Permanent Marker',cursive;font-size:17px;color:#f5c518;filter:drop-shadow(0 0 6px rgba(245,197,24,0.15));}
+.footer-sub{font-size:7px;letter-spacing:3px;color:#222218;margin-top:3px;}
+.footer-disc{font-size:7px;color:#1a1810;max-width:360px;line-height:1.7;text-align:right;}
 
 @media(max-width:600px){
-  .hero h1{font-size:48px;}
-  .sat-h1{font-size:44px;}
-  .feat-grid{grid-template-columns:1fr;}
-  .site-nav{padding:0 12px;}
-  .logo-name{font-size:18px;}
-  .body-wrap{padding:20px 12px;}
+  .hero-h1{font-size:44px;}
+  .sat-h1{font-size:40px;}
+  .feat-wall{grid-template-columns:1fr;}
+  .nav{padding:0 10px;}
+  .body{padding:14px 10px;}
+  .logo-name{font-size:15px;}
 }
 </style>
 </head>
 <body>
 
 <!-- TICKER -->
-<div class="ticker-bar">
-  <div class="ticker-live">● LIVE</div>
+<div class="ticker">
+  <div class="ticker-live">LIVE</div>
   <div style="overflow:hidden;flex:1;">
-    <div class="ticker-scroll" id="ticker-scroll">
-      <span class="ticker-coin">BTC <span class="t-up">+2.4%</span></span>
-      <span class="ticker-coin">ETH <span class="t-up">+1.8%</span></span>
-      <span class="ticker-coin">SOL <span class="t-up">+3.2%</span></span>
-      <span class="ticker-coin">DOGE <span class="t-up">+5.1%</span></span>
-      <span class="ticker-coin">PEPE <span class="t-dn">-1.4%</span></span>
-      <span class="ticker-coin">WIF <span class="t-up">+8.2%</span></span>
-      <span class="ticker-coin">LINK <span class="t-up">+0.9%</span></span>
-      <span class="ticker-coin">XRP <span class="t-up">+2.1%</span></span>
-      <span class="ticker-coin">ADA <span class="t-dn">-0.7%</span></span>
-      <span class="ticker-coin">AVAX <span class="t-up">+1.3%</span></span>
-      <span class="ticker-coin">BTC <span class="t-up">+2.4%</span></span>
-      <span class="ticker-coin">ETH <span class="t-up">+1.8%</span></span>
-      <span class="ticker-coin">SOL <span class="t-up">+3.2%</span></span>
-      <span class="ticker-coin">DOGE <span class="t-up">+5.1%</span></span>
-      <span class="ticker-coin">PEPE <span class="t-dn">-1.4%</span></span>
-      <span class="ticker-coin">WIF <span class="t-up">+8.2%</span></span>
-      <span class="ticker-coin">LINK <span class="t-up">+0.9%</span></span>
-      <span class="ticker-coin">XRP <span class="t-up">+2.1%</span></span>
-      <span class="ticker-coin">ADA <span class="t-dn">-0.7%</span></span>
-      <span class="ticker-coin">AVAX <span class="t-up">+1.3%</span></span>
+    <div class="ticker-scroll" id="tkscroll">
+      <span class="ticker-coin">BTC <span class="tup">+2.4%</span></span>
+      <span class="ticker-coin">ETH <span class="tup">+1.8%</span></span>
+      <span class="ticker-coin">SOL <span class="tup">+3.2%</span></span>
+      <span class="ticker-coin">DOGE <span class="tup">+5.1%</span></span>
+      <span class="ticker-coin">PEPE <span class="tdn">-1.4%</span></span>
+      <span class="ticker-coin">WIF <span class="tup">+8.2%</span></span>
+      <span class="ticker-coin">LINK <span class="tup">+0.9%</span></span>
+      <span class="ticker-coin">XRP <span class="tup">+2.1%</span></span>
+      <span class="ticker-coin">ADA <span class="tdn">-0.7%</span></span>
+      <span class="ticker-coin">AVAX <span class="tup">+1.3%</span></span>
+      <span class="ticker-coin">BTC <span class="tup">+2.4%</span></span>
+      <span class="ticker-coin">ETH <span class="tup">+1.8%</span></span>
+      <span class="ticker-coin">SOL <span class="tup">+3.2%</span></span>
+      <span class="ticker-coin">DOGE <span class="tup">+5.1%</span></span>
+      <span class="ticker-coin">PEPE <span class="tdn">-1.4%</span></span>
+      <span class="ticker-coin">WIF <span class="tup">+8.2%</span></span>
+      <span class="ticker-coin">LINK <span class="tup">+0.9%</span></span>
+      <span class="ticker-coin">XRP <span class="tup">+2.1%</span></span>
+      <span class="ticker-coin">ADA <span class="tdn">-0.7%</span></span>
+      <span class="ticker-coin">AVAX <span class="tup">+1.3%</span></span>
     </div>
   </div>
 </div>
 
 <!-- NAV -->
-<nav class="site-nav">
-  <div class="logo-wrap">
+<nav class="nav">
+  <div class="logo">
     <svg class="logo-svg" viewBox="0 0 30 30">
-      <rect width="30" height="30" fill="#f7c94810" rx="2"/>
-      <polygon points="15,2 27,9 23,26 7,26 3,9" fill="none" stroke="#f7c948" stroke-width="1.5"/>
-      <polygon points="15,6 23,11 20,22 10,22 7,11" fill="#f7c94818" stroke="#f7c948" stroke-width="0.8"/>
-      <line x1="15" y1="2" x2="7" y2="11" stroke="#f7c94855" stroke-width="0.8"/>
-      <line x1="15" y1="2" x2="23" y2="11" stroke="#f7c94855" stroke-width="0.8"/>
-      <line x1="7" y1="11" x2="15" y2="6" stroke="#f7c94855" stroke-width="0.8"/>
-      <line x1="23" y1="11" x2="15" y2="6" stroke="#f7c94855" stroke-width="0.8"/>
+      <rect width="30" height="30" fill="#f5c51810"/>
+      <polygon points="15,2 28,9 23,26 7,26 2,9" fill="none" stroke="#f5c518" stroke-width="1.8"/>
+      <polygon points="15,7 24,12 20,22 10,22 6,12" fill="#f5c51815" stroke="#f5c518" stroke-width="0.8"/>
+      <line x1="15" y1="2" x2="6" y2="12" stroke="#f5c51855" stroke-width="0.8"/>
+      <line x1="15" y1="2" x2="24" y2="12" stroke="#f5c51855" stroke-width="0.8"/>
+      <line x1="6" y1="12" x2="15" y2="7" stroke="#f5c51855" stroke-width="0.8"/>
+      <line x1="24" y1="12" x2="15" y2="7" stroke="#f5c51855" stroke-width="0.8"/>
     </svg>
-    <div>
+    <div class="logo-text">
       <div class="logo-name">Diamond Hands Daily</div>
-      <div class="logo-tag">Hold the line · Every day</div>
+      <div class="logo-sub">hold the line · every day</div>
     </div>
   </div>
-  <div class="nav-links">
-    <button class="nav-btn satoshi-btn" data-section="satoshi">Satoshi</button>
-    <button class="nav-btn active" data-section="news">News</button>
-    <button class="nav-btn" data-section="law">Law</button>
-    <button class="nav-btn" data-section="voices">Voices</button>
-    <button class="nav-btn" data-section="learn">101</button>
-    <button class="nav-btn" data-section="memes">Memes</button>
-    <button class="nav-btn" data-section="pods">Pod</button>
-    <button class="nav-btn" data-section="markets">Markets</button>
+  <div class="nav-tabs">
+    <button class="nt sat" data-s="satoshi">Satoshi</button>
+    <button class="nt on" data-s="news">News</button>
+    <button class="nt" data-s="law">Law</button>
+    <button class="nt" data-s="voices">Voices</button>
+    <button class="nt" data-s="learn">101</button>
+    <button class="nt" data-s="memes">Memes</button>
+    <button class="nt" data-s="pods">Pod</button>
+    <button class="nt" data-s="markets">Markets</button>
   </div>
 </nav>
 
-<!-- ============ NEWS ============ -->
-<div id="section-news" class="page-section active">
+<!-- NEWS -->
+<div id="pg-news" class="pg on">
   <div class="hero">
-    <div class="hero-watermark">₿</div>
-    <div class="hero-kicker"><div class="kicker-dot"></div> Breaking Now</div>
-    <h1>The News<br>Built For<br><em>Diamond Hands.</em></h1>
-    <p class="hero-sub">Bitcoin. Altcoins. Memecoins. DeFi. Legislation. The boldest voices in crypto — curated 4× daily. No noise. Just signal.</p>
+    <div class="hero-btc">₿</div>
+    <div class="hero-wall-words">HODL WAGMI DYOR NOT YOUR KEYS<br>DIAMOND HANDS NGMI FU TO FIAT<br>BITCOIN IS THE EXIT BANKS HATE THIS</div>
+    <div class="hero-wall-2">DEGEN</div>
+    <div class="drip" style="left:18%;height:40px;opacity:0.6;"></div>
+    <div class="drip" style="left:62%;height:25px;opacity:0.4;"></div>
+    <div class="drip" style="left:85%;height:55px;opacity:0.3;"></div>
+    <div class="hero-stamp">Breaking Now</div>
+    <div class="hero-h1">
+      <span class="l1">The News For</span>
+      <span class="l2">Diamond Hands.</span>
+      <span class="l3">Not Paper Hands.</span>
+    </div>
+    <p class="hero-sub">Bitcoin. Altcoins. Memecoins. DeFi. Legislation.<br><b>Curated 4× daily. No fluff. No FUD. Just signal.</b></p>
+    <div class="war-tags">
+      <span class="wt wt-gold">HODL</span>
+      <span class="wt wt-red">BANKS HATE THIS</span>
+      <span class="wt wt-gold">WAGMI</span>
+      <span class="wt wt-red">FU TO FIAT</span>
+      <span class="wt wt-white">DYOR</span>
+      <span class="wt wt-gold">GM DEGENS</span>
+    </div>
     <div class="hero-btns">
-      <button class="btn-gold" onclick="switchSection('satoshi')">Who Is Satoshi? →</button>
-      <button class="btn-outline" onclick="switchSection('markets')">Live Markets</button>
+      <button class="btn-spray" onclick="goTo('satoshi')">Who Is Satoshi? →</button>
+      <button class="btn-spray-out" onclick="goTo('markets')">Live Markets</button>
     </div>
     <div class="hero-stats">
-      <div><div class="stat-n">4×</div><div class="stat-l">Daily Updates</div></div>
-      <div><div class="stat-n">34</div><div class="stat-l">Top Voices</div></div>
-      <div><div class="stat-n">250</div><div class="stat-l">Live Coins</div></div>
-      <div><div class="stat-n">0</div><div class="stat-l">Paper Hands</div></div>
+      <div class="hstat"><div class="hstat-n">4×</div><div class="hstat-l">Daily</div></div>
+      <div class="hstat"><div class="hstat-n">34</div><div class="hstat-l">Voices</div></div>
+      <div class="hstat"><div class="hstat-n">250</div><div class="hstat-l">Coins</div></div>
+      <div class="hstat"><div class="hstat-n">0</div><div class="hstat-l">Paper Hands</div></div>
     </div>
   </div>
-  <div class="body-wrap">
+  <div class="body">
+    <div class="qwall">
+      <div class="qwall-bg">SYSTEM</div>
+      <div>
+        <div class="qwall-q">"The banks got a bailout. <span>You got Bitcoin.</span> We're not even — you won."</div>
+        <div class="qwall-src">— inscribed forever in the genesis block · Jan 3, 2009 · still the most punk thing ever done</div>
+      </div>
+    </div>
     <section>
-      <div class="sec-head">
-        <span class="sec-title">Top Stories</span>
-        <div class="sec-line"></div>
-        <span class="sec-tag" id="news-ts">Today</span>
-      </div>
-      <div class="feat-grid">
-        <div class="feat-main nc-btc" id="feat-main">
-          <div class="feat-main-wm">₿</div>
-          <div class="feat-label"><div class="feat-label-dot"></div> Breaking — Bitcoin</div>
-          <div class="feat-title">BTC Breaks Resistance. Bulls Eye $100K.</div>
-          <div class="feat-desc">Institutional flows accelerating as ETF inflows hit a 3-month high. On-chain data confirms accumulation across all wallet tiers. The signal is loud.</div>
-          <div class="feat-read">Read Full Story →</div>
+      <div class="sh"><span class="sh-name">Top Stories</span><div class="sh-rule"></div><span class="sh-tag" id="news-ts">Today</span></div>
+      <div class="feat-wall">
+        <div class="fw-main">
+          <div class="fw-wm">₿</div>
+          <div class="fw-flash">Breaking</div>
+          <div class="fw-cat">Bitcoin</div>
+          <div class="fw-title">BTC Breaks Resistance. Bulls Eye $100K.</div>
+          <div class="fw-desc">Institutional flows accelerating. ETF inflows hit 3-month high. On-chain data confirms accumulation across all wallet tiers. The signal is loud.</div>
+          <div class="fw-read">Read Full Story →</div>
         </div>
-        <div style="display:flex;flex-direction:column;gap:2px;">
-          <div class="feat-side" style="border-left:3px solid #00d084;">
-            <div><div class="feat-side-cat">Memecoins</div><div class="feat-side-title">PEPE, WIF & the Memecoin Supercycle Nobody Saw Coming</div></div>
-            <div class="feat-side-meta">4 hrs ago · CoinDesk</div>
-          </div>
-          <div class="feat-side" style="border-left:3px solid #e0605a;">
-            <div><div class="feat-side-cat">Legislation</div><div class="feat-side-title">Senate Crypto Bill Moves Forward — Here's What's In It</div></div>
-            <div class="feat-side-meta">6 hrs ago · Politico</div>
-          </div>
-          <div class="feat-side" style="border-left:3px solid #627eea;">
-            <div><div class="feat-side-cat">Ethereum</div><div class="feat-side-title">Vitalik: Scaling Reaches Inflection Point in 2026</div></div>
-            <div class="feat-side-meta">8 hrs ago · Decrypt</div>
-          </div>
+        <div class="fw-stack">
+          <div class="fw-side"><div class="fw-side-top" style="background:#00ff88;"></div><div class="fw-side-cat">Memecoins</div><div class="fw-side-title">PEPE, WIF & the Supercycle Nobody Saw Coming</div><div class="fw-side-meta">4 hrs ago</div></div>
+          <div class="fw-side"><div class="fw-side-top" style="background:#ff1a1a;"></div><div class="fw-side-cat">Legislation</div><div class="fw-side-title">Senate Crypto Bill Moves Forward — What's In It</div><div class="fw-side-meta">6 hrs ago</div></div>
+          <div class="fw-side"><div class="fw-side-top" style="background:#627eea;"></div><div class="fw-side-cat">Ethereum</div><div class="fw-side-title">Vitalik: Scaling Hits Inflection Point in 2026</div><div class="fw-side-meta">8 hrs ago</div></div>
         </div>
       </div>
-      <div style="height:2px;"></div>
       <div class="news-grid" id="news-container">
-        <div class="news-card nc-defi"><span class="news-pill p-live">Live</span><div class="news-cat">DeFi</div><div class="news-title">Chainlink Surges 12% on Real-World Asset Milestone</div><div class="news-meta">1 hr ago · CoinDesk</div></div>
-        <div class="news-card nc-macro"><span class="news-pill p-new">New</span><div class="news-cat">Macro</div><div class="news-title">Lyn Alden: Bitcoin Wins Every Macro Scenario in 2026</div><div class="news-meta">3 hrs ago · Real Vision</div></div>
-        <div class="news-card nc-alt"><span class="news-pill p-new">New</span><div class="news-cat">Solana</div><div class="news-title">SOL Ecosystem TVL Hits All-Time High as Builders Pour In</div><div class="news-meta">5 hrs ago · The Block</div></div>
-        <div class="news-card nc-meme"><span class="news-pill p-hot">Hot</span><div class="news-cat">Memecoins</div><div class="news-title">WIF Breaks Out — Solana Memecoins Lead This Cycle</div><div class="news-meta">2 hrs ago · Decrypt</div></div>
-        <div class="news-card nc-btc"><span class="news-pill p-new">New</span><div class="news-cat">Bitcoin</div><div class="news-title">Michael Saylor Buys Another $500M in BTC for MicroStrategy</div><div class="news-meta">7 hrs ago · Bloomberg</div></div>
-        <div class="news-card nc-law"><span class="news-pill p-hot">Hot</span><div class="news-cat">Legislation</div><div class="news-title">IRS DeFi Broker Rule: What Every Holder Needs to Know</div><div class="news-meta">9 hrs ago · Forbes</div></div>
+        <div class="nc"><div class="nc-top" style="background:#a855f7;"></div><span class="nc-pill pl">Live</span><div class="nc-cat">DeFi</div><div class="nc-title">Chainlink Surges 12% on Real-World Asset Deal</div><div class="nc-meta">1 hr · CoinDesk</div></div>
+        <div class="nc"><div class="nc-top" style="background:#06b6d4;"></div><span class="nc-pill pn">New</span><div class="nc-cat">Macro</div><div class="nc-title">Lyn Alden: Bitcoin Wins Every Macro Scenario</div><div class="nc-meta">3 hrs · Real Vision</div></div>
+        <div class="nc"><div class="nc-top" style="background:#f5c518;"></div><span class="nc-pill pn">New</span><div class="nc-cat">Solana</div><div class="nc-title">SOL Ecosystem TVL Hits All-Time High</div><div class="nc-meta">5 hrs · The Block</div></div>
+        <div class="nc"><div class="nc-top" style="background:#00ff88;"></div><span class="nc-pill ph">Hot</span><div class="nc-cat">Memecoins</div><div class="nc-title">WIF Breaks Out — Solana Memes Lead This Cycle</div><div class="nc-meta">2 hrs · Decrypt</div></div>
+        <div class="nc"><div class="nc-top" style="background:#f7a520;"></div><span class="nc-pill pn">New</span><div class="nc-cat">Bitcoin</div><div class="nc-title">Saylor Buys Another $500M BTC for MicroStrategy</div><div class="nc-meta">7 hrs · Bloomberg</div></div>
+        <div class="nc"><div class="nc-top" style="background:#ff1a1a;"></div><span class="nc-pill ph">Hot</span><div class="nc-cat">Legislation</div><div class="nc-title">IRS DeFi Rule: What Every Holder Needs to Know</div><div class="nc-meta">9 hrs · Forbes</div></div>
+      </div>
+    </section>
+    <div class="price-board">
+      <div class="pb-head"><span>Live Prices</span><span onclick="goTo('markets')" style="cursor:pointer;">Full Markets →</span></div>
+      <div class="pb-grid" id="pb-grid">
+        <div class="pb-item"><div class="pb-sym">BTC</div><div class="pb-price">Loading...</div><div class="pb-chg pbup">—</div></div>
+        <div class="pb-item"><div class="pb-sym">ETH</div><div class="pb-price">Loading...</div><div class="pb-chg pbup">—</div></div>
+        <div class="pb-item"><div class="pb-sym">SOL</div><div class="pb-price">Loading...</div><div class="pb-chg pbup">—</div></div>
+        <div class="pb-item"><div class="pb-sym">DOGE</div><div class="pb-price">Loading...</div><div class="pb-chg pbup">—</div></div>
+        <div class="pb-item"><div class="pb-sym">PEPE</div><div class="pb-price">Loading...</div><div class="pb-chg pbup">—</div></div>
+        <div class="pb-item"><div class="pb-sym">WIF</div><div class="pb-price">Loading...</div><div class="pb-chg pbup">—</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SATOSHI -->
+<div id="pg-satoshi" class="pg">
+  <div class="sat-wall">
+    <div class="sat-btc">₿</div>
+    <div class="sat-ghost">GHOST</div>
+    <div class="drip" style="left:25%;height:35px;opacity:0.5;"></div>
+    <div class="drip" style="left:70%;height:20px;opacity:0.3;"></div>
+    <div class="sat-kicker"><div class="sat-blink"></div> Identity Unknown · Last Seen April 2011</div>
+    <div class="sat-h1">
+      <span class="sw1">Satoshi</span>
+      <span class="sw2">Nakamoto.</span>
+    </div>
+    <div class="sat-quote">"I've moved on to other things. It's in good hands with Gavin and everyone."<br>— Last known message. April 23, 2011. Then silence. Forever.</div>
+    <div class="hero-btns">
+      <a href="https://bitcoin.org/bitcoin.pdf" target="_blank" rel="noopener" class="btn-spray">Read the Whitepaper →</a>
+      <a href="https://satoshi.nakamotoinstitute.org/" target="_blank" rel="noopener" class="btn-spray-out">All Satoshi Writings</a>
+    </div>
+  </div>
+  <div class="sat-body">
+    <section>
+      <div class="sh"><span class="sh-name">The Whitepaper</span><div class="sh-rule"></div><span class="sh-tag">Oct 31 2008</span></div>
+      <div class="wp-card">
+        <div class="wp-eyebrow">● Original Document · bitcoin.org/bitcoin.pdf</div>
+        <div class="wp-title">Bitcoin: A Peer-to-Peer Electronic Cash System</div>
+        <div class="wp-auth">Satoshi Nakamoto · satoshin@gmx.com · Halloween, 2008</div>
+        <div class="wp-abs">A purely peer-to-peer version of electronic cash would allow online payments to be sent directly from one party to another without going through a financial institution. Digital signatures provide part of the solution, but the main benefits are lost if a trusted third party is still required to prevent double-spending...</div>
+        <a href="https://bitcoin.org/bitcoin.pdf" target="_blank" rel="noopener" class="wp-dl">Download PDF → bitcoin.org/bitcoin.pdf</a>
+      </div>
+    </section>
+    <section>
+      <div class="sh"><span class="sh-name">The Timeline</span><div class="sh-rule"></div><span class="sh-tag">2008–2011</span></div>
+      <div class="tl">
+        <div class="tl-row"><div class="tl-yr">Oct 2008</div><div class="tl-dot g"></div><div class="tl-content"><div class="tl-evt">The Whitepaper</div><div class="tl-head">Bitcoin: A Peer-to-Peer Electronic Cash System published</div><div class="tl-desc">Posted on Halloween to a cryptography mailing list. 9 pages. No institution. No funding. An idea that became a $1 trillion asset class.</div></div></div>
+        <div class="tl-row"><div class="tl-yr">Jan 3 2009</div><div class="tl-dot g"></div><div class="tl-content"><div class="tl-evt">Genesis Block</div><div class="tl-head">Block #0 mined. 50 BTC. The network is born.</div><div class="tl-desc">Embedded forever: "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks." A timestamp. A message. The most punk thing ever written into a financial system.</div></div></div>
+        <div class="tl-row"><div class="tl-yr">Jan 12 2009</div><div class="tl-dot g"></div><div class="tl-content"><div class="tl-evt">First Transaction</div><div class="tl-head">Satoshi sends 10 BTC to Hal Finney</div><div class="tl-desc">The first peer-to-peer Bitcoin transaction. Hal Finney — cryptographer, early believer — receives the first transfer ever made.</div></div></div>
+        <div class="tl-row"><div class="tl-yr">May 22 2010</div><div class="tl-dot g"></div><div class="tl-content"><div class="tl-evt">Bitcoin Pizza Day</div><div class="tl-head">10,000 BTC for two pizzas. Worth hundreds of millions today.</div><div class="tl-desc">The first real-world Bitcoin purchase. Every May 22nd the crypto world mourns and celebrates simultaneously.</div></div></div>
+        <div class="tl-row"><div class="tl-yr">Apr 2011</div><div class="tl-dot d"></div><div class="tl-content"><div class="tl-evt">The Disappearance</div><div class="tl-head">One final email. Then silence. Forever.</div><div class="tl-desc">"I've moved on to other things." No identity revealed. No coins moved. The greatest unsolved mystery in financial history. Gone — or watching.</div></div></div>
+      </div>
+    </section>
+    <section>
+      <div class="sh"><span class="sh-name">The Wallet</span><div class="sh-rule"></div><span class="sh-tag">Never Moved</span></div>
+      <div class="wallet">
+        <div style="font-size:32px;flex-shrink:0;">🔐</div>
+        <div style="flex:1;">
+          <div style="font-size:7px;letter-spacing:4px;color:#333;text-transform:uppercase;margin-bottom:5px;">Estimated Holdings</div>
+          <div class="wallet-big">~1,000,000 BTC</div>
+          <div class="wallet-sub">Mined in early blocks · Never moved · Never spent · Still watching</div>
+          <div class="wallet-addr">1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</div>
+        </div>
+        <div class="wallet-note">If Satoshi's coins ever move, it will be the most significant event in crypto history. Every on-chain analyst on earth watches these addresses. So far — not one satoshi has moved.</div>
+      </div>
+    </section>
+    <section>
+      <div class="sh"><span class="sh-name">Satoshi's Words</span><div class="sh-rule"></div><span class="sh-tag">Direct Quotes</span></div>
+      <div class="quotes-grid">
+        <div class="qcard"><div class="qcard-txt">"The root problem with conventional currency is all the trust that's required to make it work. The central bank must be trusted not to debase the currency, but the history of fiat currencies is full of breaches of that trust."</div><div class="qcard-src">P2P Foundation · 2009</div></div>
+        <div class="qcard"><div class="qcard-txt">"If you don't believe me or don't get it, I don't have time to try to convince you, sorry."</div><div class="qcard-src">Bitcointalk · 2010</div></div>
+        <div class="qcard"><div class="qcard-txt">"Lost coins only make everyone else's coins worth slightly more. Think of it as a donation to everyone."</div><div class="qcard-src">Bitcointalk · 2010</div></div>
+        <div class="qcard"><div class="qcard-txt">"It might make sense just to get some in case it catches on. If enough people think the same way, that becomes a self fulfilling prophecy."</div><div class="qcard-src">Satoshi Email · 2009</div></div>
+        <div class="qcard"><div class="qcard-txt">"Writing a description for this thing for general audiences is bloody hard. There's nothing to relate it to."</div><div class="qcard-src">Bitcointalk · 2010</div></div>
+        <div class="qcard"><div class="qcard-txt">"I've moved on to other things. It's in good hands with Gavin and everyone."</div><div class="qcard-src">Final Email · April 23, 2011</div></div>
       </div>
     </section>
   </div>
 </div>
 
-<!-- ============ SATOSHI ============ -->
-<div id="section-satoshi" class="page-section">
-  <div class="satoshi-page">
-    <div class="sat-hero">
-      <div class="sat-hero-wm">₿</div>
-      <div class="sat-eyebrow">The Ghost Who Started Everything</div>
-      <div class="sat-h1">Satoshi<br><em>Nakamoto.</em></div>
-      <p class="sat-intro">On October 31, 2008, an anonymous person or group using the name Satoshi Nakamoto published a 9-page whitepaper that would change the world. They built Bitcoin, launched it, corresponded with early developers for two years — then vanished. No one knows who they are. No one has ever moved a single coin from their estimated 1 million BTC wallet. The mystery remains unsolved.</p>
-      <div class="sat-mystery">"I've moved on to other things. It's in good hands with Gavin and everyone."<br>— Satoshi Nakamoto, last known message, April 23, 2011</div>
-      <div class="sat-btns">
-        <a href="https://bitcoin.org/bitcoin.pdf" target="_blank" rel="noopener" class="btn-gold">Read the Whitepaper →</a>
-        <a href="https://satoshi.nakamotoinstitute.org/" target="_blank" rel="noopener" class="btn-outline">Satoshi's Writings</a>
-      </div>
-    </div>
-
-    <div class="sat-body">
-
-      <section>
-        <div class="sec-head"><span class="sec-title">The Whitepaper</span><div class="sec-line"></div><span class="sec-tag">Oct 31 2008</span></div>
-        <div class="sat-whitepaper">
-          <div class="sat-wp-label">● Original Document</div>
-          <div class="sat-wp-title">Bitcoin: A Peer-to-Peer Electronic Cash System</div>
-          <div class="sat-wp-author">Satoshi Nakamoto — satoshin@gmx.com — bitcoin.org — October 31, 2008</div>
-          <div class="sat-wp-abstract">A purely peer-to-peer version of electronic cash would allow online payments to be sent directly from one party to another without going through a financial institution. Digital signatures provide part of the solution, but the main benefits are lost if a trusted third party is still required to prevent double-spending. We propose a solution to the double-spending problem using a peer-to-peer network...</div>
-          <a href="https://bitcoin.org/bitcoin.pdf" target="_blank" rel="noopener" class="sat-wp-link">Download PDF → bitcoin.org/bitcoin.pdf</a>
-        </div>
-      </section>
-
-      <section>
-        <div class="sec-head"><span class="sec-title">The Timeline</span><div class="sec-line"></div><span class="sec-tag">2008 — 2011</span></div>
-        <div class="sat-timeline">
-          <div class="sat-tl-item">
-            <div class="sat-tl-date">Oct 2008</div>
-            <div class="sat-tl-dot"></div>
-            <div class="sat-tl-content">
-              <div class="sat-tl-label">The Whitepaper</div>
-              <div class="sat-tl-title">Bitcoin: A Peer-to-Peer Electronic Cash System published</div>
-              <div class="sat-tl-desc">Posted to a cryptography mailing list on Halloween. Nine pages. No institution. No funding. Just an idea that would become a $1 trillion+ asset class.</div>
-            </div>
-          </div>
-          <div class="sat-tl-item">
-            <div class="sat-tl-date">Jan 3 2009</div>
-            <div class="sat-tl-dot"></div>
-            <div class="sat-tl-content">
-              <div class="sat-tl-label">The Genesis Block</div>
-              <div class="sat-tl-title">Block #0 mined. 50 BTC created. The network is born.</div>
-              <div class="sat-tl-desc">Embedded in the genesis block: "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks." A message. A timestamp. A manifesto.</div>
-            </div>
-          </div>
-          <div class="sat-tl-item">
-            <div class="sat-tl-date">Jan 12 2009</div>
-            <div class="sat-tl-dot"></div>
-            <div class="sat-tl-content">
-              <div class="sat-tl-label">First Transaction</div>
-              <div class="sat-tl-title">Satoshi sends 10 BTC to Hal Finney</div>
-              <div class="sat-tl-desc">The first peer-to-peer Bitcoin transaction. Hal Finney, a cryptographer and one of the earliest believers, receives the first ever Bitcoin transfer.</div>
-            </div>
-          </div>
-          <div class="sat-tl-item">
-            <div class="sat-tl-date">May 22 2010</div>
-            <div class="sat-tl-dot"></div>
-            <div class="sat-tl-content">
-              <div class="sat-tl-label">Bitcoin Pizza Day</div>
-              <div class="sat-tl-title">10,000 BTC exchanged for two pizzas</div>
-              <div class="sat-tl-desc">Laszlo Hanyecz makes the first real-world Bitcoin purchase. Those pizzas are now worth hundreds of millions of dollars. Every May 22nd, the world remembers.</div>
-            </div>
-          </div>
-          <div class="sat-tl-item">
-            <div class="sat-tl-date">Dec 2010</div>
-            <div class="sat-tl-dot"></div>
-            <div class="sat-tl-content">
-              <div class="sat-tl-label">The Withdrawal</div>
-              <div class="sat-tl-title">Satoshi begins stepping back from the project</div>
-              <div class="sat-tl-desc">Passes development control to Gavin Andresen. Becomes less active on forums. The handoff begins quietly.</div>
-            </div>
-          </div>
-          <div class="sat-tl-item">
-            <div class="sat-tl-date">Apr 23 2011</div>
-            <div class="sat-tl-dot dim"></div>
-            <div class="sat-tl-content">
-              <div class="sat-tl-label">The Disappearance</div>
-              <div class="sat-tl-title">Last known communication. Then silence.</div>
-              <div class="sat-tl-desc">A brief email to Gavin Andresen: "I've moved on to other things. It's in good hands." No further contact. No identity revealed. Gone forever — or perhaps watching.</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div class="sec-head"><span class="sec-title">The Wallet</span><div class="sec-line"></div><span class="sec-tag">Never Moved</span></div>
-        <div class="sat-wallet">
-          <div class="sat-wallet-icon">🔐</div>
-          <div style="flex:1;">
-            <div class="sat-wallet-label">Satoshi's Estimated Holdings</div>
-            <div class="sat-wallet-val">~1,000,000 BTC</div>
-            <div class="sat-wallet-sub">Mined in early blocks · Never moved · Never spent</div>
-            <div class="sat-wallet-addr">Genesis address: 1A1zP1eP5QGefi2DMPTfTL5SLmv7Divf Na</div>
-          </div>
-          <div class="sat-wallet-note">If Satoshi's coins ever move, it will be the most significant event in crypto history. Every on-chain analyst in the world watches these addresses. So far — not a single satoshi has moved.</div>
-        </div>
-      </section>
-
-      <section>
-        <div class="sec-head"><span class="sec-title">Satoshi's Words</span><div class="sec-line"></div><span class="sec-tag">Direct Quotes</span></div>
-        <div class="sat-quotes">
-          <div class="sat-quote"><div class="sat-quote-text">"The root problem with conventional currency is all the trust that's required to make it work. The central bank must be trusted not to debase the currency, but the history of fiat currencies is full of breaches of that trust."</div><div class="sat-quote-src">P2P Foundation Forum · 2009</div></div>
-          <div class="sat-quote"><div class="sat-quote-text">"If you don't believe me or don't get it, I don't have time to try to convince you, sorry."</div><div class="sat-quote-src">Bitcointalk · 2010</div></div>
-          <div class="sat-quote"><div class="sat-quote-text">"Lost coins only make everyone else's coins worth slightly more. Think of it as a donation to everyone."</div><div class="sat-quote-src">Bitcointalk · 2010</div></div>
-          <div class="sat-quote"><div class="sat-quote-text">"It might make sense just to get some in case it catches on. If enough people think the same way, that becomes a self fulfilling prophecy."</div><div class="sat-quote-src">Satoshi Email · 2009</div></div>
-          <div class="sat-quote"><div class="sat-quote-text">"Writing a description for this thing for general audiences is bloody hard. There's nothing to relate it to."</div><div class="sat-quote-src">Bitcointalk · 2010</div></div>
-          <div class="sat-quote"><div class="sat-quote-text">"I've moved on to other things. It's in good hands with Gavin and everyone."</div><div class="sat-quote-src">Final Email · April 23, 2011</div></div>
-        </div>
-      </section>
-
-    </div>
-  </div>
-</div>
-
-<!-- ============ LAW ============ -->
-<div id="section-law" class="page-section">
-  <div class="body-wrap">
+<!-- LAW -->
+<div id="pg-law" class="pg">
+  <div class="body">
     <section>
-      <div class="sec-head"><span class="sec-title">Legislation Watch</span><div class="sec-line"></div><span class="sec-tag">U.S. Policy</span></div>
+      <div class="sh"><span class="sh-name">Legislation Watch</span><div class="sh-rule"></div><span class="sh-tag">U.S. Policy</span></div>
+      <div class="qwall" style="margin-bottom:14px;">
+        <div class="qwall-bg">LAW</div>
+        <div><div class="qwall-q">"They're writing rules for <span>something they don't understand.</span>"</div><div class="qwall-src">— the entire crypto industry · watching Congress · every single day</div></div>
+      </div>
       <div class="law-stack">
-        <div class="law-item"><div class="law-bar lb-pending"></div><div><div class="law-status ls-pending">● Pending Senate Vote</div><div class="law-title">GENIUS Act — Stablecoin Regulation Framework</div><div class="law-desc">Would require stablecoin issuers to hold 1:1 reserves and register with federal regulators. Key vote expected this session. Direct impact on USDT, USDC, and DAI holders across the board.</div></div></div>
-        <div class="law-item"><div class="law-bar lb-passed"></div><div><div class="law-status ls-passed">● House Passed</div><div class="law-title">FIT21 — Financial Innovation and Technology for the 21st Century Act</div><div class="law-desc">Establishes CFTC jurisdiction over digital commodities vs SEC for securities. The most important structural crypto bill in U.S. history. Awaiting Senate action.</div></div></div>
-        <div class="law-item"><div class="law-bar lb-watch"></div><div><div class="law-status ls-watch">● Legal Battle</div><div class="law-title">IRS DeFi Broker Rule</div><div class="law-desc">Contested rulemaking requiring DeFi protocols to report user transactions to the IRS. Multiple legal challenges filed by crypto advocacy groups. Outcome will define DeFi privacy for years.</div></div></div>
-        <div class="law-item"><div class="law-bar lb-order"></div><div><div class="law-status ls-order">● Executive Order</div><div class="law-title">Bitcoin Strategic Reserve</div><div class="law-desc">Treasury directed to explore a national Bitcoin reserve. Multiple states introducing companion legislation. Historic shift in U.S. sovereign Bitcoin policy — the world is watching.</div></div></div>
-        <div class="law-item"><div class="law-bar lb-watch"></div><div><div class="law-status ls-watch">● Active Litigation</div><div class="law-title">SEC vs. Crypto — Ongoing Cases</div><div class="law-desc">Multiple enforcement actions still working through courts following Ripple precedent. Coinbase, Binance, and others fighting to define whether tokens are securities. Landmark rulings expected.</div></div></div>
-        <div class="law-item"><div class="law-bar lb-pending"></div><div><div class="law-status ls-pending">● Committee Review</div><div class="law-title">Digital Asset Anti-Money Laundering Act</div><div class="law-desc">Would extend Bank Secrecy Act requirements to crypto wallets and miners. Heavily opposed by the crypto industry as unconstitutional. Watch this one closely.</div></div></div>
+        <div class="law-row"><div class="law-bar" style="background:#f5c518;"></div><div><div class="law-badge lb-y">Pending Senate Vote</div><div class="law-title">GENIUS Act — Stablecoin Regulation Framework</div><div class="law-desc">1:1 reserve requirements for all stablecoin issuers. Direct impact on USDT, USDC, DAI. Key vote expected this session.</div></div></div>
+        <div class="law-row"><div class="law-bar" style="background:#00ff88;"></div><div><div class="law-badge lb-g">House Passed</div><div class="law-title">FIT21 — Crypto Market Structure Act</div><div class="law-desc">CFTC takes jurisdiction over digital commodities. Most important structural crypto bill in U.S. history. Awaiting Senate.</div></div></div>
+        <div class="law-row"><div class="law-bar" style="background:#ff4444;"></div><div><div class="law-badge lb-r">Legal Battle</div><div class="law-title">IRS DeFi Broker Rule</div><div class="law-desc">Forces DeFi protocols to report user transactions. Multiple legal challenges. Outcome defines DeFi privacy for years.</div></div></div>
+        <div class="law-row"><div class="law-bar" style="background:#4488ff;"></div><div><div class="law-badge lb-b">Executive Order</div><div class="law-title">Bitcoin Strategic Reserve</div><div class="law-desc">Treasury directed to explore national Bitcoin reserve. States following with companion legislation. Historic sovereign shift.</div></div></div>
+        <div class="law-row"><div class="law-bar" style="background:#ff4444;"></div><div><div class="law-badge lb-r">Active Litigation</div><div class="law-title">SEC vs. Crypto — Ongoing Cases</div><div class="law-desc">Coinbase, Binance fighting to define whether tokens are securities. Landmark rulings expected post-Ripple.</div></div></div>
       </div>
     </section>
   </div>
 </div>
 
-<!-- ============ VOICES ============ -->
-<div id="section-voices" class="page-section">
-  <div class="body-wrap">
+<!-- VOICES -->
+<div id="pg-voices" class="pg">
+  <div class="body">
     <section>
-      <div class="sec-head"><span class="sec-title">Voices That Matter</span><div class="sec-line"></div><span class="sec-tag">35 Voices</span></div>
-      <div class="voices-wrap">
-        <div class="voice-satoshi" onclick="switchSection('satoshi')">
-          <div class="voice-satoshi-avatar">₿</div>
-          <div>
-            <div class="voice-satoshi-name">Satoshi Nakamoto</div>
-            <div class="voice-satoshi-sub">Identity Unknown · Last Seen April 2011 · Creator of Bitcoin</div>
-            <div class="voice-satoshi-desc">The anonymous founder of Bitcoin. Published the whitepaper in 2008, launched the network in 2009, then disappeared. Holds an estimated 1 million BTC — never moved. The greatest mystery in financial history.</div>
-            <div class="voice-satoshi-tag">Read the Origin Story →</div>
-          </div>
+      <div class="sh"><span class="sh-name">Voices That Matter</span><div class="sh-rule"></div><span class="sh-tag">35 Voices</span></div>
+      <div class="voice-legend" onclick="goTo('satoshi')">
+        <div class="vl-icon">₿</div>
+        <div>
+          <div class="vl-name">Satoshi Nakamoto</div>
+          <div class="vl-sub">Identity Unknown · Last Seen April 2011 · Creator of Bitcoin</div>
+          <div class="vl-desc">The anonymous founder. Whitepaper 2008. Network 2009. Disappeared 2011. Holds ~1M BTC never moved. Greatest mystery in financial history.</div>
+          <div class="vl-cta">Read the Origin Story →</div>
         </div>
-        <div class="voices-grid" id="voices-grid"></div>
       </div>
+      <div class="vg" id="vg"></div>
     </section>
   </div>
 </div>
 
-<!-- ============ LEARN ============ -->
-<div id="section-learn" class="page-section">
-  <div class="body-wrap">
+<!-- 101 -->
+<div id="pg-learn" class="pg">
+  <div class="body">
     <section>
-      <div class="sec-head"><span class="sec-title">Crypto 101</span><div class="sec-line"></div><span class="sec-tag">Start Here</span></div>
-      <div class="learn-tabs">
-        <button class="learn-tab active">All</button>
-        <button class="learn-tab">Bitcoin</button>
-        <button class="learn-tab">Altcoins</button>
-        <button class="learn-tab">Memecoins</button>
-        <button class="learn-tab">DeFi</button>
-        <button class="learn-tab">History</button>
-        <button class="learn-tab">Scam Alert</button>
+      <div class="sh"><span class="sh-name">Crypto 101</span><div class="sh-rule"></div><span class="sh-tag">Start Here</span></div>
+      <div class="qwall" style="margin-bottom:12px;">
+        <div class="qwall-q">"The best time to learn crypto was 2009. <span>Second best time is now.</span>"</div>
+        <div class="qwall-src">— every person who bought BTC in 2013 · still applies · probably always will</div>
+      </div>
+      <div class="lt-tabs">
+        <button class="lt on">All</button>
+        <button class="lt">Bitcoin</button>
+        <button class="lt">Altcoins</button>
+        <button class="lt">Memecoins</button>
+        <button class="lt">DeFi</button>
+        <button class="lt">History</button>
+        <button class="lt">Scam Alert</button>
       </div>
       <div class="learn-grid">
-        <div class="learn-card"><div class="learn-icon">₿</div><div class="learn-name">Bitcoin</div><div class="learn-desc">The original. Digital gold. Fixed supply of 21 million coins. Why it exists, how it works, and why it matters.</div></div>
-        <div class="learn-card"><div class="learn-icon">🔷</div><div class="learn-name">Ethereum</div><div class="learn-desc">Smart contracts. The programmable money layer powering DeFi, NFTs, and the entire Web3 ecosystem.</div></div>
-        <div class="learn-card"><div class="learn-icon">🐸</div><div class="learn-name">Memecoins</div><div class="learn-desc">Community-driven, meme-powered. High risk, high reward. DOGE started it all in 2013. Now it's a movement.</div></div>
-        <div class="learn-card"><div class="learn-icon">⛓️</div><div class="learn-name">Utility Coins</div><div class="learn-desc">Coins with actual jobs. Chainlink, Filecoin, Helium — they power real infrastructure and solve real problems.</div></div>
-        <div class="learn-card"><div class="learn-icon">🏦</div><div class="learn-name">DeFi</div><div class="learn-desc">Banking without banks. Lend, borrow, earn yield — no middlemen, no permission needed, no KYC.</div></div>
-        <div class="learn-card"><div class="learn-icon">📖</div><div class="learn-name">Crypto History</div><div class="learn-desc">From Satoshi's 2008 whitepaper to today. The crashes, the rallies, the scandals, the breakthroughs.</div></div>
-        <div class="learn-card"><div class="learn-icon">🔐</div><div class="learn-name">Wallets & Keys</div><div class="learn-desc">Not your keys, not your coins. Hardware wallets, seed phrases, self-custody — everything you need to know.</div></div>
-        <div class="learn-card"><div class="learn-icon">⚠️</div><div class="learn-name">Scam Alert</div><div class="learn-desc">Rugpulls, fake influencers, deepfakes, honeypots. The crypto space is full of predators. Here's how to spot them.</div></div>
-        <div class="learn-card"><div class="learn-icon">📊</div><div class="learn-name">How to Read Charts</div><div class="learn-desc">Support, resistance, RSI, volume, candlesticks. The basics every holder should understand before buying anything.</div></div>
-        <div class="learn-card"><div class="learn-icon">🌐</div><div class="learn-name">Blockchain Basics</div><div class="learn-desc">What is a blockchain? What is a node? What is consensus? The technical foundation explained simply.</div></div>
-        <div class="learn-card"><div class="learn-icon">🏛️</div><div class="learn-name">Crypto & The Law</div><div class="learn-desc">Taxes, regulation, KYC, AML. What's legal, what's not, and what's still being figured out by governments worldwide.</div></div>
-        <div class="learn-card"><div class="learn-icon">🚀</div><div class="learn-name">How to Start</div><div class="learn-desc">Your first wallet. Your first purchase. Your first trade. A no-BS beginner guide to entering crypto safely.</div></div>
+        <div class="lc"><div class="lc-icon">₿</div><div class="lc-name">Bitcoin</div><div class="lc-desc">The original. Digital gold. 21M cap. Why it exists and why it changes everything.</div></div>
+        <div class="lc"><div class="lc-icon">🔷</div><div class="lc-name">Ethereum</div><div class="lc-desc">Smart contracts. Programmable money. DeFi, NFTs, Web3 — it all runs here.</div></div>
+        <div class="lc"><div class="lc-icon">🐸</div><div class="lc-name">Memecoins</div><div class="lc-desc">Community-powered. Meme-fueled. DOGE started it in 2013. High risk.</div></div>
+        <div class="lc"><div class="lc-icon">⛓️</div><div class="lc-name">Utility Coins</div><div class="lc-desc">Coins with actual jobs. Chainlink, Filecoin, Helium — real infrastructure.</div></div>
+        <div class="lc"><div class="lc-icon">🏦</div><div class="lc-name">DeFi</div><div class="lc-desc">Banking without banks. Lend, borrow, earn. No middlemen. No permission.</div></div>
+        <div class="lc"><div class="lc-icon">📖</div><div class="lc-name">History</div><div class="lc-desc">Satoshi's 2008 whitepaper to today. Crashes, rallies, scandals, breakthroughs.</div></div>
+        <div class="lc"><div class="lc-icon">🔐</div><div class="lc-name">Wallets</div><div class="lc-desc">Not your keys, not your coins. Self-custody explained simply.</div></div>
+        <div class="lc"><div class="lc-icon">⚠️</div><div class="lc-name">Scam Alert</div><div class="lc-desc">Rugpulls. Deepfakes. Honeypots. How to spot every predator in the space.</div></div>
       </div>
     </section>
   </div>
 </div>
 
-<!-- ============ MEMES ============ -->
-<div id="section-memes" class="page-section">
-  <div class="body-wrap">
+<!-- MEMES -->
+<div id="pg-memes" class="pg">
+  <div class="body">
     <section>
-      <div class="sec-head"><span class="sec-title">Meme Zone</span><div class="sec-line"></div><span class="sec-tag">Community</span></div>
+      <div class="sh"><span class="sh-name">Meme Zone</span><div class="sh-rule"></div><span class="sh-tag">Community</span></div>
+      <div class="qwall" style="margin-bottom:12px;">
+        <div class="qwall-q">"If you're not laughing, <span>you're not paying attention.</span>"</div>
+        <div class="qwall-src">— the crypto community · been saying this since 2013 · will say it in 2030</div>
+      </div>
       <div class="meme-grid">
-        <div class="meme-card"><div class="meme-face" style="background:#0d1a0d;">💎🙌</div><div class="meme-txt">Haven't checked my portfolio in 3 weeks. Still holding. Diamond hands don't flinch.</div></div>
-        <div class="meme-card"><div class="meme-face" style="background:#1a0a0a;">🚀🌕</div><div class="meme-txt">Financial advisor said diversify. Said DOGE, WIF, PEPE, and prayers.</div></div>
-        <div class="meme-card"><div class="meme-face" style="background:#0d0d1a;">📉😤</div><div class="meme-txt">The dip is not a threat. It is a discount. Act accordingly.</div></div>
-        <div class="meme-card"><div class="meme-face" style="background:#1a1500;">🧠💰</div><div class="meme-txt">Bought BTC in 2013. Never sold. Currently funding retirement with "magic internet money."</div></div>
-        <div class="meme-card"><div class="meme-face" style="background:#1a0a1a;">🐶✨</div><div class="meme-txt">Elon tweets one dog. DOGE up 40%. This is totally normal finance.</div></div>
-        <div class="meme-card"><div class="meme-face" style="background:#0a1a1a;">⛏️😅</div><div class="meme-txt">Me explaining to my parents why I turned their savings advice into Solana.</div></div>
-        <div class="meme-card"><div class="meme-face" style="background:#1a1a0a;">👀📈</div><div class="meme-txt">When the chart is red but you remember you're a long term investor.</div></div>
-        <div class="meme-card"><div class="meme-face" style="background:#0a0a1a;">🏦💥</div><div class="meme-txt">Banks: "Crypto is too volatile." Also banks: *collapses every 15 years.*</div></div>
-        <div class="meme-card"><div class="meme-face" style="background:#1a0d0a;">🔑🏰</div><div class="meme-txt">Not your keys, not your coins. This is the way. This has always been the way.</div></div>
+        <div class="mc"><div class="mc-face" style="background:#0a160a;">💎🙌<span class="mc-spray" style="top:5px;right:6px;font-size:12px;color:#00ff88;">HODL</span></div><div class="mc-txt">Haven't checked portfolio in 3 weeks. Still holding. Diamond hands never flinch.</div></div>
+        <div class="mc"><div class="mc-face" style="background:#160a0a;">🚀🌕<span class="mc-spray" style="bottom:5px;left:6px;font-size:11px;color:#ff1a1a;">WEN?</span></div><div class="mc-txt">Advisor said diversify. Said DOGE, WIF, PEPE, and prayers.</div></div>
+        <div class="mc"><div class="mc-face" style="background:#0a0a16;">📉😤<span class="mc-spray" style="top:5px;left:6px;font-size:14px;color:#f5c518;">BUY</span></div><div class="mc-txt">The dip is not a threat. It is a discount. Act accordingly.</div></div>
+        <div class="mc"><div class="mc-face" style="background:#161200;">🧠💰<span class="mc-spray" style="bottom:5px;right:5px;font-size:10px;color:#f5c518;">2013</span></div><div class="mc-txt">Bought BTC in 2013. Never sold. Funding retirement with magic internet money.</div></div>
+        <div class="mc"><div class="mc-face" style="background:#16060a;">🐶✨<span class="mc-spray" style="top:5px;right:5px;font-size:11px;color:#ff1a1a;">DOGE</span></div><div class="mc-txt">Elon tweets one dog. DOGE up 40%. This is totally normal finance.</div></div>
+        <div class="mc"><div class="mc-face" style="background:#060a0a;">⛏️😅<span class="mc-spray" style="bottom:5px;left:5px;font-size:10px;color:#00ff88;">SOL</span></div><div class="mc-txt">Explaining to parents why savings advice became Solana.</div></div>
+        <div class="mc"><div class="mc-face" style="background:#060616;">🏦💥<span class="mc-spray" style="top:5px;left:5px;font-size:10px;color:#ff1a1a;">NGMI</span></div><div class="mc-txt">Banks: "crypto is too volatile." Banks: *collapses every 15 years*</div></div>
+        <div class="mc"><div class="mc-face" style="background:#0a0e06;">🔑🏰<span class="mc-spray" style="bottom:5px;right:5px;font-size:9px;color:#00ff88;">KEYS</span></div><div class="mc-txt">Not your keys, not your coins. This is the way. Always has been.</div></div>
+        <div class="mc"><div class="mc-face" style="background:#0e0a06;">📊🔥<span class="mc-spray" style="top:5px;right:5px;font-size:10px;color:#f5c518;">LFG</span></div><div class="mc-txt">Chart is red. Headlines scary. I have been here before. I am staying.</div></div>
       </div>
     </section>
   </div>
 </div>
 
-<!-- ============ PODCASTS ============ -->
-<div id="section-pods" class="page-section">
-  <div class="body-wrap">
+<!-- PODS -->
+<div id="pg-pods" class="pg">
+  <div class="body">
     <section>
-      <div class="sec-head"><span class="sec-title">Podcasts</span><div class="sec-line"></div><span class="sec-tag">Listen Now</span></div>
-      <div class="pod-stack">
-        <div class="pod-card"><div class="pod-art">💎</div><div class="pod-info"><div class="pod-show">Diamond Hands Daily Pod</div><div class="pod-title">Ep. 47 — The Bitcoin Halving: One Year Later</div><div class="pod-meta">58 min · 3 days ago</div></div><div class="pod-play"></div></div>
-        <div class="pod-card"><div class="pod-art">💰</div><div class="pod-info"><div class="pod-show">The Pomp Podcast</div><div class="pod-title">Michael Saylor: Why Every Company Should Hold Bitcoin</div><div class="pod-meta">74 min · 2 days ago</div></div><div class="pod-play"></div></div>
-        <div class="pod-card"><div class="pod-art">🔗</div><div class="pod-info"><div class="pod-show">Unchained — Laura Shin</div><div class="pod-title">Inside the Senate Crypto Hearing: What Actually Happened</div><div class="pod-meta">62 min · 5 days ago</div></div><div class="pod-play"></div></div>
-        <div class="pod-card"><div class="pod-art">🐺</div><div class="pod-info"><div class="pod-show">Wolf of All Streets — Scott Melker</div><div class="pod-title">Lyn Alden: The Macro Case for Bitcoin in 2026</div><div class="pod-meta">81 min · 1 week ago</div></div><div class="pod-play"></div></div>
-        <div class="pod-card"><div class="pod-art">📊</div><div class="pod-info"><div class="pod-show">Rekt Capital</div><div class="pod-title">Bitcoin Cycle Analysis — Where Are We Really?</div><div class="pod-meta">44 min · 4 days ago</div></div><div class="pod-play"></div></div>
-        <div class="pod-card"><div class="pod-art">🧠</div><div class="pod-info"><div class="pod-show">What Bitcoin Did — Peter McCormack</div><div class="pod-title">Jack Mallers on Strike, Lightning & the Future of Payments</div><div class="pod-meta">68 min · 6 days ago</div></div><div class="pod-play"></div></div>
-        <div class="pod-card"><div class="pod-art">🌐</div><div class="pod-info"><div class="pod-show">Bankless</div><div class="pod-title">The DeFi Summer That Never Ended — 2026 Edition</div><div class="pod-meta">91 min · 3 days ago</div></div><div class="pod-play"></div></div>
+      <div class="sh"><span class="sh-name">Podcasts</span><div class="sh-rule"></div><span class="sh-tag">Listen Now</span></div>
+      <div class="pod-list">
+        <div class="pc"><div class="pc-art">💎</div><div class="pc-info"><div class="pc-show">Diamond Hands Daily Pod</div><div class="pc-title">Ep. 47 — The Bitcoin Halving: One Year Later</div><div class="pc-meta">58 min · 3 days ago</div></div><div class="pc-btn"></div></div>
+        <div class="pc"><div class="pc-art">💰</div><div class="pc-info"><div class="pc-show">The Pomp Podcast</div><div class="pc-title">Michael Saylor: Why Every Company Should Hold Bitcoin</div><div class="pc-meta">74 min · 2 days ago</div></div><div class="pc-btn"></div></div>
+        <div class="pc"><div class="pc-art">🔗</div><div class="pc-info"><div class="pc-show">Unchained — Laura Shin</div><div class="pc-title">Inside the Senate Crypto Hearing: What Actually Happened</div><div class="pc-meta">62 min · 5 days ago</div></div><div class="pc-btn"></div></div>
+        <div class="pc"><div class="pc-art">🐺</div><div class="pc-info"><div class="pc-show">Wolf of All Streets — Scott Melker</div><div class="pc-title">Lyn Alden: The Macro Case for Bitcoin in 2026</div><div class="pc-meta">81 min · 1 week ago</div></div><div class="pc-btn"></div></div>
+        <div class="pc"><div class="pc-art">📊</div><div class="pc-info"><div class="pc-show">Rekt Capital</div><div class="pc-title">Bitcoin Cycle Analysis — Where Are We Really?</div><div class="pc-meta">44 min · 4 days ago</div></div><div class="pc-btn"></div></div>
+        <div class="pc"><div class="pc-art">⚡</div><div class="pc-info"><div class="pc-show">What Bitcoin Did</div><div class="pc-title">Jack Mallers on Strike, Lightning & Future of Payments</div><div class="pc-meta">68 min · 6 days ago</div></div><div class="pc-btn"></div></div>
+        <div class="pc"><div class="pc-art">🌐</div><div class="pc-info"><div class="pc-show">Bankless</div><div class="pc-title">The DeFi Summer That Never Ended — 2026 Edition</div><div class="pc-meta">91 min · 3 days ago</div></div><div class="pc-btn"></div></div>
       </div>
     </section>
   </div>
 </div>
 
-<!-- ============ MARKETS ============ -->
-<div id="section-markets" class="page-section">
-  <div class="body-wrap">
+<!-- MARKETS -->
+<div id="pg-markets" class="pg">
+  <div class="body">
     <section>
-      <div class="sec-head"><span class="sec-title">Live Markets</span><div class="sec-line"></div><span class="sec-tag" id="markets-ts">Loading...</span></div>
-      <div class="markets-header">
-        <input type="text" class="markets-search" placeholder="Search coins..." id="markets-search" oninput="filterCoins()"/>
-        <div style="font-family:'Space Mono',monospace;font-size:9px;color:#444;letter-spacing:1px;">Data: CoinGecko · Updates on load</div>
+      <div class="sh"><span class="sh-name">Live Markets</span><div class="sh-rule"></div><span class="sh-tag" id="mkt-ts">Loading...</span></div>
+      <div class="mkt-hdr">
+        <input type="text" class="mkt-srch" placeholder="Search coins..." id="mkt-srch" oninput="filterCoins()"/>
+        <div style="font-size:7px;letter-spacing:2px;color:#222218;">CoinGecko · Live Data</div>
       </div>
-      <div class="markets-table-wrap">
-        <table class="markets-table">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Coin</th>
-              <th class="r">Price</th>
-              <th class="r">24h</th>
-              <th class="r">Market Cap</th>
-              <th class="r">Volume 24h</th>
-            </tr>
-          </thead>
-          <tbody id="markets-body">
-            <tr><td colspan="6"><div class="markets-loading">Loading live market data...</div></td></tr>
-          </tbody>
+      <div class="mkt-wrap">
+        <table class="mt">
+          <thead><tr><th>#</th><th>Coin</th><th class="r">Price</th><th class="r">24h</th><th class="r">Mkt Cap</th><th class="r">Volume</th></tr></thead>
+          <tbody id="mkt-body"><tr><td colspan="6"><div class="loading-state">Loading live market data...</div></td></tr></tbody>
         </table>
       </div>
-      <button class="load-more-btn" id="load-more-btn" onclick="loadMoreCoins()" style="display:none;">Load More (101–250) →</button>
+      <button class="more-btn" id="more-btn" onclick="loadMore()" style="display:none;">Load More (101–250) →</button>
     </section>
   </div>
 </div>
 
 <!-- FOOTER -->
 <footer class="site-footer">
+  <div class="footer-bg">₿</div>
   <div>
     <div class="footer-logo">Diamond Hands Daily</div>
-    <div class="footer-tag">Hold the line · Stay informed · Never paper hands</div>
+    <div class="footer-sub">hold the line · stay informed · never paper hands · banks dislike this message</div>
   </div>
-  <div class="footer-disc">DYOR. Nothing here is financial advice. Crypto is volatile. Never invest more than you can afford to lose. Always verify from multiple sources.</div>
+  <div class="footer-disc">DYOR. Not financial advice. Crypto is volatile. Never invest more than you can afford to lose.</div>
 </footer>
 
 <script>
-// NAV
-function switchSection(id){
-  document.querySelectorAll('.page-section').forEach(s=>s.classList.remove('active'));
-  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
-  document.getElementById('section-'+id).classList.add('active');
-  document.querySelector('[data-section="'+id+'"]').classList.add('active');
+function goTo(s){
+  document.querySelectorAll('.pg').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.nt').forEach(b=>b.classList.remove('on'));
+  document.getElementById('pg-'+s).classList.add('on');
+  const btn=document.querySelector('[data-s="'+s+'"]');
+  if(btn)btn.classList.add('on');
   window.scrollTo({top:0,behavior:'smooth'});
-  if(id==='markets' && !marketsLoaded) loadMarkets();
-  if(id==='voices' && !voicesLoaded) buildVoices();
+  if(s==='markets'&&!mktLoaded)loadMarkets();
+  if(s==='voices'&&!vLoaded)buildVoices();
 }
-document.querySelectorAll('.nav-btn').forEach(btn=>{
-  btn.addEventListener('click',()=>switchSection(btn.dataset.section));
-});
+document.querySelectorAll('.nt').forEach(b=>b.addEventListener('click',()=>goTo(b.dataset.s)));
+const tsEl=document.getElementById('news-ts');
+if(tsEl){const n=new Date();tsEl.textContent=n.toLocaleDateString('en-US',{month:'short',day:'numeric'});}
 
-// TIMESTAMP
-const now=new Date();
-const ts=now.toLocaleDateString('en-US',{month:'short',day:'numeric'});
-const el=document.getElementById('news-ts');
-if(el) el.textContent=ts;
-
-// VOICES
-const voiceData=[
-  {n:"Michael Saylor",h:"saylor",focus:"Bitcoin maximalist · MicroStrategy",c:"#f7a520"},
-  {n:"Anthony Pompliano",h:"APompliano",focus:"Macro + Bitcoin · Podcaster",c:"#f7c948"},
-  {n:"Natalie Brunell",h:"nataliebrunell",focus:"Bitcoin journalist · Educator",c:"#4cc870"},
-  {n:"Jack Mallers",h:"jackmallers",focus:"Strike · Bitcoin payments",c:"#60aaff"},
-  {n:"Vitalik Buterin",h:"VitalikButerin",focus:"Ethereum co-founder",c:"#627eea"},
-  {n:"CZ",h:"cz_binance",focus:"Binance founder · Exchange",c:"#f7c948"},
-  {n:"Brian Armstrong",h:"brian_armstrong",focus:"Coinbase CEO · Regulation",c:"#0052ff"},
-  {n:"Lyn Alden",h:"LynAldenContact",focus:"Macro economist · Bitcoin",c:"#4cc870"},
-  {n:"Raoul Pal",h:"RaoulGMI",focus:"Macro + crypto · Real Vision",c:"#c070e0"},
-  {n:"Cathie Wood",h:"CathieDWood",focus:"ARK Invest · Institutional",c:"#60aaff"},
-  {n:"PlanB",h:"100trillionUSD",focus:"Stock-to-Flow · BTC models",c:"#f7a520"},
-  {n:"Andreas Antonopoulos",h:"aantonop",focus:"Bitcoin educator · Author",c:"#f7c948"},
-  {n:"Balaji Srinivasan",h:"balajis",focus:"Network states · Tech sovereignty",c:"#e06060"},
-  {n:"Erik Voorhees",h:"ErikVoorhees",focus:"ShapeShift · Libertarian crypto",c:"#4cc870"},
-  {n:"Max Keiser",h:"maxkeiser",focus:"OG Bitcoin bull · El Salvador",c:"#f7a520"},
-  {n:"Preston Pysh",h:"PrestonPysh",focus:"Bitcoin podcaster · Investor",c:"#60aaff"},
-  {n:"Jack Dorsey",h:"jack",focus:"Bitcoin maximalist · Block",c:"#f7c948"},
-  {n:"Willy Woo",h:"woonomic",focus:"On-chain analytics",c:"#4cc870"},
-  {n:"Rekt Capital",h:"rektcapital",focus:"Cycle analysis · Charts",c:"#e06060"},
-  {n:"Scott Melker",h:"scottmelker",focus:"Wolf of All Streets · Trader",c:"#c070e0"},
-  {n:"Coin Bureau",h:"coinbureau",focus:"Educational YouTube · Reviews",c:"#60aaff"},
-  {n:"Altcoin Daily",h:"AltcoinDailyio",focus:"News + altcoin trends",c:"#4cc870"},
-  {n:"Laura Shin",h:"laurashin",focus:"Unchained podcast · Journalism",c:"#f7c948"},
-  {n:"Lark Davis",h:"TheCryptoLark",focus:"Market commentary · Altcoins",c:"#f7a520"},
-  {n:"Miles Deutscher",h:"milesdeutscher",focus:"Market breakdowns · CT",c:"#c070e0"},
-  {n:"Ash Crypto",h:"Ashcryptoreal",focus:"Trading-focused content",c:"#60aaff"},
-  {n:"Michael van de Poppe",h:"CryptoMichNL",focus:"Trading cycles · Altcoins",c:"#4cc870"},
-  {n:"Saifedean Ammous",h:"saifedean",focus:"The Bitcoin Standard · Author",c:"#f7a520"},
-  {n:"Novogratz",h:"novogratz",focus:"Galaxy Digital · Institutional",c:"#60aaff"},
-  {n:"Ansem",h:"blknoiz06",focus:"Solana ecosystem · CT",c:"#c070e0"},
-  {n:"Murad Mahmudov",h:"MustStopMurad",focus:"Memecoin supercycle thesis",c:"#e06060"},
-  {n:"Roaring Kitty",h:"TheRoaringKitty",focus:"Crossover retail legend",c:"#4cc870"},
-  {n:"Elon Musk",h:"elonmusk",focus:"Market sentiment · DOGE",c:"#f7c948"},
-  {n:"Watcher.Guru",h:"WatcherGuru",focus:"Breaking crypto news",c:"#60aaff"},
+const spraytags=['HODL','WAGMI','LFG','GM','NGMI','DYOR','WEN?','REKT','APE IN','BASED'];
+const vData=[
+  {n:"Michael Saylor",h:"saylor",r:"Bitcoin maximalist",c:"#f7a520"},
+  {n:"Pompliano",h:"APompliano",r:"Macro + Bitcoin",c:"#f5c518"},
+  {n:"Natalie Brunell",h:"nataliebrunell",r:"Bitcoin journalist",c:"#00ff88"},
+  {n:"Jack Mallers",h:"jackmallers",r:"Strike · Lightning",c:"#60aaff"},
+  {n:"Vitalik Buterin",h:"VitalikButerin",r:"Ethereum founder",c:"#627eea"},
+  {n:"CZ",h:"cz_binance",r:"Binance founder",c:"#f5c518"},
+  {n:"Brian Armstrong",h:"brian_armstrong",r:"Coinbase CEO",c:"#4488ff"},
+  {n:"Lyn Alden",h:"LynAldenContact",r:"Macro economist",c:"#00ff88"},
+  {n:"Raoul Pal",h:"RaoulGMI",r:"Macro · Real Vision",c:"#aa44ff"},
+  {n:"Cathie Wood",h:"CathieDWood",r:"ARK Invest",c:"#60aaff"},
+  {n:"PlanB",h:"100trillionUSD",r:"Stock-to-Flow",c:"#f7a520"},
+  {n:"Antonopoulos",h:"aantonop",r:"Bitcoin educator",c:"#f5c518"},
+  {n:"Balaji",h:"balajis",r:"Network states",c:"#ff6060"},
+  {n:"Erik Voorhees",h:"ErikVoorhees",r:"ShapeShift founder",c:"#00ff88"},
+  {n:"Max Keiser",h:"maxkeiser",r:"OG Bitcoin bull",c:"#f7a520"},
+  {n:"Preston Pysh",h:"PrestonPysh",r:"Bitcoin podcaster",c:"#60aaff"},
+  {n:"Jack Dorsey",h:"jack",r:"Bitcoin · Block",c:"#f5c518"},
+  {n:"Willy Woo",h:"woonomic",r:"On-chain analytics",c:"#00ff88"},
+  {n:"Rekt Capital",h:"rektcapital",r:"Cycle analysis",c:"#ff6060"},
+  {n:"Scott Melker",h:"scottmelker",r:"Wolf of All Streets",c:"#aa44ff"},
+  {n:"Coin Bureau",h:"coinbureau",r:"Educational YouTube",c:"#60aaff"},
+  {n:"Altcoin Daily",h:"AltcoinDailyio",r:"News + altcoins",c:"#00ff88"},
+  {n:"Laura Shin",h:"laurashin",r:"Unchained podcast",c:"#f5c518"},
+  {n:"Lark Davis",h:"TheCryptoLark",r:"Market commentary",c:"#f7a520"},
+  {n:"Miles Deutscher",h:"milesdeutscher",r:"Market breakdowns",c:"#aa44ff"},
+  {n:"Ash Crypto",h:"Ashcryptoreal",r:"Trading content",c:"#60aaff"},
+  {n:"Van de Poppe",h:"CryptoMichNL",r:"Trading cycles",c:"#00ff88"},
+  {n:"Saifedean",h:"saifedean",r:"The Bitcoin Standard",c:"#f7a520"},
+  {n:"Novogratz",h:"novogratz",r:"Galaxy Digital",c:"#60aaff"},
+  {n:"Ansem",h:"blknoiz06",r:"Solana · CT",c:"#aa44ff"},
+  {n:"Murad",h:"MustStopMurad",r:"Memecoin thesis",c:"#ff6060"},
+  {n:"Roaring Kitty",h:"TheRoaringKitty",r:"Retail legend",c:"#00ff88"},
+  {n:"Elon Musk",h:"elonmusk",r:"DOGE · Sentiment",c:"#f5c518"},
+  {n:"Watcher.Guru",h:"WatcherGuru",r:"Breaking news",c:"#60aaff"},
 ];
-
-let voicesLoaded=false;
+let vLoaded=false;
 function buildVoices(){
-  voicesLoaded=true;
-  const grid=document.getElementById('voices-grid');
-  grid.innerHTML='';
-  voiceData.forEach(v=>{
-    const initials=v.n.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
-    const card=document.createElement('div');
-    card.className='voice-card';
-    card.innerHTML=`
-      <img class="voice-photo" 
-        src="https://unavatar.io/twitter/${v.h}" 
-        alt="${v.n}"
-        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-      />
-      <div class="voice-photo-fallback" style="display:none;background:${v.c}15;color:${v.c};border-color:${v.c}30;">${initials}</div>
-      <div class="voice-name">${v.n}</div>
-      <div class="voice-handle">@${v.h}</div>
-      <div class="voice-focus">${v.focus}</div>
-    `;
-    grid.appendChild(card);
+  vLoaded=true;
+  const g=document.getElementById('vg');
+  g.innerHTML='';
+  vData.forEach((v,i)=>{
+    const init=v.n.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
+    const tag=spraytags[i%spraytags.length];
+    const d=document.createElement('div');
+    d.className='vc';
+    d.innerHTML=`<span class="vc-tag" style="color:${v.c};">${tag}</span>
+    <img class="vc-photo" src="https://unavatar.io/twitter/${v.h}" alt="${v.n}"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"/>
+    <div class="vc-fb" style="background:${v.c}12;color:${v.c};border-color:${v.c}28;">${init}</div>
+    <div class="vc-name">${v.n}</div>
+    <div class="vc-handle">@${v.h}</div>
+    <div class="vc-role">${v.r}</div>`;
+    g.appendChild(d);
   });
 }
 
-// MARKETS
-let marketsLoaded=false;
-let allCoins=[];
-let page=1;
-
-function fmt(n){
-  if(!n && n!==0) return '—';
-  if(n>=1e12) return '$'+(n/1e12).toFixed(2)+'T';
-  if(n>=1e9) return '$'+(n/1e9).toFixed(2)+'B';
-  if(n>=1e6) return '$'+(n/1e6).toFixed(2)+'M';
-  return '$'+n.toLocaleString();
-}
-function fmtPrice(n){
-  if(!n && n!==0) return '—';
-  if(n>=1000) return '$'+n.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});
-  if(n>=1) return '$'+n.toFixed(4);
-  if(n>=0.01) return '$'+n.toFixed(6);
-  return '$'+n.toFixed(8);
-}
-
+let mktLoaded=false;
+function fmt(n){if(!n&&n!==0)return'—';if(n>=1e12)return'$'+(n/1e12).toFixed(2)+'T';if(n>=1e9)return'$'+(n/1e9).toFixed(2)+'B';if(n>=1e6)return'$'+(n/1e6).toFixed(2)+'M';return'$'+n.toLocaleString();}
+function fmtP(n){if(!n&&n!==0)return'—';if(n>=1000)return'$'+n.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});if(n>=1)return'$'+n.toFixed(4);if(n>=0.01)return'$'+n.toFixed(6);return'$'+n.toFixed(8);}
 function renderCoins(coins){
-  const tbody=document.getElementById('markets-body');
-  const existing=tbody.querySelectorAll('tr.coin-row').length;
+  const tb=document.getElementById('mkt-body');
+  const ex=tb.querySelectorAll('tr.cr').length;
   coins.forEach((c,i)=>{
     const chg=c.price_change_percentage_24h;
-    const chgClass=chg>=0?'c-up':'c-dn';
-    const chgStr=(chg>=0?'+':'')+chg?.toFixed(2)+'%';
-    const tr=document.createElement('tr');
-    tr.className='coin-row';
-    tr.innerHTML=`
-      <td class="coin-rank">${existing+i+1}</td>
-      <td><div class="coin-info">
-        <img class="coin-logo" src="${c.image}" alt="${c.name}" onerror="this.style.background='#2a2a3a';this.src=''"/>
-        <div><div class="coin-name">${c.name}</div><div class="coin-symbol">${c.symbol}</div></div>
-      </div></td>
-      <td class="coin-price">${fmtPrice(c.current_price)}</td>
-      <td class="coin-change ${chgClass}">${chgStr}</td>
-      <td class="coin-mcap">${fmt(c.market_cap)}</td>
-      <td class="coin-vol">${fmt(c.total_volume)}</td>
-    `;
-    tbody.appendChild(tr);
+    const cls=chg>=0?'cup':'cdn';
+    const str=(chg>=0?'+':'')+chg?.toFixed(2)+'%';
+    const tr=document.createElement('tr');tr.className='cr';
+    tr.innerHTML=`<td class="cr-r">${ex+i+1}</td>
+    <td><div class="cr-info"><img class="cr-logo" src="${c.image}" onerror="this.style.background='#1e1c14';this.src='';"/><div><div class="cr-name">${c.name}</div><div class="cr-sym">${c.symbol}</div></div></div></td>
+    <td class="cr-price">${fmtP(c.current_price)}</td>
+    <td class="cr-chg ${cls}">${str}</td>
+    <td class="cr-mc">${fmt(c.market_cap)}</td>
+    <td class="cr-mc">${fmt(c.total_volume)}</td>`;
+    tb.appendChild(tr);
   });
 }
-
 async function loadMarkets(){
-  marketsLoaded=true;
-  const btn=document.getElementById('load-more-btn');
-  const ts=document.getElementById('markets-ts');
+  mktLoaded=true;
   try{
-    const res=await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=24h');
+    const res=await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false');
     const data=await res.json();
-    allCoins=data;
-    document.getElementById('markets-body').innerHTML='';
+    document.getElementById('mkt-body').innerHTML='';
     renderCoins(data);
-    btn.style.display='block';
-    if(ts) ts.textContent='Live · '+new Date().toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit'});
-    // also update ticker with real data
+    document.getElementById('more-btn').style.display='block';
+    const ts=document.getElementById('mkt-ts');
+    if(ts)ts.textContent='Live · '+new Date().toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit'});
     updateTicker(data.slice(0,10));
+    updatePriceBoard(data.slice(0,6));
   }catch(e){
-    document.getElementById('markets-body').innerHTML='<tr><td colspan="6"><div class="markets-loading">Unable to load — check connection</div></td></tr>';
+    document.getElementById('mkt-body').innerHTML='<tr><td colspan="6"><div class="loading-state">Unable to load market data</div></td></tr>';
   }
 }
-
-async function loadMoreCoins(){
-  const btn=document.getElementById('load-more-btn');
-  btn.disabled=true;
-  btn.textContent='Loading...';
+async function loadMore(){
+  const btn=document.getElementById('more-btn');
+  btn.disabled=true;btn.textContent='Loading...';
   try{
-    const res1=await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=2&sparkline=false');
-    const res2=await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=3&sparkline=false');
-    const d1=await res1.json();
-    const d2=await res2.json();
-    renderCoins([...d1,...d2]);
+    const[r1,r2]=await Promise.all([
+      fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=2&sparkline=false'),
+      fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=3&sparkline=false')
+    ]);
+    renderCoins([...await r1.json(),...await r2.json()]);
     btn.style.display='none';
-  }catch(e){
-    btn.disabled=false;
-    btn.textContent='Retry →';
-  }
+  }catch(e){btn.disabled=false;btn.textContent='Retry →';}
 }
-
 function filterCoins(){
-  const q=document.getElementById('markets-search').value.toLowerCase();
-  document.querySelectorAll('.coin-row').forEach(row=>{
-    const name=row.querySelector('.coin-name')?.textContent.toLowerCase()||'';
-    const sym=row.querySelector('.coin-symbol')?.textContent.toLowerCase()||'';
-    row.style.display=(name.includes(q)||sym.includes(q))?'':'none';
+  const q=document.getElementById('mkt-srch').value.toLowerCase();
+  document.querySelectorAll('.cr').forEach(r=>{
+    const nm=r.querySelector('.cr-name')?.textContent.toLowerCase()||'';
+    const sy=r.querySelector('.cr-sym')?.textContent.toLowerCase()||'';
+    r.style.display=(nm.includes(q)||sy.includes(q))?'':'none';
   });
 }
-
 function updateTicker(coins){
-  const scroll=document.getElementById('ticker-scroll');
-  if(!scroll||!coins.length) return;
+  const t=document.getElementById('tkscroll');
+  if(!t||!coins.length)return;
   const doubled=[...coins,...coins];
-  scroll.innerHTML=doubled.map(c=>{
+  t.innerHTML=doubled.map(c=>{
     const chg=c.price_change_percentage_24h;
-    const cls=chg>=0?'t-up':'t-dn';
-    const str=(chg>=0?'+':'')+chg?.toFixed(1)+'%';
-    return `<span class="ticker-coin"><img src="${c.image}" alt="${c.symbol}" onerror="this.style.display='none'"/>${c.symbol.toUpperCase()} <span class="${cls}">${str}</span></span>`;
+    const cls=chg>=0?'tup':'tdn';
+    return`<span class="ticker-coin"><img src="${c.image}" onerror="this.style.display='none'"/>${c.symbol.toUpperCase()} <span class="${cls}">${(chg>=0?'+':'')+chg?.toFixed(1)+'%'}</span></span>`;
   }).join('');
 }
+function updatePriceBoard(coins){
+  const g=document.getElementById('pb-grid');
+  if(!g||!coins.length)return;
+  g.innerHTML=coins.map(c=>{
+    const chg=c.price_change_percentage_24h;
+    const cls=chg>=0?'pbup':'pbdn';
+    return`<div class="pb-item">
+      <img class="pb-logo" src="${c.image}" onerror="this.style.background='#1e1c14';this.src='';"/>
+      <div class="pb-sym">${c.symbol.toUpperCase()}</div>
+      <div class="pb-price">${fmtP(c.current_price)}</div>
+      <div class="pb-chg ${cls}">${(chg>=0?'+':'')+chg?.toFixed(2)+'%'}</div>
+    </div>`;
+  }).join('');
+}
+
+// Auto-load markets data for price board on page load
+loadMarkets();
 </script>
 </body>
 </html>
