@@ -230,13 +230,17 @@ img{display:block;}
 .mc-spray{position:absolute;font-family:'Permanent Marker',cursive;opacity:0.5;text-shadow:0 0 4px currentColor;}
 .mc-txt{padding:9px 10px;font-size:9px;color:#555;line-height:1.55;border-top:1px solid #1e1c14;}
 
-.yt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2px;}
+/* YOUTUBE */
+.yt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2px;}
 .yt-card{background:#111009;border:1px solid #2a2820;overflow:hidden;cursor:pointer;transition:border-color 0.12s;}
 .yt-card:hover{border-color:#f5c51840;}
-.yt-thumb{height:120px;background:#0a0a08;display:flex;align-items:center;justify-content:center;position:relative;}
-.yt-icon{position:absolute;top:8px;left:10px;font-size:24px;}
-.yt-play{width:40px;height:40px;background:#ff0000;border-radius:50%;display:flex;align-items:center;justify-content:center;}
-.yt-play::after{content:'';width:0;height:0;border-top:9px solid transparent;border-bottom:9px solid transparent;border-left:16px solid #fff;margin-left:3px;}
+.yt-thumb{width:100%;height:148px;position:relative;overflow:hidden;background:#0a0a08;}
+.yt-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
+.yt-thumb-fallback{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:40px;}
+.yt-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.15s;}
+.yt-card:hover .yt-overlay{opacity:1;}
+.yt-play{width:44px;height:44px;background:#ff0000;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.yt-play::after{content:'';width:0;height:0;border-top:10px solid transparent;border-bottom:10px solid transparent;border-left:18px solid #fff;margin-left:4px;}
 .yt-dur{position:absolute;bottom:6px;right:8px;font-family:'Share Tech Mono',monospace;font-size:9px;background:#000000cc;color:#fff;padding:2px 5px;}
 .yt-body{padding:10px 12px;}
 .yt-channel{font-size:7px;letter-spacing:2px;color:#f5c518;text-transform:uppercase;margin-bottom:4px;}
@@ -246,7 +250,8 @@ img{display:block;}
 .pod-list{display:flex;flex-direction:column;gap:2px;}
 .pc{background:#111009;border:1px solid #2a2820;padding:11px 13px;display:flex;gap:11px;align-items:center;cursor:pointer;transition:border-color 0.12s;}
 .pc:hover{border-color:#f5c51830;}
-.pc-art{width:46px;height:46px;background:#1e1c14;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.pc-art{width:56px;height:56px;background:#1e1c14;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;overflow:hidden;}
+.pc-art img{width:100%;height:100%;object-fit:cover;}
 .pc-info{flex:1;min-width:0;}
 .pc-show{font-size:7px;letter-spacing:3px;text-transform:uppercase;color:#f5c518;margin-bottom:2px;}
 .pc-title{font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:0.5px;color:#ccc5aa;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
@@ -292,6 +297,7 @@ img{display:block;}
   .nav{padding:0 10px;}
   .body{padding:14px 10px;}
   .logo-name{font-size:15px;}
+  .yt-grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -605,38 +611,54 @@ img{display:block;}
         <div><div class="qwall-q">"The best crypto education is <span>free on YouTube.</span> No excuse not to know."</div><div class="qwall-src">— the crypto community · been true since 2013 · still true today</div></div>
       </div>
       <div class="yt-grid">
-        <div class="yt-card">
-          <div class="yt-thumb"><span class="yt-icon">₿</span><div class="yt-play"></div><span class="yt-dur">14:22</span></div>
-          <div class="yt-body"><div class="yt-channel">Coin Bureau</div><div class="yt-title">Bitcoin Price Prediction — What the Data Actually Says</div><div class="yt-meta">312K views · 2 days ago</div></div>
-        </div>
-        <div class="yt-card">
-          <div class="yt-thumb"><span class="yt-icon">🐸</span><div class="yt-play"></div><span class="yt-dur">8:44</span></div>
-          <div class="yt-body"><div class="yt-channel">Altcoin Daily</div><div class="yt-title">Top Memecoins That Could 10x This Cycle</div><div class="yt-meta">98K views · 3 days ago</div></div>
-        </div>
-        <div class="yt-card">
-          <div class="yt-thumb"><span class="yt-icon">🏛️</span><div class="yt-play"></div><span class="yt-dur">22:15</span></div>
-          <div class="yt-body"><div class="yt-channel">Natalie Brunell</div><div class="yt-title">The Bitcoin Strategic Reserve: What It Really Means</div><div class="yt-meta">187K views · 1 day ago</div></div>
-        </div>
-        <div class="yt-card">
-          <div class="yt-thumb"><span class="yt-icon">📊</span><div class="yt-play"></div><span class="yt-dur">18:44</span></div>
-          <div class="yt-body"><div class="yt-channel">Rekt Capital</div><div class="yt-title">Bitcoin Cycle Analysis — Where Are We Really?</div><div class="yt-meta">244K views · 4 days ago</div></div>
-        </div>
-        <div class="yt-card">
-          <div class="yt-thumb"><span class="yt-icon">🧠</span><div class="yt-play"></div><span class="yt-dur">31:08</span></div>
-          <div class="yt-body"><div class="yt-channel">Michael Saylor</div><div class="yt-title">Why Bitcoin Is the Only Rational Treasury Strategy</div><div class="yt-meta">520K views · 1 week ago</div></div>
-        </div>
-        <div class="yt-card">
-          <div class="yt-thumb"><span class="yt-icon">⚡</span><div class="yt-play"></div><span class="yt-dur">11:33</span></div>
-          <div class="yt-body"><div class="yt-channel">Jack Mallers</div><div class="yt-title">Strike Is Changing How the World Moves Money</div><div class="yt-meta">189K views · 5 days ago</div></div>
-        </div>
-        <div class="yt-card">
-          <div class="yt-thumb"><span class="yt-icon">🔷</span><div class="yt-play"></div><span class="yt-dur">26:41</span></div>
-          <div class="yt-body"><div class="yt-channel">Vitalik Buterin</div><div class="yt-title">Ethereum Scaling: The Roadmap for 2026 and Beyond</div><div class="yt-meta">298K views · 3 days ago</div></div>
-        </div>
-        <div class="yt-card">
-          <div class="yt-thumb"><span class="yt-icon">📈</span><div class="yt-play"></div><span class="yt-dur">19:55</span></div>
-          <div class="yt-body"><div class="yt-channel">Lyn Alden</div><div class="yt-title">The Macro Case for Bitcoin — Full Breakdown</div><div class="yt-meta">176K views · 6 days ago</div></div>
-        </div>
+        <a href="https://www.youtube.com/watch?v=QjH-wvXpz-4" target="_blank" rel="noopener" class="yt-card">
+          <div class="yt-thumb">
+            <img src="https://img.youtube.com/vi/QjH-wvXpz-4/mqdefault.jpg" alt="Coin Bureau Bitcoin" onerror="this.parentElement.innerHTML='<div class=yt-thumb-fallback>₿</div>'"/>
+            <div class="yt-overlay"><div class="yt-play"></div></div>
+            <span class="yt-dur">14:22</span>
+          </div>
+          <div class="yt-body"><div class="yt-channel">Coin Bureau</div><div class="yt-title">Bitcoin Price Prediction — What the Data Actually Says</div><div class="yt-meta">312K views · Recent</div></div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=AbuxDEK1GF8" target="_blank" rel="noopener" class="yt-card">
+          <div class="yt-thumb">
+            <img src="https://img.youtube.com/vi/AbuxDEK1GF8/mqdefault.jpg" alt="Natalie Brunell Bitcoin Reserve" onerror="this.parentElement.innerHTML='<div class=yt-thumb-fallback>🏛️</div>'"/>
+            <div class="yt-overlay"><div class="yt-play"></div></div>
+            <span class="yt-dur">22:15</span>
+          </div>
+          <div class="yt-body"><div class="yt-channel">Natalie Brunell</div><div class="yt-title">The Bitcoin Strategic Reserve: What It Really Means</div><div class="yt-meta">187K views · Recent</div></div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=LuaUhNMe6wU" target="_blank" rel="noopener" class="yt-card">
+          <div class="yt-thumb">
+            <img src="https://img.youtube.com/vi/LuaUhNMe6wU/mqdefault.jpg" alt="Michael Saylor Bitcoin Reserve" onerror="this.parentElement.innerHTML='<div class=yt-thumb-fallback>🧠</div>'"/>
+            <div class="yt-overlay"><div class="yt-play"></div></div>
+            <span class="yt-dur">31:08</span>
+          </div>
+          <div class="yt-body"><div class="yt-channel">Michael Saylor</div><div class="yt-title">U.S. Strategic Bitcoin Reserve is America's Manifest Destiny</div><div class="yt-meta">520K views · Recent</div></div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=8HvSFVJgXNQ" target="_blank" rel="noopener" class="yt-card">
+          <div class="yt-thumb">
+            <img src="https://img.youtube.com/vi/8HvSFVJgXNQ/mqdefault.jpg" alt="Coin Bureau 2025 Crypto Predictions" onerror="this.parentElement.innerHTML='<div class=yt-thumb-fallback>📊</div>'"/>
+            <div class="yt-overlay"><div class="yt-play"></div></div>
+            <span class="yt-dur">26:41</span>
+          </div>
+          <div class="yt-body"><div class="yt-channel">Coin Bureau</div><div class="yt-title">Crypto Predictions — Coin Bureau's Full Breakdown</div><div class="yt-meta">298K views · Recent</div></div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=_DFBkRNca58" target="_blank" rel="noopener" class="yt-card">
+          <div class="yt-thumb">
+            <img src="https://img.youtube.com/vi/_DFBkRNca58/mqdefault.jpg" alt="Natalie Brunell Bitcoin Cycle" onerror="this.parentElement.innerHTML='<div class=yt-thumb-fallback>📈</div>'"/>
+            <div class="yt-overlay"><div class="yt-play"></div></div>
+            <span class="yt-dur">58:44</span>
+          </div>
+          <div class="yt-body"><div class="yt-channel">Natalie Brunell</div><div class="yt-title">Why Bitcoin's Four-Year Cycle Is Dead — And What Replaces It</div><div class="yt-meta">176K views · Recent</div></div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=pr6r-WEiH24" target="_blank" rel="noopener" class="yt-card">
+          <div class="yt-thumb">
+            <img src="https://img.youtube.com/vi/pr6r-WEiH24/mqdefault.jpg" alt="Coin Bureau Bitcoin Crash" onerror="this.parentElement.innerHTML='<div class=yt-thumb-fallback>⚡</div>'"/>
+            <div class="yt-overlay"><div class="yt-play"></div></div>
+            <span class="yt-dur">19:55</span>
+          </div>
+          <div class="yt-body"><div class="yt-channel">Coin Bureau</div><div class="yt-title">Will BTC Continue Crashing? Updated Bitcoin Price Analysis</div><div class="yt-meta">244K views · Recent</div></div>
+        </a>
       </div>
     </section>
   </div>
@@ -648,13 +670,34 @@ img{display:block;}
     <section>
       <div class="sh"><span class="sh-name">Podcasts</span><div class="sh-rule"></div><span class="sh-tag">Listen Now</span></div>
       <div class="pod-list">
-        <div class="pc"><div class="pc-art">💎</div><div class="pc-info"><div class="pc-show">Diamond Hands Daily Pod</div><div class="pc-title">Ep. 47 — The Bitcoin Halving: One Year Later</div><div class="pc-meta">58 min · 3 days ago</div></div><div class="pc-btn"></div></div>
-        <div class="pc"><div class="pc-art">💰</div><div class="pc-info"><div class="pc-show">The Pomp Podcast</div><div class="pc-title">Michael Saylor: Why Every Company Should Hold Bitcoin</div><div class="pc-meta">74 min · 2 days ago</div></div><div class="pc-btn"></div></div>
-        <div class="pc"><div class="pc-art">🔗</div><div class="pc-info"><div class="pc-show">Unchained — Laura Shin</div><div class="pc-title">Inside the Senate Crypto Hearing: What Actually Happened</div><div class="pc-meta">62 min · 5 days ago</div></div><div class="pc-btn"></div></div>
-        <div class="pc"><div class="pc-art">🐺</div><div class="pc-info"><div class="pc-show">Wolf of All Streets — Scott Melker</div><div class="pc-title">Lyn Alden: The Macro Case for Bitcoin in 2026</div><div class="pc-meta">81 min · 1 week ago</div></div><div class="pc-btn"></div></div>
-        <div class="pc"><div class="pc-art">📊</div><div class="pc-info"><div class="pc-show">Rekt Capital</div><div class="pc-title">Bitcoin Cycle Analysis — Where Are We Really?</div><div class="pc-meta">44 min · 4 days ago</div></div><div class="pc-btn"></div></div>
-        <div class="pc"><div class="pc-art">⚡</div><div class="pc-info"><div class="pc-show">What Bitcoin Did</div><div class="pc-title">Jack Mallers on Strike, Lightning & Future of Payments</div><div class="pc-meta">68 min · 6 days ago</div></div><div class="pc-btn"></div></div>
-        <div class="pc"><div class="pc-art">🌐</div><div class="pc-info"><div class="pc-show">Bankless</div><div class="pc-title">The DeFi Summer That Never Ended — 2026 Edition</div><div class="pc-meta">91 min · 3 days ago</div></div><div class="pc-btn"></div></div>
+        <div class="pc">
+          <div class="pc-art"><img src="https://img.youtube.com/vi/AbuxDEK1GF8/default.jpg" alt="DHD Pod" onerror="this.parentElement.innerHTML='💎'"/></div>
+          <div class="pc-info"><div class="pc-show">Diamond Hands Daily Pod</div><div class="pc-title">Ep. 47 — The Bitcoin Halving: One Year Later</div><div class="pc-meta">58 min · 3 days ago</div></div><div class="pc-btn"></div>
+        </div>
+        <div class="pc">
+          <div class="pc-art"><img src="https://img.youtube.com/vi/LuaUhNMe6wU/default.jpg" alt="Pomp Pod" onerror="this.parentElement.innerHTML='💰'"/></div>
+          <div class="pc-info"><div class="pc-show">The Pomp Podcast</div><div class="pc-title">Michael Saylor: Why Every Company Should Hold Bitcoin</div><div class="pc-meta">74 min · 2 days ago</div></div><div class="pc-btn"></div>
+        </div>
+        <div class="pc">
+          <div class="pc-art"><img src="https://img.youtube.com/vi/QjH-wvXpz-4/default.jpg" alt="Unchained" onerror="this.parentElement.innerHTML='🔗'"/></div>
+          <div class="pc-info"><div class="pc-show">Unchained — Laura Shin</div><div class="pc-title">Inside the Senate Crypto Hearing: What Actually Happened</div><div class="pc-meta">62 min · 5 days ago</div></div><div class="pc-btn"></div>
+        </div>
+        <div class="pc">
+          <div class="pc-art"><img src="https://img.youtube.com/vi/8HvSFVJgXNQ/default.jpg" alt="Wolf of All Streets" onerror="this.parentElement.innerHTML='🐺'"/></div>
+          <div class="pc-info"><div class="pc-show">Wolf of All Streets — Scott Melker</div><div class="pc-title">Lyn Alden: The Macro Case for Bitcoin in 2026</div><div class="pc-meta">81 min · 1 week ago</div></div><div class="pc-btn"></div>
+        </div>
+        <div class="pc">
+          <div class="pc-art"><img src="https://img.youtube.com/vi/pr6r-WEiH24/default.jpg" alt="Rekt Capital" onerror="this.parentElement.innerHTML='📊'"/></div>
+          <div class="pc-info"><div class="pc-show">Rekt Capital</div><div class="pc-title">Bitcoin Cycle Analysis — Where Are We Really?</div><div class="pc-meta">44 min · 4 days ago</div></div><div class="pc-btn"></div>
+        </div>
+        <div class="pc">
+          <div class="pc-art"><img src="https://img.youtube.com/vi/_DFBkRNca58/default.jpg" alt="What Bitcoin Did" onerror="this.parentElement.innerHTML='⚡'"/></div>
+          <div class="pc-info"><div class="pc-show">What Bitcoin Did</div><div class="pc-title">Jack Mallers on Strike, Lightning & Future of Payments</div><div class="pc-meta">68 min · 6 days ago</div></div><div class="pc-btn"></div>
+        </div>
+        <div class="pc">
+          <div class="pc-art" style="font-size:18px;display:flex;align-items:center;justify-content:center;">🌐</div>
+          <div class="pc-info"><div class="pc-show">Bankless</div><div class="pc-title">The DeFi Summer That Never Ended — 2026 Edition</div><div class="pc-meta">91 min · 3 days ago</div></div><div class="pc-btn"></div>
+        </div>
       </div>
     </section>
   </div>
