@@ -60,8 +60,8 @@ img{display:block;}
 .hero-wall-words{position:absolute;top:10px;left:10px;font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:4px;color:#f5c518;opacity:0.07;line-height:2;pointer-events:none;transform:rotate(-2deg);}
 .hero-wall-2{position:absolute;bottom:10px;right:140px;font-family:'Permanent Marker',cursive;font-size:28px;color:#ff1a1a;opacity:0.06;line-height:1;pointer-events:none;transform:rotate(3deg);}
 .drip{position:absolute;top:0;width:2px;background:linear-gradient(180deg,#f5c518 0%,#f5c51840 60%,transparent 100%);pointer-events:none;}
-.hero-stamp{display:inline-block;background:#ff1a1a;font-family:'Bebas Neue',sans-serif;font-size:10px;letter-spacing:5px;color:#fff;padding:3px 10px;margin-bottom:14px;transform:rotate(-1deg);position:relative;box-shadow:2px 2px 0 rgba(255,26,26,0.3);}
-.hero-h1{font-family:'Bebas Neue',sans-serif;font-size:60px;line-height:0.88;letter-spacing:2px;margin-bottom:14px;position:relative;}
+.hero-stamp{display:inline-block;background:#ff1a1a;font-family:'Bebas Neue',sans-serif;font-size:10px;letter-spacing:5px;color:#fff;padding:3px 10px;margin-bottom:14px;transform:rotate(-1deg);box-shadow:2px 2px 0 rgba(255,26,26,0.3);}
+.hero-h1{font-family:'Bebas Neue',sans-serif;font-size:60px;line-height:0.88;letter-spacing:2px;margin-bottom:14px;}
 .hero-h1 .l1{color:#e8e0cc;display:block;}
 .hero-h1 .l2{color:#f5c518;display:block;filter:drop-shadow(0 0 12px rgba(245,197,24,0.25));}
 .hero-h1 .l3{color:#ff1a1a;display:block;}
@@ -223,11 +223,59 @@ img{display:block;}
 .lc-name{font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:1px;color:#f5c518;margin-bottom:4px;}
 .lc-desc{font-size:9px;color:#444;line-height:1.6;}
 
-.meme-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:2px;}
-.mc{background:#111009;border:1px solid #2a2820;overflow:hidden;position:relative;}
-.mc-face{height:90px;display:flex;align-items:center;justify-content:center;font-size:38px;position:relative;}
-.mc-spray{position:absolute;font-family:'Permanent Marker',cursive;opacity:0.5;text-shadow:0 0 4px currentColor;}
-.mc-txt{padding:9px 10px;font-size:9px;color:#555;line-height:1.55;border-top:1px solid #1e1c14;}
+/* HALVING */
+.halving-hero{background:#111009;border:1px solid #f5c51825;border-left:4px solid #f5c518;padding:28px;text-align:center;position:relative;overflow:hidden;margin-bottom:2px;}
+.halving-hero::before{content:'₿';position:absolute;right:-10px;top:-10px;font-family:'Bebas Neue',sans-serif;font-size:180px;color:#f5c518;opacity:0.04;line-height:1;pointer-events:none;}
+.halving-eyebrow{font-size:7px;letter-spacing:5px;color:#f5c518;text-transform:uppercase;margin-bottom:12px;}
+.halving-countdown{display:flex;gap:4px;justify-content:center;flex-wrap:wrap;margin-bottom:16px;}
+.hc-unit{background:#0e0d0b;border:1px solid #2a2820;padding:16px 12px;min-width:70px;text-align:center;}
+.hc-num{font-family:'Permanent Marker',cursive;font-size:36px;color:#f5c518;line-height:1;filter:drop-shadow(0 0 8px rgba(245,197,24,0.2));}
+.hc-lbl{font-size:7px;letter-spacing:3px;color:#333;text-transform:uppercase;margin-top:4px;}
+.halving-sub{font-size:9px;color:#444;letter-spacing:2px;}
+.halving-sub span{color:#f5c518;}
+
+.halving-hist{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2px;}
+.hh{background:#111009;border:1px solid #2a2820;padding:14px;position:relative;overflow:hidden;}
+.hh::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;}
+.hh-num{font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:3px;color:#444;margin-bottom:6px;}
+.hh-date{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:1px;color:#e8e0cc;margin-bottom:4px;}
+.hh-block{font-size:8px;color:#333;margin-bottom:8px;}
+.hh-reward{font-size:9px;color:#f5c518;margin-bottom:4px;}
+.hh-price{font-size:9px;color:#444;}
+.hh-gain{font-family:'Bebas Neue',sans-serif;font-size:22px;color:#00ff88;margin-top:6px;}
+
+.block-live{background:#111009;border:1px solid #2a2820;padding:16px;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+.bl-stat{text-align:center;}
+.bl-num{font-family:'Permanent Marker',cursive;font-size:24px;color:#f5c518;line-height:1;}
+.bl-lbl{font-size:7px;letter-spacing:3px;color:#333;text-transform:uppercase;margin-top:3px;}
+
+/* SIGNALS */
+.fg-card{background:#111009;border:1px solid #2a2820;padding:20px;text-align:center;position:relative;overflow:hidden;}
+.fg-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
+.fg-val{font-family:'Permanent Marker',cursive;font-size:72px;line-height:1;filter:drop-shadow(0 0 12px currentColor);}
+.fg-label{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:4px;margin-top:4px;}
+.fg-sub{font-size:8px;color:#333;letter-spacing:3px;margin-top:6px;}
+.fg-bar{height:8px;background:#1e1c16;border-radius:4px;margin:12px 0;position:relative;overflow:hidden;}
+.fg-fill{height:100%;border-radius:4px;transition:width 1s ease;}
+.fg-scale{display:flex;justify-content:space-between;font-size:7px;color:#333;letter-spacing:1px;}
+
+.sig-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:2px;}
+.sig{background:#111009;border:1px solid #2a2820;padding:14px;text-align:center;position:relative;overflow:hidden;}
+.sig::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;}
+.sig-lbl{font-size:7px;letter-spacing:3px;color:#444;text-transform:uppercase;margin-bottom:8px;}
+.sig-val{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:1px;color:#e8e0cc;}
+.sig-sub{font-size:8px;color:#333;margin-top:4px;}
+.sig-chg{font-family:'Bebas Neue',sans-serif;font-size:14px;margin-top:4px;}
+
+/* COMMUNITY */
+.comm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2px;}
+.cc{background:#111009;border:1px solid #2a2820;padding:14px;cursor:pointer;transition:border-color 0.12s;position:relative;overflow:hidden;}
+.cc:hover{border-color:#f5c51835;}
+.cc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;}
+.cc-platform{font-size:7px;letter-spacing:3px;color:#444;text-transform:uppercase;margin-bottom:6px;}
+.cc-name{font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:1px;color:#e8e0cc;margin-bottom:3px;}
+.cc-desc{font-size:9px;color:#444;line-height:1.6;margin-bottom:8px;}
+.cc-link{font-size:7px;letter-spacing:2px;color:#f5c518;}
 
 .yt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2px;}
 .yt-card{background:#111009;border:1px solid #2a2820;overflow:hidden;cursor:pointer;transition:border-color 0.12s;}
@@ -296,6 +344,7 @@ img{display:block;}
   .body{padding:14px 10px;}
   .logo-name{font-size:15px;}
   .yt-grid{grid-template-columns:1fr;}
+  .hc-num{font-size:26px;}
 }
 </style>
 </head>
@@ -351,7 +400,9 @@ img{display:block;}
     <button class="nt" data-s="law">Law</button>
     <button class="nt" data-s="voices">Voices</button>
     <button class="nt" data-s="learn">101</button>
-    <button class="nt" data-s="memes">Memes</button>
+    <button class="nt" data-s="halving">Halving</button>
+    <button class="nt" data-s="signals">Signals</button>
+    <button class="nt" data-s="community">Community</button>
     <button class="nt" data-s="watch">Watch</button>
     <button class="nt" data-s="pods">Pod</button>
     <button class="nt" data-s="markets">Markets</button>
@@ -575,25 +626,187 @@ img{display:block;}
   </div>
 </div>
 
-<!-- MEMES -->
-<div id="pg-memes" class="pg">
+<!-- HALVING -->
+<div id="pg-halving" class="pg">
   <div class="body">
     <section>
-      <div class="sh"><span class="sh-name">Meme Zone</span><div class="sh-rule"></div><span class="sh-tag">Community</span></div>
-      <div class="qwall" style="margin-bottom:12px;">
-        <div class="qwall-q">"If you're not laughing, <span>you're not paying attention.</span>"</div>
-        <div class="qwall-src">— the crypto community · been saying this since 2013 · will say it in 2030</div>
+      <div class="sh"><span class="sh-name">Bitcoin Halving</span><div class="sh-rule"></div><span class="sh-tag" id="halving-next-tag">Next: 2028</span></div>
+      <div class="halving-hero">
+        <div class="halving-eyebrow">⏳ Countdown to Next Halving</div>
+        <div class="halving-countdown">
+          <div class="hc-unit"><div class="hc-num" id="hc-days">—</div><div class="hc-lbl">Days</div></div>
+          <div class="hc-unit"><div class="hc-num" id="hc-hours">—</div><div class="hc-lbl">Hours</div></div>
+          <div class="hc-unit"><div class="hc-num" id="hc-mins">—</div><div class="hc-lbl">Minutes</div></div>
+          <div class="hc-unit"><div class="hc-num" id="hc-secs">—</div><div class="hc-lbl">Seconds</div></div>
+        </div>
+        <div class="halving-sub">Block reward drops from <span>3.125 BTC → 1.5625 BTC</span> · Estimated April 2028</div>
       </div>
-      <div class="meme-grid">
-        <div class="mc"><div class="mc-face" style="background:#0a160a;">💎🙌<span class="mc-spray" style="top:5px;right:6px;font-size:12px;color:#00ff88;">HODL</span></div><div class="mc-txt">Haven't checked portfolio in 3 weeks. Still holding. Diamond hands never flinch.</div></div>
-        <div class="mc"><div class="mc-face" style="background:#160a0a;">🚀🌕<span class="mc-spray" style="bottom:5px;left:6px;font-size:11px;color:#ff1a1a;">WEN?</span></div><div class="mc-txt">Advisor said diversify. Said DOGE, WIF, PEPE, and prayers.</div></div>
-        <div class="mc"><div class="mc-face" style="background:#0a0a16;">📉😤<span class="mc-spray" style="top:5px;left:6px;font-size:14px;color:#f5c518;">BUY</span></div><div class="mc-txt">The dip is not a threat. It is a discount. Act accordingly.</div></div>
-        <div class="mc"><div class="mc-face" style="background:#161200;">🧠💰<span class="mc-spray" style="bottom:5px;right:5px;font-size:10px;color:#f5c518;">2013</span></div><div class="mc-txt">Bought BTC in 2013. Never sold. Funding retirement with magic internet money.</div></div>
-        <div class="mc"><div class="mc-face" style="background:#16060a;">🐶✨<span class="mc-spray" style="top:5px;right:5px;font-size:11px;color:#ff1a1a;">DOGE</span></div><div class="mc-txt">Elon tweets one dog. DOGE up 40%. This is totally normal finance.</div></div>
-        <div class="mc"><div class="mc-face" style="background:#060a0a;">⛏️😅<span class="mc-spray" style="bottom:5px;left:5px;font-size:10px;color:#00ff88;">SOL</span></div><div class="mc-txt">Explaining to parents why savings advice became Solana.</div></div>
-        <div class="mc"><div class="mc-face" style="background:#060616;">🏦💥<span class="mc-spray" style="top:5px;left:5px;font-size:10px;color:#ff1a1a;">NGMI</span></div><div class="mc-txt">Banks: "crypto is too volatile." Banks: *collapses every 15 years*</div></div>
-        <div class="mc"><div class="mc-face" style="background:#0a0e06;">🔑🏰<span class="mc-spray" style="bottom:5px;right:5px;font-size:9px;color:#00ff88;">KEYS</span></div><div class="mc-txt">Not your keys, not your coins. This is the way. Always has been.</div></div>
-        <div class="mc"><div class="mc-face" style="background:#0e0a06;">📊🔥<span class="mc-spray" style="top:5px;right:5px;font-size:10px;color:#f5c518;">LFG</span></div><div class="mc-txt">Chart is red. Headlines scary. I have been here before. I am staying.</div></div>
+    </section>
+    <section>
+      <div class="sh"><span class="sh-name">Live Block Data</span><div class="sh-rule"></div><span class="sh-tag" id="block-ts">Loading...</span></div>
+      <div class="block-live">
+        <div class="bl-stat"><div class="bl-num" id="bl-height">Loading...</div><div class="bl-lbl">Current Block</div></div>
+        <div class="bl-stat"><div class="bl-num" id="bl-remain">Loading...</div><div class="bl-lbl">Blocks to Halving</div></div>
+        <div class="bl-stat"><div class="bl-num" id="bl-reward">3.125 BTC</div><div class="bl-lbl">Current Reward</div></div>
+        <div class="bl-stat"><div class="bl-num">21,000,000</div><div class="bl-lbl">Max Supply</div></div>
+        <div class="bl-stat"><div class="bl-num" id="bl-supply">Loading...</div><div class="bl-lbl">Circulating</div></div>
+      </div>
+    </section>
+    <section>
+      <div class="sh"><span class="sh-name">Halving History</span><div class="sh-rule"></div><span class="sh-tag">Every ~4 Years</span></div>
+      <div class="halving-hist">
+        <div class="hh" style="border-top-color:#f5c518;">
+          <div class="hh-num" style="border-top:2px solid #f5c518;"></div>
+          <div class="hh-num">Halving #1</div>
+          <div class="hh-date">Nov 28, 2012</div>
+          <div class="hh-block">Block 210,000</div>
+          <div class="hh-reward">50 BTC → 25 BTC per block</div>
+          <div class="hh-price">Price at halving: ~$12</div>
+          <div class="hh-gain">+8,069% next 12 months</div>
+        </div>
+        <div class="hh">
+          <div class="hh-num">Halving #2</div>
+          <div class="hh-date">Jul 9, 2016</div>
+          <div class="hh-block">Block 420,000</div>
+          <div class="hh-reward">25 BTC → 12.5 BTC per block</div>
+          <div class="hh-price">Price at halving: ~$650</div>
+          <div class="hh-gain">+2,842% next 18 months</div>
+        </div>
+        <div class="hh">
+          <div class="hh-num">Halving #3</div>
+          <div class="hh-date">May 11, 2020</div>
+          <div class="hh-block">Block 630,000</div>
+          <div class="hh-reward">12.5 BTC → 6.25 BTC per block</div>
+          <div class="hh-price">Price at halving: ~$8,500</div>
+          <div class="hh-gain">+559% next 12 months</div>
+        </div>
+        <div class="hh">
+          <div class="hh-num">Halving #4</div>
+          <div class="hh-date">Apr 19, 2024</div>
+          <div class="hh-block">Block 840,000</div>
+          <div class="hh-reward">6.25 BTC → 3.125 BTC per block</div>
+          <div class="hh-price">Price at halving: ~$64,000</div>
+          <div class="hh-gain" style="color:#f5c518;">In progress...</div>
+        </div>
+        <div class="hh" style="border:1px dashed #2a2820;opacity:0.6;">
+          <div class="hh-num">Halving #5</div>
+          <div class="hh-date">Est. April 2028</div>
+          <div class="hh-block">Block 1,050,000</div>
+          <div class="hh-reward">3.125 BTC → 1.5625 BTC per block</div>
+          <div class="hh-price">Price at halving: ?</div>
+          <div class="hh-gain" style="color:#444;">The future. Stay diamond.</div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="sh"><span class="sh-name">Why It Matters</span><div class="sh-rule"></div><span class="sh-tag">Supply Shock</span></div>
+      <div class="qwall">
+        <div class="qwall-bg">SUPPLY</div>
+        <div>
+          <div class="qwall-q">"Every halving, <span>Bitcoin becomes twice as scarce.</span> Demand doesn't halve with it."</div>
+          <div class="qwall-src">— the immutable math of Satoshi's design · baked into the protocol forever · cannot be changed</div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- SIGNALS -->
+<div id="pg-signals" class="pg">
+  <div class="body">
+    <section>
+      <div class="sh"><span class="sh-name">Market Signals</span><div class="sh-rule"></div><span class="sh-tag" id="sig-ts">Loading...</span></div>
+      <div class="qwall" style="margin-bottom:14px;">
+        <div class="qwall-bg">SIGNAL</div>
+        <div><div class="qwall-q">"The market is a device for <span>transferring money</span> from the impatient to the patient."</div><div class="qwall-src">— Warren Buffett · applies doubly to crypto · diamond hands always win</div></div>
+      </div>
+
+      <!-- Fear & Greed -->
+      <div class="fg-card" id="fg-card" style="margin-bottom:2px;">
+        <div style="font-size:7px;letter-spacing:4px;color:#444;text-transform:uppercase;margin-bottom:12px;">Fear & Greed Index · Alternative.me</div>
+        <div class="fg-val" id="fg-val" style="color:#f5c518;">—</div>
+        <div class="fg-label" id="fg-label" style="color:#f5c518;">Loading...</div>
+        <div class="fg-bar"><div class="fg-fill" id="fg-fill" style="width:0%;background:#f5c518;"></div></div>
+        <div class="fg-scale"><span>Extreme Fear</span><span>Fear</span><span>Neutral</span><span>Greed</span><span>Extreme Greed</span></div>
+        <div class="fg-sub" style="margin-top:10px;">Yesterday: <span id="fg-yesterday">—</span> &nbsp;·&nbsp; Last Week: <span id="fg-week">—</span> &nbsp;·&nbsp; Last Month: <span id="fg-month">—</span></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sh"><span class="sh-name">Live Metrics</span><div class="sh-rule"></div><span class="sh-tag">CoinGecko</span></div>
+      <div class="sig-grid">
+        <div class="sig" style="--c:#f7a520;"><div class="sig" style="border-top:2px solid #f7a520;padding:0;border:none;"><div class="sig-lbl">BTC Price</div><div class="sig-val" id="sig-btc-price">—</div><div class="sig-chg" id="sig-btc-chg">—</div></div></div>
+        <div class="sig" style="border-top:2px solid #627eea;"><div class="sig-lbl">ETH Price</div><div class="sig-val" id="sig-eth-price">—</div><div class="sig-chg" id="sig-eth-chg">—</div></div>
+        <div class="sig" style="border-top:2px solid #f5c518;"><div class="sig-lbl">BTC Dominance</div><div class="sig-val" id="sig-dom">—</div><div class="sig-sub">% of total market</div></div>
+        <div class="sig" style="border-top:2px solid #00ff88;"><div class="sig-lbl">Total Market Cap</div><div class="sig-val" id="sig-mcap">—</div><div class="sig-chg" id="sig-mcap-chg">—</div></div>
+        <div class="sig" style="border-top:2px solid #aa44ff;"><div class="sig-lbl">ETH/BTC Ratio</div><div class="sig-val" id="sig-ratio">—</div><div class="sig-sub">ETH priced in BTC</div></div>
+        <div class="sig" style="border-top:2px solid #60aaff;"><div class="sig-lbl">Total Volume 24h</div><div class="sig-val" id="sig-vol">—</div><div class="sig-sub">Global trading volume</div></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sh"><span class="sh-name">Top Gainers 24h</span><div class="sh-rule"></div><span class="sh-tag">Live</span></div>
+      <div class="sig-grid" id="gainers-grid">
+        <div class="loading-state">Loading...</div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- COMMUNITY -->
+<div id="pg-community" class="pg">
+  <div class="body">
+    <section>
+      <div class="sh"><span class="sh-name">Community</span><div class="sh-rule"></div><span class="sh-tag">Find Your Tribe</span></div>
+      <div class="qwall" style="margin-bottom:14px;">
+        <div class="qwall-bg">WAGMI</div>
+        <div><div class="qwall-q">"The Bitcoin community is the <span>most passionate group of people</span> in finance. Full stop."</div><div class="qwall-src">— anyone who has been to a Bitcoin conference · confirmed every time · WAGMI</div></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sh"><span class="sh-name">X / Twitter</span><div class="sh-rule"></div><span class="sh-tag">Crypto Twitter</span></div>
+      <div class="comm-grid">
+        <a href="https://x.com/saylor" target="_blank" rel="noopener" class="cc" style="border-top:2px solid #f7a520;"><div class="cc-platform">Bitcoin Maximalist</div><div class="cc-name">Michael Saylor</div><div class="cc-desc">The most bullish human on earth. Daily Bitcoin signal. Never sells. Never apologizes.</div><div class="cc-link">@saylor →</div></a>
+        <a href="https://x.com/APompliano" target="_blank" rel="noopener" class="cc" style="border-top:2px solid #f5c518;"><div class="cc-platform">Macro + Bitcoin</div><div class="cc-name">Pompliano</div><div class="cc-desc">Daily macro commentary, Bitcoin takes, and the occasional savage tweet about banks.</div><div class="cc-link">@APompliano →</div></a>
+        <a href="https://x.com/woonomic" target="_blank" rel="noopener" class="cc" style="border-top:2px solid #00ff88;"><div class="cc-platform">On-Chain Analytics</div><div class="cc-name">Willy Woo</div><div class="cc-desc">The best on-chain charts on the internet. When Willy speaks, the market listens.</div><div class="cc-link">@woonomic →</div></a>
+        <a href="https://x.com/rektcapital" target="_blank" rel="noopener" class="cc" style="border-top:2px solid #ff6060;"><div class="cc-platform">Cycle Analysis</div><div class="cc-name">Rekt Capital</div><div class="cc-desc">Technical analysis and cycle timing. The clearest halving cycle charts anywhere.</div><div class="cc-link">@rektcapital →</div></a>
+        <a href="https://x.com/LynAldenContact" target="_blank" rel="noopener" class="cc" style="border-top:2px solid #00ff88;"><div class="cc-platform">Macro Economist</div><div class="cc-name">Lyn Alden</div><div class="cc-desc">The most rigorous macro analysis in crypto. Every thread is worth saving.</div><div class="cc-link">@LynAldenContact →</div></a>
+        <a href="https://x.com/WatcherGuru" target="_blank" rel="noopener" class="cc" style="border-top:2px solid #60aaff;"><div class="cc-platform">Breaking News</div><div class="cc-name">Watcher Guru</div><div class="cc-desc">First to break crypto news. If something big happens, Watcher Guru tweets it first.</div><div class="cc-link">@WatcherGuru →</div></a>
+      </div>
+    </section>
+
+    <section>
+      <div class="sh"><span class="sh-name">Reddit</span><div class="sh-rule"></div><span class="sh-tag">The Forums</span></div>
+      <div class="comm-grid">
+        <a href="https://reddit.com/r/Bitcoin" target="_blank" rel="noopener" class="cc" style="border-top:2px solid #f7a520;"><div class="cc-platform">Reddit · 7M members</div><div class="cc-name">r/Bitcoin</div><div class="cc-desc">The original Bitcoin subreddit. Maximalist territory. No altcoin talk. Pure BTC signal.</div><div class="cc-link">reddit.com/r/Bitcoin →</div></a>
+        <a href="https://reddit.com/r/CryptoCurrency" target="_blank" rel="noopener" class="cc" style="border-top:2px solid #f5c518;"><div class="cc-platform">Reddit · 8M members</div><div class="cc-name">r/CryptoCurrency</div><div class="cc-desc">The broadest crypto community. News, memes, analysis, drama. All of it.</div><div class="cc-link">reddit.com/r/CryptoCurrency →</div></a>
+        <a href="https://reddit.com/r/ethereum" target="_blank" rel="noopener" class="cc" style="border-top:2px solid #627eea;"><div class="cc-platform">Reddit · 2M members</div><div class="cc-name">r/ethereum</div><div class="cc-desc">Everything Ethereum. L2s, DeFi, roadmap updates, Vitalik posts.</div><div class="cc-link">reddit.com/r/ethereum →</div></a>
+        <a href="https://reddit.com/r/solana" target="_blank" rel="noopener" class="cc" style="border-top:2px solid #9945ff;"><div class="cc-platform">Reddit · 500K members</div><div class="cc-name">r/solana</div><div class="cc-desc">Solana ecosystem news, projects, and the fastest growing L1 community.</div><div class="cc-link">reddit.com/r/solana →</div></a>
+        <a href="https://reddit.com/r/CryptoMoonShots" target="_blank" rel="noopener" class="cc" style="border-top:2px solid #ff6060;"><div class="cc-platform">Reddit · 1.5M members</div><div class="cc-name">r/CryptoMoonShots</div><div class="cc-desc">Early stage gem hunting. High risk. High reward. DYOR always applies here.</div><div class="cc-link">reddit.com/r/CryptoMoonShots →</div></a>
+        <a href="https://reddit.com/r/dogecoin" target="_blank" rel="noopener" class="cc" style="border-top:2px solid #c2a633;"><div class="cc-platform">Reddit · 2.3M members</div><div class="cc-name">r/dogecoin</div><div class="cc-desc">The original memecoin community. Much wow. Very community. Such vibes.</div><div class="cc-link">reddit.com/r/dogecoin →</div></a>
+      </div>
+    </section>
+
+    <section>
+      <div class="sh"><span class="sh-name">YouTube</span><div class="sh-rule"></div><span class="sh-tag">Video Content</span></div>
+      <div class="comm-grid">
+        <a href="https://youtube.com/@CoinBureau" target="_blank" rel="noopener" class="cc" style="border-top:2px solid #ff0000;"><div class="cc-platform">YouTube · 2.5M subscribers</div><div class="cc-name">Coin Bureau</div><div class="cc-desc">The most thorough crypto education on YouTube. In-depth research, no shilling.</div><div class="cc-link">youtube.com/@CoinBureau →</div></a>
+        <a href="https://youtube.com/@natbrunell" target="_blank" rel="noopener" class="cc" style="border-top:2px solid #00ff88;"><div class="cc-platform">YouTube · Bitcoin Focus</div><div class="cc-name">Natalie Brunell</div><div class="cc-desc">Coin Stories podcast. The leading woman-hosted Bitcoin show. Emmy-winning journalist.</div><div class="cc-link">youtube.com/@natbrunell →</div></a>
+        <a href="https://youtube.com/@AltcoinDaily" target="_blank" rel="noopener" class="cc" style="border-top:2px solid #f5c518;"><div class="cc-platform">YouTube · 1.4M subscribers</div><div class="cc-name">Altcoin Daily</div><div class="cc-desc">Daily crypto news breakdowns. Covers the full market — BTC to the smallest altcoin.</div><div class="cc-link">youtube.com/@AltcoinDaily →</div></a>
+        <a href="https://youtube.com/@BanklessHQ" target="_blank" rel="noopener" class="cc" style="border-top:2px solid #aa44ff;"><div class="cc-platform">YouTube · 800K subscribers</div><div class="cc-name">Bankless</div><div class="cc-desc">Go bankless. The Ethereum and DeFi bible. Deep dives on the future of money.</div><div class="cc-link">youtube.com/@BanklessHQ →</div></a>
+      </div>
+    </section>
+
+    <section>
+      <div class="sh"><span class="sh-name">Tools & Data</span><div class="sh-rule"></div><span class="sh-tag">Essential</span></div>
+      <div class="comm-grid">
+        <a href="https://coingecko.com" target="_blank" rel="noopener" class="cc" style="border-top:2px solid #8dc63f;"><div class="cc-platform">Market Data</div><div class="cc-name">CoinGecko</div><div class="cc-desc">The most comprehensive crypto market data. Free, reliable, no nonsense.</div><div class="cc-link">coingecko.com →</div></a>
+        <a href="https://glassnode.com" target="_blank" rel="noopener" class="cc" style="border-top:2px solid #f5c518;"><div class="cc-platform">On-Chain Analytics</div><div class="cc-name">Glassnode</div><div class="cc-desc">The gold standard for on-chain data. Know what the whales are actually doing.</div><div class="cc-link">glassnode.com →</div></a>
+        <a href="https://alternative.me/crypto/fear-and-greed-index/" target="_blank" rel="noopener" class="cc" style="border-top:2px solid #ff4444;"><div class="cc-platform">Sentiment</div><div class="cc-name">Fear & Greed Index</div><div class="cc-desc">The market's emotional temperature. Buy when fearful. The oldest rule in crypto.</div><div class="cc-link">alternative.me →</div></a>
+        <a href="https://mempool.space" target="_blank" rel="noopener" class="cc" style="border-top:2px solid #f7a520;"><div class="cc-platform">Bitcoin Explorer</div><div class="cc-name">Mempool.space</div><div class="cc-desc">The best Bitcoin block explorer. Real-time mempool, fees, and transaction tracking.</div><div class="cc-link">mempool.space →</div></a>
+        <a href="https://lookintobitcoin.com" target="_blank" rel="noopener" class="cc" style="border-top:2px solid #00ff88;"><div class="cc-platform">Cycle Analysis</div><div class="cc-name">LookIntoBitcoin</div><div class="cc-desc">The best Bitcoin cycle charts. MVRV, Rainbow Chart, Stock-to-Flow. All free.</div><div class="cc-link">lookintobitcoin.com →</div></a>
+        <a href="https://bitcoin.org/bitcoin.pdf" target="_blank" rel="noopener" class="cc" style="border-top:2px solid #f5c518;"><div class="cc-platform">The Source</div><div class="cc-name">The Whitepaper</div><div class="cc-desc">9 pages. Halloween 2008. The document that started everything. Read it.</div><div class="cc-link">bitcoin.org/bitcoin.pdf →</div></a>
       </div>
     </section>
   </div>
@@ -695,10 +908,154 @@ function goTo(s){
   window.scrollTo({top:0,behavior:'smooth'});
   if(s==='markets'&&!mktLoaded)loadMarkets();
   if(s==='voices'&&!vLoaded)buildVoices();
+  if(s==='signals'&&!sigLoaded)loadSignals();
+  if(s==='halving'&&!halvingLoaded)loadHalving();
 }
 document.querySelectorAll('.nt').forEach(b=>b.addEventListener('click',()=>goTo(b.dataset.s)));
 const tsEl=document.getElementById('news-ts');
 if(tsEl){const n=new Date();tsEl.textContent=n.toLocaleDateString('en-US',{month:'short',day:'numeric'});}
+
+// HALVING COUNTDOWN
+const NEXT_HALVING=new Date('2028-04-20T00:00:00Z');
+function updateHalving(){
+  const now=new Date();
+  const diff=NEXT_HALVING-now;
+  if(diff<=0)return;
+  const days=Math.floor(diff/86400000);
+  const hours=Math.floor((diff%86400000)/3600000);
+  const mins=Math.floor((diff%3600000)/60000);
+  const secs=Math.floor((diff%60000)/1000);
+  const d=document.getElementById('hc-days');
+  const h=document.getElementById('hc-hours');
+  const m=document.getElementById('hc-mins');
+  const s=document.getElementById('hc-secs');
+  if(d)d.textContent=String(days).padStart(3,'0');
+  if(h)h.textContent=String(hours).padStart(2,'0');
+  if(m)m.textContent=String(mins).padStart(2,'0');
+  if(s)s.textContent=String(secs).padStart(2,'0');
+}
+setInterval(updateHalving,1000);
+updateHalving();
+
+let halvingLoaded=false;
+async function loadHalving(){
+  halvingLoaded=true;
+  try{
+    const res=await fetch('https://api.coingecko.com/api/v3/coins/bitcoin?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false');
+    const d=await res.json();
+    const supply=d.market_data?.circulating_supply;
+    if(supply){
+      const el=document.getElementById('bl-supply');
+      if(el)el.textContent=Math.round(supply/1000000*100)/100+'M';
+    }
+    // Estimate block height from supply
+    const estHeight=Math.round(supply/6.25+840000);
+    const halvingBlock=1050000;
+    const remain=halvingBlock-estHeight;
+    const bh=document.getElementById('bl-height');
+    const br=document.getElementById('bl-remain');
+    const bts=document.getElementById('block-ts');
+    if(bh)bh.textContent='~'+estHeight.toLocaleString();
+    if(br)br.textContent=remain.toLocaleString();
+    if(bts)bts.textContent='Est. from supply data';
+  }catch(e){console.log('halving data error',e);}
+}
+
+// SIGNALS
+let sigLoaded=false;
+async function loadSignals(){
+  sigLoaded=true;
+  const ts=document.getElementById('sig-ts');
+  if(ts)ts.textContent='Live · '+new Date().toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit'});
+
+  // Fear & Greed
+  try{
+    const fg=await fetch('https://api.alternative.me/fng/?limit=4');
+    const fd=await fg.json();
+    const today=fd.data[0];
+    const yesterday=fd.data[1];
+    const week=fd.data[3];
+    const val=parseInt(today.value);
+    const label=today.value_classification;
+    const fgv=document.getElementById('fg-val');
+    const fgl=document.getElementById('fg-label');
+    const fgf=document.getElementById('fg-fill');
+    const fgy=document.getElementById('fg-yesterday');
+    const fgw=document.getElementById('fg-week');
+    if(fgv)fgv.textContent=val;
+    if(fgl)fgl.textContent=label;
+    if(fgf)fgf.style.width=val+'%';
+    if(fgy)fgy.textContent=yesterday.value+' · '+yesterday.value_classification;
+    if(fgw)fgw.textContent=week.value+' · '+week.value_classification;
+    // Color by sentiment
+    const color=val<=25?'#ff4444':val<=45?'#ff8800':val<=55?'#f5c518':val<=75?'#88cc00':'#00ff88';
+    if(fgv){fgv.style.color=color;}
+    if(fgl){fgl.style.color=color;}
+    if(fgf){fgf.style.background=color;}
+  }catch(e){console.log('fg error',e);}
+
+  // Market metrics
+  try{
+    const [gcRes,glRes]=await Promise.all([
+      fetch('https://api.coingecko.com/api/v3/global'),
+      fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin,ethereum&order=market_cap_desc&per_page=2&page=1')
+    ]);
+    const gc=await gcRes.json();
+    const gl=await glRes.json();
+    const gd=gc.data;
+
+    const btc=gl.find(c=>c.id==='bitcoin');
+    const eth=gl.find(c=>c.id==='ethereum');
+
+    function fmtSig(n){if(n>=1e12)return'$'+(n/1e12).toFixed(2)+'T';if(n>=1e9)return'$'+(n/1e9).toFixed(2)+'B';return'$'+n.toLocaleString();}
+    function fmtChg(n){const c=n>=0?'#00ff88':'#ff4444';const s=(n>=0?'+':'')+n?.toFixed(2)+'%';return`<span style="color:${c};font-family:'Bebas Neue',sans-serif;font-size:14px;">${s}</span>`;}
+
+    const bp=document.getElementById('sig-btc-price');
+    const bc=document.getElementById('sig-btc-chg');
+    const ep=document.getElementById('sig-eth-price');
+    const ec=document.getElementById('sig-eth-chg');
+    const dom=document.getElementById('sig-dom');
+    const mcap=document.getElementById('sig-mcap');
+    const mcapchg=document.getElementById('sig-mcap-chg');
+    const ratio=document.getElementById('sig-ratio');
+    const vol=document.getElementById('sig-vol');
+
+    if(btc){
+      if(bp)bp.textContent='$'+btc.current_price.toLocaleString();
+      if(bc)bc.innerHTML=fmtChg(btc.price_change_percentage_24h);
+    }
+    if(eth){
+      if(ep)ep.textContent='$'+eth.current_price.toLocaleString(undefined,{maximumFractionDigits:2});
+      if(ec)ec.innerHTML=fmtChg(eth.price_change_percentage_24h);
+    }
+    if(dom)dom.textContent=(gd.market_cap_percentage?.bitcoin||0).toFixed(1)+'%';
+    if(mcap)mcap.textContent=fmtSig(gd.total_market_cap?.usd||0);
+    if(mcapchg)mcapchg.innerHTML=fmtChg(gd.market_cap_change_percentage_24h_usd||0);
+    if(ratio&&btc&&eth)ratio.textContent=(eth.current_price/btc.current_price).toFixed(5);
+    if(vol)vol.textContent=fmtSig(gd.total_volume?.usd||0);
+
+    // Top gainers
+    const gainRes=await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=percent_change_24h_desc&per_page=6&page=1&price_change_percentage=24h');
+    const gainers=await gainRes.json();
+    const gg=document.getElementById('gainers-grid');
+    if(gg&&gainers.length){
+      gg.innerHTML=gainers.slice(0,6).map(c=>{
+        const chg=c.price_change_percentage_24h;
+        return`<div class="sig" style="border-top:2px solid #00ff88;">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+            <img src="${c.image}" style="width:24px;height:24px;border-radius:50%;" onerror="this.style.display='none'"/>
+            <div>
+              <div style="font-family:'Bebas Neue',sans-serif;font-size:13px;color:#e8e0cc;">${c.name}</div>
+              <div style="font-size:7px;color:#333;text-transform:uppercase;">${c.symbol}</div>
+            </div>
+          </div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:#00ff88;">+${chg?.toFixed(2)}%</div>
+          <div style="font-size:9px;color:#444;margin-top:3px;">$${c.current_price.toLocaleString(undefined,{maximumFractionDigits:6})}</div>
+        </div>`;
+      }).join('');
+    }
+  }catch(e){console.log('signals error',e);}
+}
 
 const spraytags=['HODL','WAGMI','LFG','GM','NGMI','DYOR','WEN?','REKT','APE IN','BASED'];
 const vData=[
