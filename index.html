@@ -27,7 +27,6 @@ body{background:#0e0d0b;color:#e8e0cc;font-family:'Share Tech Mono',monospace;mi
 a{color:inherit;text-decoration:none;}
 img{display:block;}
 
-/* TICKER */
 .ticker{background:#f5c518;height:26px;display:flex;align-items:center;overflow:hidden;position:sticky;top:0;z-index:100;}
 .ticker::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:repeating-linear-gradient(90deg,transparent,transparent 40px,rgba(0,0,0,0.04) 40px,rgba(0,0,0,0.04) 41px);pointer-events:none;}
 .ticker-live{background:#0e0d0b;color:#f5c518;font-size:8px;letter-spacing:4px;padding:0 10px;height:100%;display:flex;align-items:center;flex-shrink:0;}
@@ -38,7 +37,6 @@ img{display:block;}
 .ticker-coin{display:flex;align-items:center;gap:4px;}
 .ticker-coin img{width:12px;height:12px;border-radius:50%;}
 
-/* NAV */
 .nav{height:50px;display:flex;align-items:center;justify-content:space-between;padding:0 14px;border-bottom:1px solid #1e1c16;background:#0e0d0b;position:sticky;top:26px;z-index:99;}
 .nav::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,#f5c51800,#f5c51830,#f5c51800);}
 .logo{display:flex;align-items:center;gap:10px;}
@@ -54,11 +52,9 @@ img{display:block;}
 .nt.sat{color:#f5c518;border-color:#f5c51830;}
 .nt.sat.on{background:#f5c518;color:#0e0d0b;}
 
-/* PAGE SECTIONS */
 .pg{display:none;}
 .pg.on{display:block;}
 
-/* HERO */
 .hero{padding:32px 14px 26px;border-bottom:3px solid #f5c518;position:relative;overflow:hidden;background:#0e0d0b;}
 .hero-btc{position:absolute;right:-20px;top:-30px;font-family:'Bebas Neue',sans-serif;font-size:260px;color:#f5c518;opacity:0.035;line-height:1;pointer-events:none;letter-spacing:-10px;filter:blur(0.5px);}
 .hero-wall-words{position:absolute;top:10px;left:10px;font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:4px;color:#f5c518;opacity:0.07;line-height:2;pointer-events:none;transform:rotate(-2deg);}
@@ -86,29 +82,25 @@ img{display:block;}
 .hstat-n{font-family:'Permanent Marker',cursive;font-size:30px;color:#f5c518;line-height:1;filter:drop-shadow(0 0 6px rgba(245,197,24,0.2));}
 .hstat-l{font-size:7px;letter-spacing:3px;color:#333;text-transform:uppercase;margin-top:2px;}
 
-/* BODY */
 .body{max-width:1100px;margin:0 auto;padding:18px 14px;display:flex;flex-direction:column;gap:28px;}
 
-/* SECTION HEADS */
 .sh{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
-.sh-name{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:4px;color:#e8e0cc;text-shadow:1px 0 0 rgba(232,224,204,0.1);}
+.sh-name{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:4px;color:#e8e0cc;}
 .sh-name::before{content:'▶';color:#f5c518;font-size:10px;margin-right:8px;opacity:0.7;}
 .sh-rule{flex:1;height:1px;background:repeating-linear-gradient(90deg,#f5c51830 0,#f5c51830 3px,transparent 3px,transparent 8px);}
 .sh-tag{font-size:7px;letter-spacing:3px;color:#f5c518;border:1px solid #f5c51825;padding:3px 7px;white-space:nowrap;}
 
-/* QUOTE WALL */
 .qwall{background:#111009;border:1px solid #2a2820;border-left:4px solid #ff1a1a;padding:14px 18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;position:relative;overflow:hidden;}
 .qwall-bg{position:absolute;right:-8px;top:-5px;font-family:'Permanent Marker',cursive;font-size:80px;color:#ff1a1a;opacity:0.04;line-height:1;pointer-events:none;transform:rotate(-8deg);}
-.qwall-q{font-family:'Permanent Marker',cursive;font-size:14px;color:#e8e0cc;line-height:1.45;text-shadow:1px 1px 0 rgba(0,0,0,0.5);}
+.qwall-q{font-family:'Permanent Marker',cursive;font-size:14px;color:#e8e0cc;line-height:1.45;}
 .qwall-q span{color:#f5c518;}
 .qwall-src{font-size:8px;color:#333;letter-spacing:2px;margin-top:4px;}
 
-/* NEWS */
 .feat-wall{display:grid;grid-template-columns:2fr 1fr;gap:2px;margin-bottom:2px;}
 .fw-main{background:#111009;border:1px solid #2a2820;padding:18px;position:relative;overflow:hidden;cursor:pointer;transition:border-color 0.12s;}
 .fw-main:hover{border-color:#f5c51840;}
-.fw-wm{position:absolute;bottom:-10px;right:-8px;font-family:'Bebas Neue',sans-serif;font-size:100px;color:#f5c518;opacity:0.04;line-height:1;pointer-events:none;filter:blur(0.3px);}
-.fw-flash{display:inline-block;background:#ff1a1a;font-family:'Bebas Neue',sans-serif;font-size:9px;letter-spacing:4px;color:#fff;padding:2px 8px;transform:rotate(-0.8deg);margin-bottom:8px;box-shadow:1px 1px 0 rgba(255,26,26,0.3);}
+.fw-wm{position:absolute;bottom:-10px;right:-8px;font-family:'Bebas Neue',sans-serif;font-size:100px;color:#f5c518;opacity:0.04;line-height:1;pointer-events:none;}
+.fw-flash{display:inline-block;background:#ff1a1a;font-family:'Bebas Neue',sans-serif;font-size:9px;letter-spacing:4px;color:#fff;padding:2px 8px;transform:rotate(-0.8deg);margin-bottom:8px;}
 .fw-cat{font-size:7px;letter-spacing:3px;color:#f5c518;text-transform:uppercase;margin-bottom:5px;}
 .fw-title{font-family:'Bebas Neue',sans-serif;font-size:28px;color:#e8e0cc;line-height:1.0;letter-spacing:1px;margin-bottom:8px;}
 .fw-desc{font-size:10px;color:#444;line-height:1.75;margin-bottom:10px;}
@@ -117,12 +109,10 @@ img{display:block;}
 .fw-side{background:#111009;border:1px solid #2a2820;padding:11px;cursor:pointer;transition:border-color 0.12s;flex:1;overflow:hidden;}
 .fw-side:hover{border-color:#f5c51835;}
 .fw-side-top{height:2px;width:100%;margin-bottom:7px;}
-.fw-side-top::after{content:'';display:block;width:2px;height:6px;margin-left:10px;margin-top:0;opacity:0.6;background:inherit;}
 .fw-side-cat{font-size:7px;letter-spacing:2px;color:#444;text-transform:uppercase;margin-bottom:3px;}
 .fw-side-title{font-family:'Bebas Neue',sans-serif;font-size:13px;color:#ccc5aa;line-height:1.2;letter-spacing:0.5px;}
 .fw-side-meta{font-size:7px;color:#222218;margin-top:4px;}
 
-/* NEWS GRID */
 .news-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:2px;}
 .nc{background:#111009;border:1px solid #2a2820;padding:10px;cursor:pointer;transition:all 0.12s;position:relative;overflow:hidden;}
 .nc:hover{background:#151309;border-color:#f5c51830;}
@@ -135,7 +125,6 @@ img{display:block;}
 .nc-title{font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:0.5px;color:#ccc5aa;line-height:1.25;margin-bottom:4px;}
 .nc-meta{font-size:7px;color:#1e1c14;}
 
-/* PRICE BOARD */
 .price-board{background:#111009;border:1px solid #2a2820;padding:14px;position:relative;overflow:hidden;}
 .price-board::before{content:'PRICES';position:absolute;right:-5px;top:-5px;font-family:'Bebas Neue',sans-serif;font-size:60px;color:#f5c518;opacity:0.025;line-height:1;letter-spacing:4px;pointer-events:none;}
 .pb-head{font-size:7px;letter-spacing:4px;color:#333;text-transform:uppercase;margin-bottom:10px;display:flex;justify-content:space-between;}
@@ -150,7 +139,6 @@ img{display:block;}
 .pbdn{color:#ff4444;text-shadow:0 0 8px rgba(255,68,68,0.2);}
 .loading-state{text-align:center;padding:40px;font-size:8px;letter-spacing:4px;color:#2a2820;text-transform:uppercase;}
 
-/* SATOSHI */
 .sat-wall{padding:30px 14px;border-bottom:3px solid #f5c518;position:relative;overflow:hidden;background:#0e0d0b;}
 .sat-btc{position:absolute;right:-15px;top:-20px;font-family:'Bebas Neue',sans-serif;font-size:220px;color:#f5c518;opacity:0.03;line-height:1;pointer-events:none;filter:blur(0.5px);letter-spacing:-8px;}
 .sat-ghost{position:absolute;bottom:-8px;left:10px;font-family:'Permanent Marker',cursive;font-size:50px;color:#ff1a1a;opacity:0.05;transform:rotate(-4deg);pointer-events:none;}
@@ -158,13 +146,11 @@ img{display:block;}
 .sat-blink{width:6px;height:6px;background:#ff1a1a;border-radius:50%;animation:bl 1.2s ease-in-out infinite;}
 @keyframes bl{0%,100%{opacity:1}50%{opacity:0.1}}
 .sat-h1{font-family:'Bebas Neue',sans-serif;font-size:56px;line-height:0.9;letter-spacing:3px;margin-bottom:14px;}
-.sat-h1 .sw1{color:#e8e0cc;display:block;text-shadow:1px 0 0 rgba(232,224,204,0.1);}
-.sat-h1 .sw2{color:#f5c518;display:block;filter:drop-shadow(0 0 10px rgba(245,197,24,0.2));text-shadow:2px 0 0 rgba(245,197,24,0.12);}
-.sat-quote{background:#111009;border:1px solid #f5c51828;border-left:3px solid #f5c518;padding:12px 16px;font-size:10px;color:#f5c518;line-height:1.85;max-width:580px;margin-bottom:18px;position:relative;overflow:hidden;}
-.sat-quote::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 0% 50%,rgba(245,197,24,0.04) 0%,transparent 60%);}
+.sat-h1 .sw1{color:#e8e0cc;display:block;}
+.sat-h1 .sw2{color:#f5c518;display:block;filter:drop-shadow(0 0 10px rgba(245,197,24,0.2));}
+.sat-quote{background:#111009;border:1px solid #f5c51828;border-left:3px solid #f5c518;padding:12px 16px;font-size:10px;color:#f5c518;line-height:1.85;max-width:580px;margin-bottom:18px;}
 .sat-body{max-width:1100px;margin:0 auto;padding:18px 14px;display:flex;flex-direction:column;gap:24px;}
 
-/* TIMELINE */
 .tl{display:flex;flex-direction:column;}
 .tl-row{display:flex;gap:0;position:relative;}
 .tl-row::before{content:'';position:absolute;left:70px;top:22px;bottom:-1px;width:1px;background:#2a2820;}
@@ -178,9 +164,7 @@ img{display:block;}
 .tl-head{font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:1px;color:#ccc5aa;margin-bottom:3px;}
 .tl-desc{font-size:10px;color:#444;line-height:1.65;}
 
-/* WHITEPAPER */
 .wp-card{background:#111009;border:1px solid #f5c51825;border-left:4px solid #f5c518;padding:18px;position:relative;overflow:hidden;}
-.wp-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 0% 0%,rgba(245,197,24,0.03) 0%,transparent 50%);}
 .wp-eyebrow{font-size:7px;letter-spacing:4px;text-transform:uppercase;color:#f5c518;margin-bottom:8px;}
 .wp-title{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px;color:#e8e0cc;margin-bottom:3px;}
 .wp-auth{font-size:8px;color:#444;margin-bottom:10px;}
@@ -188,21 +172,18 @@ img{display:block;}
 .wp-dl{display:inline-flex;align-items:center;gap:8px;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:#f5c518;border:1px solid #f5c51835;padding:7px 12px;transition:border-color 0.12s;}
 .wp-dl:hover{border-color:#f5c518;}
 
-/* WALLET */
-.wallet{background:#111009;border:1px solid #f5c51825;padding:16px;display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap;position:relative;overflow:hidden;}
+.wallet{background:#111009;border:1px solid #f5c51825;padding:16px;display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap;}
 .wallet-big{font-family:'Permanent Marker',cursive;font-size:28px;color:#f5c518;line-height:1;filter:drop-shadow(0 0 8px rgba(245,197,24,0.15));}
 .wallet-sub{font-size:8px;color:#444;letter-spacing:1px;margin-top:3px;}
 .wallet-addr{font-size:8px;color:#2a2820;margin-top:6px;word-break:break-all;line-height:1.6;}
 .wallet-note{font-size:10px;color:#444;line-height:1.65;max-width:340px;}
 
-/* QUOTES */
 .quotes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:2px;}
 .qcard{background:#111009;border:1px solid #2a2820;border-left:2px solid #f5c51830;padding:13px;position:relative;overflow:hidden;}
 .qcard::before{content:'"';position:absolute;top:-5px;left:8px;font-family:'Permanent Marker',cursive;font-size:40px;color:#f5c518;opacity:0.08;pointer-events:none;}
 .qcard-txt{font-size:10px;color:#777;line-height:1.7;margin-bottom:7px;font-style:italic;}
 .qcard-src{font-size:7px;letter-spacing:2px;color:#333;text-transform:uppercase;}
 
-/* LAW */
 .law-stack{display:flex;flex-direction:column;gap:2px;}
 .law-row{background:#111009;border:1px solid #2a2820;padding:13px 15px;display:flex;gap:12px;}
 .law-bar{width:3px;flex-shrink:0;min-height:40px;align-self:stretch;}
@@ -214,11 +195,10 @@ img{display:block;}
 .law-title{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:0.5px;color:#ccc5aa;margin-bottom:3px;}
 .law-desc{font-size:10px;color:#444;line-height:1.6;}
 
-/* VOICES */
 .voice-legend{background:#111009;border:2px solid #f5c518;padding:18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;cursor:pointer;margin-bottom:2px;position:relative;overflow:hidden;}
-.voice-legend::before{content:'₿';position:absolute;right:-5px;top:-8px;font-family:'Bebas Neue',sans-serif;font-size:80px;color:#f5c518;opacity:0.05;line-height:1;pointer-events:none;filter:blur(0.3px);}
-.vl-icon{width:54px;height:54px;background:rgba(245,197,24,0.08);border:2px solid #f5c518;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:22px;color:#f5c518;flex-shrink:0;letter-spacing:1px;}
-.vl-name{font-family:'Permanent Marker',cursive;font-size:22px;color:#f5c518;line-height:1.1;filter:drop-shadow(0 0 6px rgba(245,197,24,0.15));}
+.voice-legend::before{content:'₿';position:absolute;right:-5px;top:-8px;font-family:'Bebas Neue',sans-serif;font-size:80px;color:#f5c518;opacity:0.05;line-height:1;pointer-events:none;}
+.vl-icon{width:54px;height:54px;background:rgba(245,197,24,0.08);border:2px solid #f5c518;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:22px;color:#f5c518;flex-shrink:0;}
+.vl-name{font-family:'Permanent Marker',cursive;font-size:22px;color:#f5c518;line-height:1.1;}
 .vl-sub{font-size:7px;letter-spacing:2px;color:#444;margin-top:3px;}
 .vl-desc{font-size:10px;color:#444;line-height:1.6;max-width:380px;}
 .vl-cta{font-family:'Bebas Neue',sans-serif;font-size:9px;letter-spacing:3px;color:#f5c518;border:1px solid #f5c51835;padding:3px 9px;margin-top:7px;display:inline-block;transform:skewX(-3deg);}
@@ -232,7 +212,6 @@ img{display:block;}
 .vc-handle{font-size:7px;color:#222218;}
 .vc-role{font-size:8px;color:#333;margin-top:2px;line-height:1.3;}
 
-/* LEARN */
 .lt-tabs{display:flex;gap:2px;flex-wrap:wrap;margin-bottom:12px;}
 .lt{font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:2px;padding:5px 10px;background:transparent;border:1px solid #2a2820;color:#444;cursor:pointer;transition:all 0.12s;}
 .lt:hover{color:#e8e0cc;border-color:#3a3828;}
@@ -245,14 +224,25 @@ img{display:block;}
 .lc-name{font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:1px;color:#f5c518;margin-bottom:4px;}
 .lc-desc{font-size:9px;color:#444;line-height:1.6;}
 
-/* MEMES */
 .meme-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:2px;}
 .mc{background:#111009;border:1px solid #2a2820;overflow:hidden;position:relative;}
 .mc-face{height:90px;display:flex;align-items:center;justify-content:center;font-size:38px;position:relative;}
 .mc-spray{position:absolute;font-family:'Permanent Marker',cursive;opacity:0.5;text-shadow:0 0 4px currentColor;}
 .mc-txt{padding:9px 10px;font-size:9px;color:#555;line-height:1.55;border-top:1px solid #1e1c14;}
 
-/* PODCASTS */
+.yt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2px;}
+.yt-card{background:#111009;border:1px solid #2a2820;overflow:hidden;cursor:pointer;transition:border-color 0.12s;}
+.yt-card:hover{border-color:#f5c51840;}
+.yt-thumb{height:120px;background:#0a0a08;display:flex;align-items:center;justify-content:center;position:relative;}
+.yt-icon{position:absolute;top:8px;left:10px;font-size:24px;}
+.yt-play{width:40px;height:40px;background:#ff0000;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.yt-play::after{content:'';width:0;height:0;border-top:9px solid transparent;border-bottom:9px solid transparent;border-left:16px solid #fff;margin-left:3px;}
+.yt-dur{position:absolute;bottom:6px;right:8px;font-family:'Share Tech Mono',monospace;font-size:9px;background:#000000cc;color:#fff;padding:2px 5px;}
+.yt-body{padding:10px 12px;}
+.yt-channel{font-size:7px;letter-spacing:2px;color:#f5c518;text-transform:uppercase;margin-bottom:4px;}
+.yt-title{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:0.5px;color:#ccc5aa;line-height:1.2;margin-bottom:4px;}
+.yt-meta{font-size:7px;color:#222218;}
+
 .pod-list{display:flex;flex-direction:column;gap:2px;}
 .pc{background:#111009;border:1px solid #2a2820;padding:11px 13px;display:flex;gap:11px;align-items:center;cursor:pointer;transition:border-color 0.12s;}
 .pc:hover{border-color:#f5c51830;}
@@ -261,10 +251,9 @@ img{display:block;}
 .pc-show{font-size:7px;letter-spacing:3px;text-transform:uppercase;color:#f5c518;margin-bottom:2px;}
 .pc-title{font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:0.5px;color:#ccc5aa;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .pc-meta{font-size:7px;color:#222218;}
-.pc-btn{width:28px;height:28px;background:#f5c518;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 0 8px rgba(245,197,24,0.2);}
+.pc-btn{width:28px;height:28px;background:#f5c518;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .pc-btn::after{content:'';width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:10px solid #0e0d0b;margin-left:2px;}
 
-/* MARKETS */
 .mkt-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:11px;flex-wrap:wrap;gap:8px;}
 .mkt-srch{font-size:10px;background:#111009;border:1px solid #2a2820;color:#e8e0cc;padding:7px 10px;width:170px;outline:none;}
 .mkt-srch::placeholder{color:#2a2820;}
@@ -289,11 +278,10 @@ img{display:block;}
 .more-btn:hover{background:rgba(245,197,24,0.06);border-color:#f5c518;}
 .more-btn:disabled{opacity:0.2;cursor:not-allowed;}
 
-/* FOOTER */
 .site-footer{padding:16px 14px;border-top:3px solid #f5c518;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:16px;position:relative;overflow:hidden;background:#0e0d0b;}
 .site-footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#f5c518,#f5c518 40%,#ff1a1a 40%,#ff1a1a 43%,#f5c518 43%);}
 .footer-bg{position:absolute;right:-5px;bottom:-8px;font-family:'Permanent Marker',cursive;font-size:70px;color:#f5c518;opacity:0.025;line-height:1;pointer-events:none;}
-.footer-logo{font-family:'Permanent Marker',cursive;font-size:17px;color:#f5c518;filter:drop-shadow(0 0 6px rgba(245,197,24,0.15));}
+.footer-logo{font-family:'Permanent Marker',cursive;font-size:17px;color:#f5c518;}
 .footer-sub{font-size:7px;letter-spacing:3px;color:#222218;margin-top:3px;}
 .footer-disc{font-size:7px;color:#1a1810;max-width:360px;line-height:1.7;text-align:right;}
 
@@ -309,7 +297,6 @@ img{display:block;}
 </head>
 <body>
 
-<!-- TICKER -->
 <div class="ticker">
   <div class="ticker-live">LIVE</div>
   <div style="overflow:hidden;flex:1;">
@@ -338,7 +325,6 @@ img{display:block;}
   </div>
 </div>
 
-<!-- NAV -->
 <nav class="nav">
   <div class="logo">
     <svg class="logo-svg" viewBox="0 0 30 30">
@@ -362,6 +348,7 @@ img{display:block;}
     <button class="nt" data-s="voices">Voices</button>
     <button class="nt" data-s="learn">101</button>
     <button class="nt" data-s="memes">Memes</button>
+    <button class="nt" data-s="watch">Watch</button>
     <button class="nt" data-s="pods">Pod</button>
     <button class="nt" data-s="markets">Markets</button>
   </div>
@@ -458,10 +445,7 @@ img{display:block;}
     <div class="drip" style="left:25%;height:35px;opacity:0.5;"></div>
     <div class="drip" style="left:70%;height:20px;opacity:0.3;"></div>
     <div class="sat-kicker"><div class="sat-blink"></div> Identity Unknown · Last Seen April 2011</div>
-    <div class="sat-h1">
-      <span class="sw1">Satoshi</span>
-      <span class="sw2">Nakamoto.</span>
-    </div>
+    <div class="sat-h1"><span class="sw1">Satoshi</span><span class="sw2">Nakamoto.</span></div>
     <div class="sat-quote">"I've moved on to other things. It's in good hands with Gavin and everyone."<br>— Last known message. April 23, 2011. Then silence. Forever.</div>
     <div class="hero-btns">
       <a href="https://bitcoin.org/bitcoin.pdf" target="_blank" rel="noopener" class="btn-spray">Read the Whitepaper →</a>
@@ -486,7 +470,7 @@ img{display:block;}
         <div class="tl-row"><div class="tl-yr">Jan 3 2009</div><div class="tl-dot g"></div><div class="tl-content"><div class="tl-evt">Genesis Block</div><div class="tl-head">Block #0 mined. 50 BTC. The network is born.</div><div class="tl-desc">Embedded forever: "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks." A timestamp. A message. The most punk thing ever written into a financial system.</div></div></div>
         <div class="tl-row"><div class="tl-yr">Jan 12 2009</div><div class="tl-dot g"></div><div class="tl-content"><div class="tl-evt">First Transaction</div><div class="tl-head">Satoshi sends 10 BTC to Hal Finney</div><div class="tl-desc">The first peer-to-peer Bitcoin transaction. Hal Finney — cryptographer, early believer — receives the first transfer ever made.</div></div></div>
         <div class="tl-row"><div class="tl-yr">May 22 2010</div><div class="tl-dot g"></div><div class="tl-content"><div class="tl-evt">Bitcoin Pizza Day</div><div class="tl-head">10,000 BTC for two pizzas. Worth hundreds of millions today.</div><div class="tl-desc">The first real-world Bitcoin purchase. Every May 22nd the crypto world mourns and celebrates simultaneously.</div></div></div>
-        <div class="tl-row"><div class="tl-yr">Apr 2011</div><div class="tl-dot d"></div><div class="tl-content"><div class="tl-evt">The Disappearance</div><div class="tl-head">One final email. Then silence. Forever.</div><div class="tl-desc">"I've moved on to other things." No identity revealed. No coins moved. The greatest unsolved mystery in financial history. Gone — or watching.</div></div></div>
+        <div class="tl-row"><div class="tl-yr">Apr 2011</div><div class="tl-dot d"></div><div class="tl-content"><div class="tl-evt">The Disappearance</div><div class="tl-head">One final email. Then silence. Forever.</div><div class="tl-desc">"I've moved on to other things." No identity revealed. No coins moved. The greatest unsolved mystery in financial history.</div></div></div>
       </div>
     </section>
     <section>
@@ -611,6 +595,53 @@ img{display:block;}
   </div>
 </div>
 
+<!-- WATCH -->
+<div id="pg-watch" class="pg">
+  <div class="body">
+    <section>
+      <div class="sh"><span class="sh-name">Watch Now</span><div class="sh-rule"></div><span class="sh-tag">YouTube</span></div>
+      <div class="qwall" style="margin-bottom:14px;">
+        <div class="qwall-bg">WATCH</div>
+        <div><div class="qwall-q">"The best crypto education is <span>free on YouTube.</span> No excuse not to know."</div><div class="qwall-src">— the crypto community · been true since 2013 · still true today</div></div>
+      </div>
+      <div class="yt-grid">
+        <div class="yt-card">
+          <div class="yt-thumb"><span class="yt-icon">₿</span><div class="yt-play"></div><span class="yt-dur">14:22</span></div>
+          <div class="yt-body"><div class="yt-channel">Coin Bureau</div><div class="yt-title">Bitcoin Price Prediction — What the Data Actually Says</div><div class="yt-meta">312K views · 2 days ago</div></div>
+        </div>
+        <div class="yt-card">
+          <div class="yt-thumb"><span class="yt-icon">🐸</span><div class="yt-play"></div><span class="yt-dur">8:44</span></div>
+          <div class="yt-body"><div class="yt-channel">Altcoin Daily</div><div class="yt-title">Top Memecoins That Could 10x This Cycle</div><div class="yt-meta">98K views · 3 days ago</div></div>
+        </div>
+        <div class="yt-card">
+          <div class="yt-thumb"><span class="yt-icon">🏛️</span><div class="yt-play"></div><span class="yt-dur">22:15</span></div>
+          <div class="yt-body"><div class="yt-channel">Natalie Brunell</div><div class="yt-title">The Bitcoin Strategic Reserve: What It Really Means</div><div class="yt-meta">187K views · 1 day ago</div></div>
+        </div>
+        <div class="yt-card">
+          <div class="yt-thumb"><span class="yt-icon">📊</span><div class="yt-play"></div><span class="yt-dur">18:44</span></div>
+          <div class="yt-body"><div class="yt-channel">Rekt Capital</div><div class="yt-title">Bitcoin Cycle Analysis — Where Are We Really?</div><div class="yt-meta">244K views · 4 days ago</div></div>
+        </div>
+        <div class="yt-card">
+          <div class="yt-thumb"><span class="yt-icon">🧠</span><div class="yt-play"></div><span class="yt-dur">31:08</span></div>
+          <div class="yt-body"><div class="yt-channel">Michael Saylor</div><div class="yt-title">Why Bitcoin Is the Only Rational Treasury Strategy</div><div class="yt-meta">520K views · 1 week ago</div></div>
+        </div>
+        <div class="yt-card">
+          <div class="yt-thumb"><span class="yt-icon">⚡</span><div class="yt-play"></div><span class="yt-dur">11:33</span></div>
+          <div class="yt-body"><div class="yt-channel">Jack Mallers</div><div class="yt-title">Strike Is Changing How the World Moves Money</div><div class="yt-meta">189K views · 5 days ago</div></div>
+        </div>
+        <div class="yt-card">
+          <div class="yt-thumb"><span class="yt-icon">🔷</span><div class="yt-play"></div><span class="yt-dur">26:41</span></div>
+          <div class="yt-body"><div class="yt-channel">Vitalik Buterin</div><div class="yt-title">Ethereum Scaling: The Roadmap for 2026 and Beyond</div><div class="yt-meta">298K views · 3 days ago</div></div>
+        </div>
+        <div class="yt-card">
+          <div class="yt-thumb"><span class="yt-icon">📈</span><div class="yt-play"></div><span class="yt-dur">19:55</span></div>
+          <div class="yt-body"><div class="yt-channel">Lyn Alden</div><div class="yt-title">The Macro Case for Bitcoin — Full Breakdown</div><div class="yt-meta">176K views · 6 days ago</div></div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
 <!-- PODS -->
 <div id="pg-pods" class="pg">
   <div class="body">
@@ -649,7 +680,6 @@ img{display:block;}
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-bg">₿</div>
   <div>
@@ -678,7 +708,7 @@ const spraytags=['HODL','WAGMI','LFG','GM','NGMI','DYOR','WEN?','REKT','APE IN',
 const vData=[
   {n:"Michael Saylor",h:"saylor",r:"Bitcoin maximalist",c:"#f7a520"},
   {n:"Pompliano",h:"APompliano",r:"Macro + Bitcoin",c:"#f5c518"},
-  {n:"Natalie Brunell",h:"nataliebrunell",r:"Bitcoin journalist",c:"#00ff88"},
+  {n:"Natalie Brunell",h:"natbrunell",r:"Bitcoin journalist",c:"#00ff88"},
   {n:"Jack Mallers",h:"jackmallers",r:"Strike · Lightning",c:"#60aaff"},
   {n:"Vitalik Buterin",h:"VitalikButerin",r:"Ethereum founder",c:"#627eea"},
   {n:"CZ",h:"cz_binance",r:"Binance founder",c:"#f5c518"},
@@ -812,8 +842,6 @@ function updatePriceBoard(coins){
     </div>`;
   }).join('');
 }
-
-// Auto-load markets data for price board on page load
 loadMarkets();
 </script>
 </body>
