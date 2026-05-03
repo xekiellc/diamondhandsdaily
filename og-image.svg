@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0a0a0f"/>
+  <rect width="1200" height="630" fill="url(#grid)" opacity="0.08"/>
+  <defs>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#f7c948" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <text x="600" y="380" font-family="Georgia, serif" font-size="340" font-weight="900" fill="#f7c948" opacity="0.04" text-anchor="middle">💎</text>
+  <polygon points="600,120 700,185 665,295 535,295 500,185" fill="none" stroke="#f7c948" stroke-width="3"/>
+  <polygon points="600,140 680,190 650,280 550,280 520,190" fill="#f7c94820" stroke="#f7c948" stroke-width="1.5"/>
+  <line x1="600" y1="120" x2="520" y2="190" stroke="#f7c94870" stroke-width="1.5"/>
+  <line x1="600" y1="120" x2="680" y2="190" stroke="#f7c94870" stroke-width="1.5"/>
+  <line x1="520" y1="190" x2="600" y2="140" stroke="#f7c94870" stroke-width="1.5"/>
+  <line x1="680" y1="190" x2="600" y2="140" stroke="#f7c94870" stroke-width="1.5"/>
+  <line x1="520" y1="190" x2="535" y2="295" stroke="#f7c94850" stroke-width="1"/>
+  <line x1="680" y1="190" x2="665" y2="295" stroke="#f7c94850" stroke-width="1"/>
+  <line x1="600" y1="140" x2="600" y2="295" stroke="#f7c94840" stroke-width="1"/>
+  <text x="600" y="380" font-family="Georgia, serif" font-size="72" font-weight="900" fill="#f7c948" text-anchor="middle" letter-spacing="-1">Diamond Hands Daily</text>
+  <text x="600" y="440" font-family="Georgia, serif" font-size="28" fill="#888888" text-anchor="middle" letter-spacing="6">HOLD THE LINE</text>
+  <line x1="200" y1="465" x2="490" y2="465" stroke="#f7c94840" stroke-width="1"/>
+  <line x1="710" y1="465" x2="1000" y2="465" stroke="#f7c94840" stroke-width="1"/>
+  <text x="600" y="470" font-family="Georgia, serif" font-size="14" fill="#f7c94860" text-anchor="middle">✦</text>
+  <text x="600" y="520" font-family="Georgia, serif" font-size="22" fill="#555555" text-anchor="middle" letter-spacing="3">Bitcoin · Altcoins · Memecoins · DeFi · Legislation</text>
+  <rect x="0" y="600" width="1200" height="30" fill="#f7c948" opacity="0.15"/>
+  <rect x="0" y="0" width="6" height="630" fill="#f7c948"/>
+  <rect x="1194" y="0" width="6" height="630" fill="#f7c948"/>
+</svg>
