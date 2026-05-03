@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Diamond Hands Daily — Hold the Line</title>
+<meta name="description" content="Bitcoin. Altcoins. Memecoins. DeFi. Legislation. Podcasts. Memes. The daily briefing for diamond hands."/>
+<meta property="og:title" content="Diamond Hands Daily"/>
+<meta property="og:description" content="Hold the Line. The daily briefing for long-term believers."/>
+<meta property="og:image" content="/og-image.png"/>
+<meta property="og:url" content="https://diamondhandsdaily.com"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="icon" href="/favicon.ico"/>
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Barlow:wght@400;600;700&family=Barlow+Condensed:wght@700;900&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#0a0a0f;color:#f0ede6;font-family:'Barlow',sans-serif;min-height:100vh;}
+a{color:inherit;text-decoration:none;}
+
+/* TICKER */
+.ticker-bar{background:#f7c948;padding:6px 16px;display:flex;align-items:center;gap:10px;overflow:hidden;}
+.ticker-label{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:11px;letter-spacing:2px;color:#0a0a0f;white-space:nowrap;text-transform:uppercase;}
+.ticker-track{display:flex;gap:24px;animation:ticker 30s linear infinite;white-space:nowrap;}
+.ticker-item{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;color:#0a0a0f;display:flex;gap:6px;}
+.up{color:#1a5c2a;}.down{color:#8b1a1a;}
+@keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* HEADER */
+.site-header{padding:20px 24px;border-bottom:1px solid #1e1e2a;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.logo-wrap{display:flex;align-items:center;gap:12px;}
+.logo-text{display:flex;flex-direction:column;line-height:1;}
+.logo-main{font-family:'Black Ops One',sans-serif;font-size:24px;color:#f7c948;letter-spacing:-0.5px;}
+.logo-sub{font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:3px;color:#666;text-transform:uppercase;margin-top:2px;}
+.site-nav{display:flex;gap:6px;flex-wrap:wrap;}
+.nav-btn{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:7px 12px;background:transparent;border:1px solid #2a2a3a;color:#aaa;border-radius:4px;cursor:pointer;transition:all 0.2s;}
+.nav-btn:hover,.nav-btn.active{background:#f7c948;color:#0a0a0f;border-color:#f7c948;}
+
+/* HERO */
+.hero{padding:36px 24px;background:#0d0d18;border-bottom:1px solid #1e1e2a;position:relative;overflow:hidden;}
+.hero-bg{position:absolute;top:-20px;right:-10px;font-family:'Black Ops One',sans-serif;font-size:160px;color:#f7c948;opacity:0.03;line-height:1;pointer-events:none;user-select:none;}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:#f7c94815;border:1px solid #f7c94840;border-radius:20px;padding:5px 14px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;color:#f7c948;text-transform:uppercase;margin-bottom:14px;}
+.hero-pulse{width:7px;height:7px;background:#f7c948;border-radius:50%;animation:pulse 1.5s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
+.hero h1{font-family:'Black Ops One',sans-serif;font-size:38px;line-height:1.1;color:#f0ede6;margin-bottom:12px;}
+.hero h1 span{color:#f7c948;}
+.hero-desc{font-size:15px;color:#888;line-height:1.7;margin-bottom:20px;max-width:540px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-primary{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;padding:12px 24px;background:#f7c948;color:#0a0a0f;border:none;border-radius:4px;cursor:pointer;transition:opacity 0.2s;}
+.btn-primary:hover{opacity:0.9;}
+.btn-ghost{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;padding:12px 24px;background:transparent;color:#f0ede6;border:1px solid #3a3a4a;border-radius:4px;cursor:pointer;transition:border-color 0.2s;}
+.btn-ghost:hover{border-color:#f7c948;color:#f7c948;}
+
+/* MAIN */
+.main{max-width:1100px;margin:0 auto;padding:32px 24px;display:flex;flex-direction:column;gap:40px;}
+
+/* SECTION HEADER */
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
+.section-title{font-family:'Black Ops One',sans-serif;font-size:17px;color:#f0ede6;white-space:nowrap;}
+.section-line{flex:1;height:1px;background:#1e1e2a;}
+.section-badge{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:3px 9px;background:#f7c94815;color:#f7c948;border:1px solid #f7c94830;border-radius:3px;white-space:nowrap;}
+
+/* NEWS CARDS */
+.news-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;}
+.news-card{background:#111118;border:1px solid #1e1e2a;border-radius:8px;overflow:hidden;transition:border-color 0.2s;cursor:pointer;}
+.news-card:hover{border-color:#f7c94850;}
+.news-thumb{width:100%;height:110px;display:flex;align-items:center;justify-content:center;font-size:48px;position:relative;}
+.news-thumb.btc{background:linear-gradient(135deg,#1a1000,#2a1800);}
+.news-thumb.eth{background:linear-gradient(135deg,#0d0d2a,#1a1a3a);}
+.news-thumb.meme{background:linear-gradient(135deg,#0a1a0a,#0d2010);}
+.news-thumb.law{background:linear-gradient(135deg,#0a0a1a,#10102a);}
+.news-thumb.defi{background:linear-gradient(135deg,#150a1a,#200d28);}
+.news-thumb.macro{background:linear-gradient(135deg,#1a0a0a,#2a1010);}
+.card-pill{position:absolute;top:8px;right:8px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:3px 7px;border-radius:3px;}
+.pill-hot{background:#c03030;color:#fff;}
+.pill-new{background:#1a6a3a;color:#fff;}
+.pill-live{background:#7030a0;color:#fff;}
+.news-body{padding:12px 14px;}
+.card-cat{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#f7c948;margin-bottom:5px;}
+.card-title{font-weight:700;font-size:13px;color:#f0ede6;line-height:1.4;margin-bottom:7px;}
+.card-meta{font-size:11px;color:#555;}
+
+/* LOADING STATE */
+.loading-state{text-align:center;padding:40px;color:#555;font-family:'Barlow Condensed',sans-serif;font-size:14px;letter-spacing:2px;text-transform:uppercase;}
+
+/* LEGISLATION */
+.law-list{display:flex;flex-direction:column;gap:12px;}
+.law-card{background:#111118;border:1px solid #1e1e2a;border-left:3px solid #f7c948;border-radius:8px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start;}
+.law-icon{font-size:24px;flex-shrink:0;margin-top:2px;}
+.law-title{font-weight:700;font-size:14px;color:#f0ede6;margin-bottom:5px;}
+.law-desc{font-size:12px;color:#777;line-height:1.6;margin-bottom:8px;}
+.law-tag{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:3px;}
+.tag-pending{background:#1a1400;color:#f7c948;border:1px solid #f7c94830;}
+.tag-passed{background:#0a1a0a;color:#4cc870;border:1px solid #4cc87030;}
+.tag-watch{background:#1a0a0a;color:#e06060;border:1px solid #e0606030;}
+
+/* VOICES */
+.voices-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;}
+.voice-card{background:#111118;border:1px solid #1e1e2a;border-radius:8px;padding:14px;text-align:center;transition:border-color 0.2s;cursor:pointer;}
+.voice-card:hover{border-color:#f7c94850;}
+.voice-avatar{width:52px;height:52px;border-radius:50%;background:#1a1a2a;border:2px solid #2a2a3a;display:flex;align-items:center;justify-content:center;font-family:'Black Ops One',sans-serif;font-size:16px;color:#f7c948;margin:0 auto 10px;}
+.voice-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:13px;color:#f0ede6;margin-bottom:3px;}
+.voice-handle{font-size:10px;color:#555;margin-bottom:6px;}
+.voice-focus{font-size:10px;color:#888;line-height:1.4;}
+
+/* CRYPTO 101 */
+.tabs-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px;}
+.tab-btn{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:7px 16px;border-radius:20px;border:1px solid #2a2a3a;background:transparent;color:#777;cursor:pointer;transition:all 0.2s;}
+.tab-btn:hover,.tab-btn.active{background:#f7c948;color:#0a0a0f;border-color:#f7c948;}
+.learn-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;}
+.learn-card{background:#111118;border:1px solid #1e1e2a;border-radius:8px;padding:16px;text-align:center;cursor:pointer;transition:border-color 0.2s;}
+.learn-card:hover{border-color:#f7c94850;}
+.learn-icon{font-size:32px;margin-bottom:10px;}
+.learn-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:14px;color:#f7c948;margin-bottom:5px;}
+.learn-desc{font-size:11px;color:#666;line-height:1.5;}
+
+/* MEME ZONE */
+.meme-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;}
+.meme-card{background:#111118;border:1px solid #1e1e2a;border-radius:8px;overflow:hidden;}
+.meme-thumb{width:100%;height:110px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:40px;gap:6px;}
+.meme-caption{padding:10px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;color:#bbb;text-align:center;line-height:1.4;}
+
+/* YOUTUBE */
+.yt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;}
+.yt-card{background:#111118;border:1px solid #1e1e2a;border-radius:8px;overflow:hidden;cursor:pointer;transition:border-color 0.2s;}
+.yt-card:hover{border-color:#f7c94850;}
+.yt-thumb{width:100%;height:110px;background:#0a0a18;display:flex;align-items:center;justify-content:center;position:relative;}
+.yt-emoji{position:absolute;top:10px;left:12px;font-size:28px;}
+.yt-play{width:40px;height:40px;background:#ff0000;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.yt-play::after{content:'';width:0;height:0;border-top:9px solid transparent;border-bottom:9px solid transparent;border-left:16px solid white;margin-left:3px;}
+.yt-duration{position:absolute;bottom:8px;right:10px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;background:#000000cc;color:#fff;padding:2px 6px;border-radius:3px;}
+.yt-body{padding:12px 14px;}
+.yt-channel{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#f7c948;margin-bottom:4px;}
+.yt-title{font-weight:700;font-size:13px;color:#f0ede6;line-height:1.3;margin-bottom:5px;}
+.yt-meta{font-size:11px;color:#555;}
+
+/* PODCASTS */
+.pod-list{display:flex;flex-direction:column;gap:12px;}
+.pod-card{background:#111118;border:1px solid #1e1e2a;border-radius:8px;padding:14px 16px;display:flex;gap:14px;align-items:center;cursor:pointer;transition:border-color 0.2s;}
+.pod-card:hover{border-color:#f7c94850;}
+.pod-art{width:56px;height:56px;border-radius:8px;background:#1a1a2a;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;}
+.pod-info{flex:1;min-width:0;}
+.pod-show{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#f7c948;margin-bottom:3px;}
+.pod-title{font-weight:700;font-size:13px;color:#f0ede6;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.pod-meta{font-size:11px;color:#555;}
+.pod-play{width:36px;height:36px;border-radius:50%;background:#f7c948;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.pod-play::after{content:'';width:0;height:0;border-top:8px solid transparent;border-bottom:8px solid transparent;border-left:14px solid #0a0a0f;margin-left:3px;}
+
+/* FOOTER */
+.site-footer{margin-top:20px;padding:28px 24px;border-top:1px solid #1e1e2a;text-align:center;}
+.footer-logo{font-family:'Black Ops One',sans-serif;font-size:22px;color:#f7c948;margin-bottom:8px;}
+.footer-tagline{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#444;margin-bottom:16px;}
+.footer-disclaimer{font-size:11px;color:#444;max-width:600px;margin:0 auto;line-height:1.6;}
+.footer-disclaimer span{color:#666;}
+
+@media(max-width:600px){
+  .hero h1{font-size:28px;}
+  .site-header{padding:14px 16px;}
+  .main{padding:24px 16px;}
+  .logo-main{font-size:18px;}
+}
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker-bar">
+  <span class="ticker-label">Live</span>
+  <div style="overflow:hidden;flex:1;">
+    <div class="ticker-track" id="ticker">
+      <span class="ticker-item">BTC <span class="up">+2.4%</span></span>
+      <span class="ticker-item">ETH <span class="up">+1.8%</span></span>
+      <span class="ticker-item">SOL <span class="up">+3.2%</span></span>
+      <span class="ticker-item">DOGE <span class="up">+5.1%</span></span>
+      <span class="ticker-item">PEPE <span class="down">-1.4%</span></span>
+      <span class="ticker-item">LINK <span class="up">+0.9%</span></span>
+      <span class="ticker-item">XRP <span class="up">+2.1%</span></span>
+      <span class="ticker-item">ADA <span class="down">-0.7%</span></span>
+      <span class="ticker-item">AVAX <span class="up">+1.3%</span></span>
+      <span class="ticker-item">WIF <span class="up">+8.2%</span></span>
+      <span class="ticker-item">BTC <span class="up">+2.4%</span></span>
+      <span class="ticker-item">ETH <span class="up">+1.8%</span></span>
+      <span class="ticker-item">SOL <span class="up">+3.2%</span></span>
+      <span class="ticker-item">DOGE <span class="up">+5.1%</span></span>
+      <span class="ticker-item">PEPE <span class="down">-1.4%</span></span>
+      <span class="ticker-item">LINK <span class="up">+0.9%</span></span>
+      <span class="ticker-item">XRP <span class="up">+2.1%</span></span>
+      <span class="ticker-item">ADA <span class="down">-0.7%</span></span>
+      <span class="ticker-item">AVAX <span class="up">+1.3%</span></span>
+      <span class="ticker-item">WIF <span class="up">+8.2%</span></span>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="logo-wrap">
+    <svg width="42" height="42" viewBox="0 0 42 42">
+      <polygon points="21,2 40,14 33,38 9,38 2,14" fill="none" stroke="#f7c948" stroke-width="2"/>
+      <polygon points="21,9 33,17 27,33 15,33 9,17" fill="#f7c94825" stroke="#f7c948" stroke-width="1"/>
+      <line x1="21" y1="2" x2="9" y2="17" stroke="#f7c94860" stroke-width="1"/>
+      <line x1="21" y1="2" x2="33" y2="17" stroke="#f7c94860" stroke-width="1"/>
+      <line x1="9" y1="17" x2="21" y2="9" stroke="#f7c94860" stroke-width="1"/>
+      <line x1="33" y1="17" x2="21" y2="9" stroke="#f7c94860" stroke-width="1"/>
+    </svg>
+    <div class="logo-text">
+      <span class="logo-main">Diamond Hands Daily</span>
+      <span class="logo-sub">Hold the Line &nbsp;·&nbsp; Every Day</span>
+    </div>
+  </div>
+  <nav class="site-nav">
+    <button class="nav-btn active">News</button>
+    <button class="nav-btn">Legislation</button>
+    <button class="nav-btn">Voices</button>
+    <button class="nav-btn">101</button>
+    <button class="nav-btn">Memes</button>
+    <button class="nav-btn">Watch</button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg">HODL</div>
+  <div class="hero-tag"><div class="hero-pulse"></div> Breaking Now</div>
+  <h1>The only news<br>for <span>diamond hands.</span></h1>
+  <p class="hero-desc">Bitcoin. Altcoins. Memecoins. DeFi. Legislation. Podcasts. Memes. Everything you need to stay informed — and stay strong. Updated 4× daily.</p>
+  <div class="hero-btns">
+    <button class="btn-primary">Start Here: Crypto 101</button>
+    <button class="btn-ghost">Today's Top Stories</button>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- TOP STORIES -->
+  <section id="news">
+    <div class="section-head">
+      <span class="section-title">Top Stories</span>
+      <div class="section-line"></div>
+      <span class="section-badge" id="news-timestamp">Today</span>
+    </div>
+    <div class="news-grid" id="news-container">
+      <div class="loading-state">Loading latest stories...</div>
+    </div>
+  </section>
+
+  <!-- LEGISLATION WATCH -->
+  <section id="legislation">
+    <div class="section-head">
+      <span class="section-title">Legislation Watch</span>
+      <div class="section-line"></div>
+      <span class="section-badge">Policy</span>
+    </div>
+    <div class="law-list">
+      <div class="law-card">
+        <div class="law-icon">⚖️</div>
+        <div>
+          <div class="law-title">GENIUS Act — Stablecoin Regulation Framework</div>
+          <div class="law-desc">Would require stablecoin issuers to hold 1:1 reserves and register with federal regulators. Key vote expected this session. Direct impact on USDT, USDC, and DAI holders.</div>
+          <span class="law-tag tag-pending">Pending Senate Vote</span>
+        </div>
+      </div>
+      <div class="law-card">
+        <div class="law-icon">🏛️</div>
+        <div>
+          <div class="law-title">FIT21 — Crypto Market Structure Act</div>
+          <div class="law-desc">Passed the House. Establishes CFTC jurisdiction over digital commodities vs SEC securities — the most important structural crypto bill in U.S. history.</div>
+          <span class="law-tag tag-passed">House Passed</span>
+        </div>
+      </div>
+      <div class="law-card">
+        <div class="law-icon">🔍</div>
+        <div>
+          <div class="law-title">IRS DeFi Broker Rule</div>
+          <div class="law-desc">Contested rulemaking requiring DeFi protocols to report user transactions. Multiple legal challenges filed. Outcome will define privacy in DeFi for years.</div>
+          <span class="law-tag tag-watch">Legal Battle</span>
+        </div>
+      </div>
+      <div class="law-card">
+        <div class="law-icon">🏦</div>
+        <div>
+          <div class="law-title">Bitcoin Strategic Reserve</div>
+          <div class="law-desc">Executive order directing Treasury to explore a national Bitcoin reserve. Multiple states introducing companion legislation. Historic shift in sovereign BTC policy.</div>
+          <span class="law-tag tag-passed">Executive Order</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOICES -->
+  <section id="voices">
+    <div class="section-head">
+      <span class="section-title">Voices That Matter</span>
+      <div class="section-line"></div>
+      <span class="section-badge">34 Influencers</span>
+    </div>
+    <div class="voices-grid" id="voices-container"></div>
+  </section>
+
+  <!-- CRYPTO 101 -->
+  <section id="learn">
+    <div class="section-head">
+      <span class="section-title">Crypto 101</span>
+      <div class="section-line"></div>
+      <span class="section-badge">New Here?</span>
+    </div>
+    <div class="tabs-row">
+      <button class="tab-btn active">All</button>
+      <button class="tab-btn">Bitcoin</button>
+      <button class="tab-btn">Altcoins</button>
+      <button class="tab-btn">Memecoins</button>
+      <button class="tab-btn">DeFi</button>
+      <button class="tab-btn">History</button>
+      <button class="tab-btn">Scam Alert</button>
+    </div>
+    <div class="learn-grid">
+      <div class="learn-card"><div class="learn-icon">₿</div><div class="learn-name">Bitcoin</div><div class="learn-desc">The original. Digital gold. Fixed supply of 21M coins. Why it exists and why it matters.</div></div>
+      <div class="learn-card"><div class="learn-icon">🔷</div><div class="learn-name">Ethereum</div><div class="learn-desc">Smart contracts. The programmable money layer powering DeFi, NFTs, and Web3.</div></div>
+      <div class="learn-card"><div class="learn-icon">🐸</div><div class="learn-name">Memecoins</div><div class="learn-desc">Community-driven, meme-powered. High risk, high reward. DOGE started it all in 2013.</div></div>
+      <div class="learn-card"><div class="learn-icon">⛓️</div><div class="learn-name">Utility Coins</div><div class="learn-desc">Coins with actual jobs. Chainlink, Filecoin, Helium — they power real infrastructure.</div></div>
+      <div class="learn-card"><div class="learn-icon">🏦</div><div class="learn-name">DeFi</div><div class="learn-desc">Banking without banks. Lend, borrow, earn yield — no middlemen, no permission needed.</div></div>
+      <div class="learn-card"><div class="learn-icon">📖</div><div class="learn-name">Crypto History</div><div class="learn-desc">From Satoshi's whitepaper (2008) to today. The full origin story every holder should know.</div></div>
+      <div class="learn-card"><div class="learn-icon">🔐</div><div class="learn-name">Wallets & Keys</div><div class="learn-desc">Not your keys, not your coins. Hardware wallets, seed phrases, and self-custody explained.</div></div>
+      <div class="learn-card"><div class="learn-icon">⚠️</div><div class="learn-name">Scam Alert</div><div class="learn-desc">Rugpulls, fake influencers, deepfakes, and honeypots. How to spot them before it's too late.</div></div>
+    </div>
+  </section>
+
+  <!-- MEME ZONE -->
+  <section id="memes">
+    <div class="section-head">
+      <span class="section-title">Meme Zone</span>
+      <div class="section-line"></div>
+      <span class="section-badge">Community</span>
+    </div>
+    <div class="meme-grid">
+      <div class="meme-card"><div class="meme-thumb" style="background:#0d1a0d;">💎🙌</div><div class="meme-caption">When everyone's panic selling and you haven't checked your portfolio in 3 weeks</div></div>
+      <div class="meme-card"><div class="meme-thumb" style="background:#1a0d0d;">🚀🌕</div><div class="meme-caption">Financial advisor said diversify. I said DOGE, WIF, PEPE, and prayers.</div></div>
+      <div class="meme-card"><div class="meme-thumb" style="background:#0d0d1a;">📉😤</div><div class="meme-caption">The dip is not a threat. It's a discount. Act accordingly.</div></div>
+      <div class="meme-card"><div class="meme-thumb" style="background:#1a1a00;">🧠💰</div><div class="meme-caption">Bought BTC in 2013. Never sold. Currently funding my retirement with "magic internet money."</div></div>
+      <div class="meme-card"><div class="meme-thumb" style="background:#1a0a1a;">🐶✨</div><div class="meme-caption">Elon tweets one dog. Doge up 40%. This is fine. This is totally normal finance.</div></div>
+      <div class="meme-card"><div class="meme-thumb" style="background:#0a1a1a;">⛏️😅</div><div class="meme-caption">Me explaining to my parents why I turned their college fund advice into Solana</div></div>
+    </div>
+  </section>
+
+  <!-- YOUTUBE -->
+  <section id="watch">
+    <div class="section-head">
+      <span class="section-title">Watch Now</span>
+      <div class="section-line"></div>
+      <span class="section-badge">YouTube</span>
+    </div>
+    <div class="yt-grid" id="yt-container">
+      <div class="yt-card"><div class="yt-thumb"><span class="yt-emoji">₿</span><div class="yt-play"></div><span class="yt-duration">12:34</span></div><div class="yt-body"><div class="yt-channel">Coin Bureau</div><div class="yt-title">Bitcoin Price Prediction — What the Data Actually Says</div><div class="yt-meta">312K views · 2 days ago</div></div></div>
+      <div class="yt-card"><div class="yt-thumb"><span class="yt-emoji">🐸</span><div class="yt-play"></div><span class="yt-duration">8:22</span></div><div class="yt-body"><div class="yt-channel">Altcoin Daily</div><div class="yt-title">Top Memecoins That Could 10x This Cycle</div><div class="yt-meta">98K views · 3 days ago</div></div></div>
+      <div class="yt-card"><div class="yt-thumb"><span class="yt-emoji">🏛️</span><div class="yt-play"></div><span class="yt-duration">22:15</span></div><div class="yt-body"><div class="yt-channel">Natalie Brunell</div><div class="yt-title">The Bitcoin Strategic Reserve: What It Really Means</div><div class="yt-meta">187K views · 1 day ago</div></div></div>
+      <div class="yt-card"><div class="yt-thumb"><span class="yt-emoji">📊</span><div class="yt-play"></div><span class="yt-duration">18:44</span></div><div class="yt-body"><div class="yt-channel">Rekt Capital</div><div class="yt-title">Bitcoin Cycle Analysis — Where Are We Really?</div><div class="yt-meta">244K views · 4 days ago</div></div></div>
+    </div>
+  </section>
+
+  <!-- PODCASTS -->
+  <section id="podcasts">
+    <div class="section-head">
+      <span class="section-title">Podcasts</span>
+      <div class="section-line"></div>
+      <span class="section-badge">Listen</span>
+    </div>
+    <div class="pod-list">
+      <div class="pod-card"><div class="pod-art">💎</div><div class="pod-info"><div class="pod-show">Diamond Hands Daily Pod</div><div class="pod-title">Ep. 47 — The Bitcoin Halving: One Year Later</div><div class="pod-meta">58 min · 3 days ago</div></div><div class="pod-play"></div></div>
+      <div class="pod-card"><div class="pod-art">💰</div><div class="pod-info"><div class="pod-show">The Pomp Podcast</div><div class="pod-title">Michael Saylor on Why Every Company Should Hold Bitcoin</div><div class="pod-meta">74 min · 2 days ago</div></div><div class="pod-play"></div></div>
+      <div class="pod-card"><div class="pod-art">🔗</div><div class="pod-info"><div class="pod-show">Unchained — Laura Shin</div><div class="pod-title">Inside the Senate Crypto Hearing: What Actually Happened</div><div class="pod-meta">62 min · 5 days ago</div></div><div class="pod-play"></div></div>
+      <div class="pod-card"><div class="pod-art">🐺</div><div class="pod-info"><div class="pod-show">Wolf of All Streets</div><div class="pod-title">Lyn Alden: The Macro Case for Bitcoin in 2026</div><div class="pod-meta">81 min · 1 week ago</div></div><div class="pod-play"></div></div>
+      <div class="pod-card"><div class="pod-art">🧠</div><div class="pod-info"><div class="pod-show">Deep Dive</div><div class="pod-title">DeFi Yield Explained — Risk vs Reward with Real Numbers</div><div class="pod-meta">44 min · 6 days ago</div></div><div class="pod-play"></div></div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-logo">Diamond Hands Daily</div>
+  <div class="footer-tagline">Hold the line &nbsp;·&nbsp; Stay informed &nbsp;·&nbsp; Never paper hands</div>
+  <div class="footer-disclaimer"><span>DYOR — Do Your Own Research.</span> Diamond Hands Daily is a news aggregator for informational purposes only. Nothing here is financial advice. Crypto is volatile. Never invest more than you can afford to lose. Always verify information from multiple sources.</div>
+</footer>
+
+<script>
+const voices = [
+  {name:"Michael Saylor",handle:"@saylor",focus:"Bitcoin maximalist, corporate treasury",init:"MS"},
+  {name:"Anthony Pompliano",handle:"@APompliano",focus:"Macro + Bitcoin, podcaster",init:"AP"},
+  {name:"Natalie Brunell",handle:"@nataliebrunell",focus:"Bitcoin journalist, educator",init:"NB"},
+  {name:"Jack Mallers",handle:"@jackmallers",focus:"Strike, Bitcoin payments",init:"JM"},
+  {name:"Vitalik Buterin",handle:"@VitalikButerin",focus:"Ethereum founder, scaling",init:"VB"},
+  {name:"CZ",handle:"@cz_binance",focus:"Binance founder, market trends",init:"CZ"},
+  {name:"Brian Armstrong",handle:"@brian_armstrong",focus:"Coinbase CEO, regulation",init:"BA"},
+  {name:"Lyn Alden",handle:"@LynAldenContact",focus:"Macro economist, Bitcoin",init:"LA"},
+  {name:"Raoul Pal",handle:"@RaoulGMI",focus:"Macro + crypto, Real Vision",init:"RP"},
+  {name:"Cathie Wood",handle:"@CathieDWood",focus:"ARK Invest, institutional",init:"CW"},
+  {name:"PlanB",handle:"@100trillionUSD",focus:"Stock-to-Flow, BTC models",init:"PB"},
+  {name:"Andreas Antonopoulos",handle:"@aantonop",focus:"Bitcoin educator, author",init:"AA"},
+  {name:"Balaji Srinivasan",handle:"@balajis",focus:"Network states, tech sovereignty",init:"BS"},
+  {name:"Erik Voorhees",handle:"@ErikVoorhees",focus:"ShapeShift, libertarian crypto",init:"EV"},
+  {name:"Max Keiser",handle:"@maxkeiser",focus:"OG Bitcoin bull, El Salvador",init:"MK"},
+  {name:"Preston Pysh",handle:"@PrestonPysh",focus:"Bitcoin podcaster, investor",init:"PP"},
+  {name:"Jack Dorsey",handle:"@jack",focus:"Bitcoin maximalist, Block/Cash App",init:"JD"},
+  {name:"Willy Woo",handle:"@woonomic",focus:"On-chain analytics",init:"WW"},
+  {name:"Rekt Capital",handle:"@rektcapital",focus:"Cycle analysis, charts",init:"RC"},
+  {name:"Scott Melker",handle:"@scottmelker",focus:"Wolf of All Streets, trader",init:"SM"},
+  {name:"Coin Bureau",handle:"@coinbureau",focus:"Educational YouTube, reviews",init:"CB"},
+  {name:"Altcoin Daily",handle:"@AltcoinDailyio",focus:"News + altcoin trends",init:"AD"},
+  {name:"Laura Shin",handle:"@laurashin",focus:"Unchained podcast, journalism",init:"LS"},
+  {name:"Lark Davis",handle:"@TheCryptoLark",focus:"Market commentary, altcoins",init:"LD"},
+  {name:"Miles Deutscher",handle:"@milesdeutscher",focus:"Market breakdowns, CT",init:"MD"},
+  {name:"Ash Crypto",handle:"@Ashcryptoreal",focus:"Trading-focused content",init:"AC"},
+  {name:"Michael van de Poppe",handle:"@CryptoMichNL",focus:"Trading cycles, altcoins",init:"MV"},
+  {name:"Saifedean Ammous",handle:"@saifedean",focus:"The Bitcoin Standard, author",init:"SA"},
+  {name:"Novogratz",handle:"@novogratz",focus:"Galaxy Digital, institutional",init:"MN"},
+  {name:"Ansem",handle:"@blknoiz06",focus:"Solana ecosystem, CT",init:"AN"},
+  {name:"Murad Mahmudov",handle:"@MustStopMurad",focus:"Memecoin supercycle thesis",init:"MM"},
+  {name:"Roaring Kitty",handle:"@TheRoaringKitty",focus:"Crossover retail legend",init:"RK"},
+  {name:"Elon Musk",handle:"@elonmusk",focus:"Market sentiment, DOGE",init:"EM"},
+  {name:"Watcher.Guru",handle:"@WatcherGuru",focus:"Breaking crypto news",init:"WG"},
+];
+
+const colors = ["#f7c948","#4cc870","#60aaff","#e06060","#c070e0","#60d0d0"];
+const vc = document.getElementById("voices-container");
+voices.forEach((v,i) => {
+  const col = colors[i % colors.length];
+  vc.innerHTML += `<div class="voice-card">
+    <div class="voice-avatar" style="color:${col};border-color:${col}30;background:${col}10;">${v.init}</div>
+    <div class="voice-name">${v.name}</div>
+    <div class="voice-handle">${v.handle}</div>
+    <div class="voice-focus">${v.focus}</div>
+  </div>`;
+});
+
+// Static fallback news cards (replaced by pipeline)
+const fallbackNews = [
+  {cat:"Bitcoin",title:"BTC Eyes $100K as Institutional Demand Surges",time:"2 hrs ago",thumb:"btc",pill:"hot",icon:"₿"},
+  {cat:"Memecoins",title:"PEPE, WIF & the New Memecoin Supercycle",time:"4 hrs ago",thumb:"meme",pill:"hot",icon:"🐸"},
+  {cat:"Legislation",title:"Senate Crypto Bill: What Diamond Hands Need to Know",time:"6 hrs ago",thumb:"law",pill:"new",icon:"🏛️"},
+  {cat:"Ethereum",title:"Vitalik on Scaling: The Next 12 Months",time:"8 hrs ago",thumb:"eth",pill:"new",icon:"🔷"},
+  {cat:"DeFi",title:"Chainlink Surges on Real-World Asset Integration",time:"1 hr ago",thumb:"defi",pill:"live",icon:"⛓️"},
+  {cat:"Macro",title:"Lyn Alden: Why Bitcoin Wins in Every Macro Scenario",time:"3 hrs ago",thumb:"macro",pill:"new",icon:"📊"},
+];
+
+const nc = document.getElementById("news-container");
+nc.innerHTML = fallbackNews.map(n => `
+  <div class="news-card">
+    <div class="news-thumb ${n.thumb}"><span style="font-size:48px;">${n.icon}</span><span class="card-pill pill-${n.pill}">${n.pill}</span></div>
+    <div class="news-body"><div class="card-cat">${n.cat}</div><div class="card-title">${n.title}</div><div class="card-meta">${n.time} · 4 min read</div></div>
+  </div>`).join("");
+
+// Set timestamp
+const now = new Date();
+document.getElementById("news-timestamp").textContent = now.toLocaleDateString("en-US",{month:"short",day:"numeric"});
+</script>
+
+</body>
+</html>
