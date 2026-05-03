@@ -230,7 +230,6 @@ img{display:block;}
 .mc-spray{position:absolute;font-family:'Permanent Marker',cursive;opacity:0.5;text-shadow:0 0 4px currentColor;}
 .mc-txt{padding:9px 10px;font-size:9px;color:#555;line-height:1.55;border-top:1px solid #1e1c14;}
 
-/* YOUTUBE */
 .yt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2px;}
 .yt-card{background:#111009;border:1px solid #2a2820;overflow:hidden;cursor:pointer;transition:border-color 0.12s;}
 .yt-card:hover{border-color:#f5c51840;}
@@ -251,7 +250,7 @@ img{display:block;}
 .pc{background:#111009;border:1px solid #2a2820;padding:11px 13px;display:flex;gap:11px;align-items:center;cursor:pointer;transition:border-color 0.12s;}
 .pc:hover{border-color:#f5c51830;}
 .pc-art{width:56px;height:56px;background:#1e1c14;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;overflow:hidden;}
-.pc-art img{width:100%;height:100%;object-fit:cover;}
+.pc-art img{width:100%;height:100%;object-fit:cover;border-radius:2px;}
 .pc-info{flex:1;min-width:0;}
 .pc-show{font-size:7px;letter-spacing:3px;text-transform:uppercase;color:#f5c518;margin-bottom:2px;}
 .pc-title{font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:0.5px;color:#ccc5aa;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
@@ -421,55 +420,14 @@ img{display:block;}
         </div>
       </div>
       <div class="news-grid" id="news-container">
-      <a href="https://cryptoslate.com/canada-wants-to-ban-crypto-atms-as-fraud-fears-turn-bitcoin-access-into-a-political-target/" target="_blank" rel="noopener" class="news-card">
-        <div class="news-thumb law"><span style="font-size:48px;">🏛️</span><span class="card-pill pill-hot">hot</span></div>
-        <div class="news-body">
-          <div class="card-cat">Legislation</div>
-          <div class="card-title">Canada Targets Crypto ATMs in Bitcoin Access Crackdown</div>
-          <div class="card-meta">20576 days ago · CryptoSlate</div>
-        </div>
-      </a>
-      <a href="https://bitcoinist.com/the-sec-just-elevated-xrp-status/" target="_blank" rel="noopener" class="news-card">
-        <div class="news-thumb law"><span style="font-size:48px;">🏛️</span><span class="card-pill pill-new">new</span></div>
-        <div class="news-body">
-          <div class="card-cat">Legislation</div>
-          <div class="card-title">SEC Elevates XRP to Bitcoin and Ethereum Status</div>
-          <div class="card-meta">20576 days ago · Bitcoinist</div>
-        </div>
-      </a>
-      <a href="http://www.newsbtc.com/news/bitcoin/bitcoins-path-to-100k-may-happen-before-anyone-understands-why-analyst/" target="_blank" rel="noopener" class="news-card">
-        <div class="news-thumb btc"><span style="font-size:48px;">₿</span><span class="card-pill pill-new">new</span></div>
-        <div class="news-body">
-          <div class="card-cat">Bitcoin</div>
-          <div class="card-title">Bitcoin's Path to $100K May Happen Before Understanding Why</div>
-          <div class="card-meta">20576 days ago · newsBTC</div>
-        </div>
-      </a>
-      <a href="https://cryptobriefing.com/senator-tillis-stalls-clarity-act-impacting-bitcoins-long-term-outlook/" target="_blank" rel="noopener" class="news-card">
-        <div class="news-thumb law"><span style="font-size:48px;">🏛️</span><span class="card-pill pill-live">live</span></div>
-        <div class="news-body">
-          <div class="card-cat">Legislation</div>
-          <div class="card-title">Senator Tillis Stalls CLARITY Act, Impacts Bitcoin Outlook</div>
-          <div class="card-meta">20576 days ago · Crypto Briefing</div>
-        </div>
-      </a>
-      <a href="https://www.coindesk.com/markets/2026/05/01/canadian-pension-giant-aimco-buys-the-dip-in-strategy-now-sitting-on-usd69-million-unrealized-gain" target="_blank" rel="noopener" class="news-card">
-        <div class="news-thumb btc"><span style="font-size:48px;">₿</span><span class="card-pill pill-live">live</span></div>
-        <div class="news-body">
-          <div class="card-cat">Bitcoin</div>
-          <div class="card-title">Canadian Pension Giant AIMCo Buys Strategy Dip, $69M Gain</div>
-          <div class="card-meta">2 days ago · CoinDesk</div>
-        </div>
-      </a>
-      <a href="https://bitcoinist.com/memecoin-millionaires-line-up-for-trumps-exclusive-luncheon/" target="_blank" rel="noopener" class="news-card">
-        <div class="news-thumb meme"><span style="font-size:48px;">🐸</span><span class="card-pill pill-live">live</span></div>
-        <div class="news-body">
-          <div class="card-cat">Memecoins</div>
-          <div class="card-title">Memecoin Millionaires Line Up for Trump's Exclusive Luncheon</div>
-          <div class="card-meta">20576 days ago · Bitcoinist</div>
-        </div>
-      </a></div>
-  </section>
+        <div class="nc"><div class="nc-top" style="background:#a855f7;"></div><span class="nc-pill pl">Live</span><div class="nc-cat">DeFi</div><div class="nc-title">Chainlink Surges 12% on Real-World Asset Deal</div><div class="nc-meta">1 hr · CoinDesk</div></div>
+        <div class="nc"><div class="nc-top" style="background:#06b6d4;"></div><span class="nc-pill pn">New</span><div class="nc-cat">Macro</div><div class="nc-title">Lyn Alden: Bitcoin Wins Every Macro Scenario</div><div class="nc-meta">3 hrs · Real Vision</div></div>
+        <div class="nc"><div class="nc-top" style="background:#f5c518;"></div><span class="nc-pill pn">New</span><div class="nc-cat">Solana</div><div class="nc-title">SOL Ecosystem TVL Hits All-Time High</div><div class="nc-meta">5 hrs · The Block</div></div>
+        <div class="nc"><div class="nc-top" style="background:#00ff88;"></div><span class="nc-pill ph">Hot</span><div class="nc-cat">Memecoins</div><div class="nc-title">WIF Breaks Out — Solana Memes Lead This Cycle</div><div class="nc-meta">2 hrs · Decrypt</div></div>
+        <div class="nc"><div class="nc-top" style="background:#f7a520;"></div><span class="nc-pill pn">New</span><div class="nc-cat">Bitcoin</div><div class="nc-title">Saylor Buys Another $500M BTC for MicroStrategy</div><div class="nc-meta">7 hrs · Bloomberg</div></div>
+        <div class="nc"><div class="nc-top" style="background:#ff1a1a;"></div><span class="nc-pill ph">Hot</span><div class="nc-cat">Legislation</div><div class="nc-title">IRS DeFi Rule: What Every Holder Needs to Know</div><div class="nc-meta">9 hrs · Forbes</div></div>
+      </div>
+    </section>
     <div class="price-board">
       <div class="pb-head"><span>Live Prices</span><span onclick="goTo('markets')" style="cursor:pointer;">Full Markets →</span></div>
       <div class="pb-grid" id="pb-grid">
@@ -653,51 +611,27 @@ img{display:block;}
       </div>
       <div class="yt-grid">
         <a href="https://www.youtube.com/watch?v=QjH-wvXpz-4" target="_blank" rel="noopener" class="yt-card">
-          <div class="yt-thumb">
-            <img src="https://img.youtube.com/vi/QjH-wvXpz-4/mqdefault.jpg" alt="Coin Bureau Bitcoin" onerror="this.parentElement.innerHTML='<div class=yt-thumb-fallback>₿</div>'"/>
-            <div class="yt-overlay"><div class="yt-play"></div></div>
-            <span class="yt-dur">14:22</span>
-          </div>
+          <div class="yt-thumb"><img src="https://img.youtube.com/vi/QjH-wvXpz-4/mqdefault.jpg" alt="Coin Bureau Bitcoin" onerror="this.parentElement.innerHTML='<div class=yt-thumb-fallback>₿</div>'"/><div class="yt-overlay"><div class="yt-play"></div></div><span class="yt-dur">14:22</span></div>
           <div class="yt-body"><div class="yt-channel">Coin Bureau</div><div class="yt-title">Bitcoin Price Prediction — What the Data Actually Says</div><div class="yt-meta">312K views · Recent</div></div>
         </a>
         <a href="https://www.youtube.com/watch?v=AbuxDEK1GF8" target="_blank" rel="noopener" class="yt-card">
-          <div class="yt-thumb">
-            <img src="https://img.youtube.com/vi/AbuxDEK1GF8/mqdefault.jpg" alt="Natalie Brunell Bitcoin Reserve" onerror="this.parentElement.innerHTML='<div class=yt-thumb-fallback>🏛️</div>'"/>
-            <div class="yt-overlay"><div class="yt-play"></div></div>
-            <span class="yt-dur">22:15</span>
-          </div>
+          <div class="yt-thumb"><img src="https://img.youtube.com/vi/AbuxDEK1GF8/mqdefault.jpg" alt="Natalie Brunell Bitcoin Reserve" onerror="this.parentElement.innerHTML='<div class=yt-thumb-fallback>🏛️</div>'"/><div class="yt-overlay"><div class="yt-play"></div></div><span class="yt-dur">22:15</span></div>
           <div class="yt-body"><div class="yt-channel">Natalie Brunell</div><div class="yt-title">The Bitcoin Strategic Reserve: What It Really Means</div><div class="yt-meta">187K views · Recent</div></div>
         </a>
         <a href="https://www.youtube.com/watch?v=LuaUhNMe6wU" target="_blank" rel="noopener" class="yt-card">
-          <div class="yt-thumb">
-            <img src="https://img.youtube.com/vi/LuaUhNMe6wU/mqdefault.jpg" alt="Michael Saylor Bitcoin Reserve" onerror="this.parentElement.innerHTML='<div class=yt-thumb-fallback>🧠</div>'"/>
-            <div class="yt-overlay"><div class="yt-play"></div></div>
-            <span class="yt-dur">31:08</span>
-          </div>
+          <div class="yt-thumb"><img src="https://img.youtube.com/vi/LuaUhNMe6wU/mqdefault.jpg" alt="Michael Saylor Bitcoin Reserve" onerror="this.parentElement.innerHTML='<div class=yt-thumb-fallback>🧠</div>'"/><div class="yt-overlay"><div class="yt-play"></div></div><span class="yt-dur">31:08</span></div>
           <div class="yt-body"><div class="yt-channel">Michael Saylor</div><div class="yt-title">U.S. Strategic Bitcoin Reserve is America's Manifest Destiny</div><div class="yt-meta">520K views · Recent</div></div>
         </a>
         <a href="https://www.youtube.com/watch?v=8HvSFVJgXNQ" target="_blank" rel="noopener" class="yt-card">
-          <div class="yt-thumb">
-            <img src="https://img.youtube.com/vi/8HvSFVJgXNQ/mqdefault.jpg" alt="Coin Bureau 2025 Crypto Predictions" onerror="this.parentElement.innerHTML='<div class=yt-thumb-fallback>📊</div>'"/>
-            <div class="yt-overlay"><div class="yt-play"></div></div>
-            <span class="yt-dur">26:41</span>
-          </div>
+          <div class="yt-thumb"><img src="https://img.youtube.com/vi/8HvSFVJgXNQ/mqdefault.jpg" alt="Coin Bureau Crypto Predictions" onerror="this.parentElement.innerHTML='<div class=yt-thumb-fallback>📊</div>'"/><div class="yt-overlay"><div class="yt-play"></div></div><span class="yt-dur">26:41</span></div>
           <div class="yt-body"><div class="yt-channel">Coin Bureau</div><div class="yt-title">Crypto Predictions — Coin Bureau's Full Breakdown</div><div class="yt-meta">298K views · Recent</div></div>
         </a>
         <a href="https://www.youtube.com/watch?v=_DFBkRNca58" target="_blank" rel="noopener" class="yt-card">
-          <div class="yt-thumb">
-            <img src="https://img.youtube.com/vi/_DFBkRNca58/mqdefault.jpg" alt="Natalie Brunell Bitcoin Cycle" onerror="this.parentElement.innerHTML='<div class=yt-thumb-fallback>📈</div>'"/>
-            <div class="yt-overlay"><div class="yt-play"></div></div>
-            <span class="yt-dur">58:44</span>
-          </div>
+          <div class="yt-thumb"><img src="https://img.youtube.com/vi/_DFBkRNca58/mqdefault.jpg" alt="Natalie Brunell Bitcoin Cycle" onerror="this.parentElement.innerHTML='<div class=yt-thumb-fallback>📈</div>'"/><div class="yt-overlay"><div class="yt-play"></div></div><span class="yt-dur">58:44</span></div>
           <div class="yt-body"><div class="yt-channel">Natalie Brunell</div><div class="yt-title">Why Bitcoin's Four-Year Cycle Is Dead — And What Replaces It</div><div class="yt-meta">176K views · Recent</div></div>
         </a>
         <a href="https://www.youtube.com/watch?v=pr6r-WEiH24" target="_blank" rel="noopener" class="yt-card">
-          <div class="yt-thumb">
-            <img src="https://img.youtube.com/vi/pr6r-WEiH24/mqdefault.jpg" alt="Coin Bureau Bitcoin Crash" onerror="this.parentElement.innerHTML='<div class=yt-thumb-fallback>⚡</div>'"/>
-            <div class="yt-overlay"><div class="yt-play"></div></div>
-            <span class="yt-dur">19:55</span>
-          </div>
+          <div class="yt-thumb"><img src="https://img.youtube.com/vi/pr6r-WEiH24/mqdefault.jpg" alt="Coin Bureau Bitcoin Analysis" onerror="this.parentElement.innerHTML='<div class=yt-thumb-fallback>⚡</div>'"/><div class="yt-overlay"><div class="yt-play"></div></div><span class="yt-dur">19:55</span></div>
           <div class="yt-body"><div class="yt-channel">Coin Bureau</div><div class="yt-title">Will BTC Continue Crashing? Updated Bitcoin Price Analysis</div><div class="yt-meta">244K views · Recent</div></div>
         </a>
       </div>
@@ -711,34 +645,13 @@ img{display:block;}
     <section>
       <div class="sh"><span class="sh-name">Podcasts</span><div class="sh-rule"></div><span class="sh-tag">Listen Now</span></div>
       <div class="pod-list">
-        <div class="pc">
-          <div class="pc-art"><img src="https://img.youtube.com/vi/AbuxDEK1GF8/default.jpg" alt="DHD Pod" onerror="this.parentElement.innerHTML='💎'"/></div>
-          <div class="pc-info"><div class="pc-show">Diamond Hands Daily Pod</div><div class="pc-title">Ep. 47 — The Bitcoin Halving: One Year Later</div><div class="pc-meta">58 min · 3 days ago</div></div><div class="pc-btn"></div>
-        </div>
-        <div class="pc">
-          <div class="pc-art"><img src="https://img.youtube.com/vi/LuaUhNMe6wU/default.jpg" alt="Pomp Pod" onerror="this.parentElement.innerHTML='💰'"/></div>
-          <div class="pc-info"><div class="pc-show">The Pomp Podcast</div><div class="pc-title">Michael Saylor: Why Every Company Should Hold Bitcoin</div><div class="pc-meta">74 min · 2 days ago</div></div><div class="pc-btn"></div>
-        </div>
-        <div class="pc">
-          <div class="pc-art"><img src="https://img.youtube.com/vi/QjH-wvXpz-4/default.jpg" alt="Unchained" onerror="this.parentElement.innerHTML='🔗'"/></div>
-          <div class="pc-info"><div class="pc-show">Unchained — Laura Shin</div><div class="pc-title">Inside the Senate Crypto Hearing: What Actually Happened</div><div class="pc-meta">62 min · 5 days ago</div></div><div class="pc-btn"></div>
-        </div>
-        <div class="pc">
-          <div class="pc-art"><img src="https://img.youtube.com/vi/8HvSFVJgXNQ/default.jpg" alt="Wolf of All Streets" onerror="this.parentElement.innerHTML='🐺'"/></div>
-          <div class="pc-info"><div class="pc-show">Wolf of All Streets — Scott Melker</div><div class="pc-title">Lyn Alden: The Macro Case for Bitcoin in 2026</div><div class="pc-meta">81 min · 1 week ago</div></div><div class="pc-btn"></div>
-        </div>
-        <div class="pc">
-          <div class="pc-art"><img src="https://img.youtube.com/vi/pr6r-WEiH24/default.jpg" alt="Rekt Capital" onerror="this.parentElement.innerHTML='📊'"/></div>
-          <div class="pc-info"><div class="pc-show">Rekt Capital</div><div class="pc-title">Bitcoin Cycle Analysis — Where Are We Really?</div><div class="pc-meta">44 min · 4 days ago</div></div><div class="pc-btn"></div>
-        </div>
-        <div class="pc">
-          <div class="pc-art"><img src="https://img.youtube.com/vi/_DFBkRNca58/default.jpg" alt="What Bitcoin Did" onerror="this.parentElement.innerHTML='⚡'"/></div>
-          <div class="pc-info"><div class="pc-show">What Bitcoin Did</div><div class="pc-title">Jack Mallers on Strike, Lightning & Future of Payments</div><div class="pc-meta">68 min · 6 days ago</div></div><div class="pc-btn"></div>
-        </div>
-        <div class="pc">
-          <div class="pc-art" style="font-size:18px;display:flex;align-items:center;justify-content:center;">🌐</div>
-          <div class="pc-info"><div class="pc-show">Bankless</div><div class="pc-title">The DeFi Summer That Never Ended — 2026 Edition</div><div class="pc-meta">91 min · 3 days ago</div></div><div class="pc-btn"></div>
-        </div>
+        <div class="pc"><div class="pc-art"><img src="https://img.youtube.com/vi/AbuxDEK1GF8/default.jpg" alt="DHD Pod" onerror="this.parentElement.innerHTML='💎'"/></div><div class="pc-info"><div class="pc-show">Diamond Hands Daily Pod</div><div class="pc-title">Ep. 47 — The Bitcoin Halving: One Year Later</div><div class="pc-meta">58 min · 3 days ago</div></div><div class="pc-btn"></div></div>
+        <div class="pc"><div class="pc-art"><img src="https://img.youtube.com/vi/LuaUhNMe6wU/default.jpg" alt="Pomp Pod" onerror="this.parentElement.innerHTML='💰'"/></div><div class="pc-info"><div class="pc-show">The Pomp Podcast</div><div class="pc-title">Michael Saylor: Why Every Company Should Hold Bitcoin</div><div class="pc-meta">74 min · 2 days ago</div></div><div class="pc-btn"></div></div>
+        <div class="pc"><div class="pc-art"><img src="https://img.youtube.com/vi/QjH-wvXpz-4/default.jpg" alt="Unchained" onerror="this.parentElement.innerHTML='🔗'"/></div><div class="pc-info"><div class="pc-show">Unchained — Laura Shin</div><div class="pc-title">Inside the Senate Crypto Hearing: What Actually Happened</div><div class="pc-meta">62 min · 5 days ago</div></div><div class="pc-btn"></div></div>
+        <div class="pc"><div class="pc-art"><img src="https://img.youtube.com/vi/8HvSFVJgXNQ/default.jpg" alt="Wolf of All Streets" onerror="this.parentElement.innerHTML='🐺'"/></div><div class="pc-info"><div class="pc-show">Wolf of All Streets — Scott Melker</div><div class="pc-title">Lyn Alden: The Macro Case for Bitcoin in 2026</div><div class="pc-meta">81 min · 1 week ago</div></div><div class="pc-btn"></div></div>
+        <div class="pc"><div class="pc-art"><img src="https://img.youtube.com/vi/pr6r-WEiH24/default.jpg" alt="Rekt Capital" onerror="this.parentElement.innerHTML='📊'"/></div><div class="pc-info"><div class="pc-show">Rekt Capital</div><div class="pc-title">Bitcoin Cycle Analysis — Where Are We Really?</div><div class="pc-meta">44 min · 4 days ago</div></div><div class="pc-btn"></div></div>
+        <div class="pc"><div class="pc-art"><img src="https://img.youtube.com/vi/_DFBkRNca58/default.jpg" alt="What Bitcoin Did" onerror="this.parentElement.innerHTML='⚡'"/></div><div class="pc-info"><div class="pc-show">What Bitcoin Did</div><div class="pc-title">Jack Mallers on Strike, Lightning & Future of Payments</div><div class="pc-meta">68 min · 6 days ago</div></div><div class="pc-btn"></div></div>
+        <div class="pc"><div class="pc-art" style="font-size:18px;">🌐</div><div class="pc-info"><div class="pc-show">Bankless</div><div class="pc-title">The DeFi Summer That Never Ended — 2026 Edition</div><div class="pc-meta">91 min · 3 days ago</div></div><div class="pc-btn"></div></div>
       </div>
     </section>
   </div>
@@ -792,7 +705,7 @@ const spraytags=['HODL','WAGMI','LFG','GM','NGMI','DYOR','WEN?','REKT','APE IN',
 const vData=[
   {n:"Michael Saylor",h:"saylor",r:"Bitcoin maximalist",c:"#f7a520"},
   {n:"Pompliano",h:"APompliano",r:"Macro + Bitcoin",c:"#f5c518"},
-  {n:"Natalie Brunell",h:"natbrunell",r:"Bitcoin journalist",c:"#00ff88"},
+  {n:"Natalie Brunell",h:"natbrunell",r:"Bitcoin journalist",c:"#00ff88",img:"https://yt3.googleusercontent.com/ytc/AIdro_mKRuOEHWFT-JfNPHqAOB84H6RDT3wFUBXq1N0Wl1HvRQ=s88-c-k-c0x00ffffff-no-rj"},
   {n:"Jack Mallers",h:"jackmallers",r:"Strike · Lightning",c:"#60aaff"},
   {n:"Vitalik Buterin",h:"VitalikButerin",r:"Ethereum founder",c:"#627eea"},
   {n:"CZ",h:"cz_binance",r:"Binance founder",c:"#f5c518"},
@@ -825,6 +738,7 @@ const vData=[
   {n:"Elon Musk",h:"elonmusk",r:"DOGE · Sentiment",c:"#f5c518"},
   {n:"Watcher.Guru",h:"WatcherGuru",r:"Breaking news",c:"#60aaff"},
 ];
+
 let vLoaded=false;
 function buildVoices(){
   vLoaded=true;
@@ -833,10 +747,11 @@ function buildVoices(){
   vData.forEach((v,i)=>{
     const init=v.n.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
     const tag=spraytags[i%spraytags.length];
+    const photoSrc=v.img||`https://unavatar.io/twitter/${v.h}`;
     const d=document.createElement('div');
     d.className='vc';
     d.innerHTML=`<span class="vc-tag" style="color:${v.c};">${tag}</span>
-    <img class="vc-photo" src="https://unavatar.io/twitter/${v.h}" alt="${v.n}"
+    <img class="vc-photo" src="${photoSrc}" alt="${v.n}"
       onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"/>
     <div class="vc-fb" style="background:${v.c}12;color:${v.c};border-color:${v.c}28;">${init}</div>
     <div class="vc-name">${v.n}</div>
